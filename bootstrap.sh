@@ -9,7 +9,7 @@ dir=~/.dotfiles                    # dotfiles directory
 olddir=~/.dotfiles_old             # old dotfiles backup directory
 files="bashrc vimrc vim gitconfig subversion"    # list of files/folders to symlink in homedir
 
-datestr=$(date -ju "+%m%d%H%M%Y")
+datestr=$(date -u "+%m%d%H%M%Y")
 
 ########## Update Submodules
 
@@ -30,8 +30,13 @@ cd $dir
 # move any existing dotfiles in homedir to dotfiles_old directory, then create symlinks
 for file in $files; do
     echo "Backing up dotfiles to files from ~ to $olddir-$datestr"
-    cp -LR ~/.$file $olddir-$datestr
-    rm ~/.$file
+    if [ -f $file ]; then
+        cp -L ~/.$file $olddir-$datestr
+        rm -f ~/.$file
+    elif [ -d $file ]; then
+        cp -LR ~/.$file $olddir-$datestr
+        rm -rf ~/.$file
+    fi
     echo "Creating symlink to $file in home directory."
     ln -s $dir/$file ~/.$file
 done
