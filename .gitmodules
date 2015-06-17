@@ -1,0 +1,21 @@
+[submodule "vim/submodules/pathogen"]
+	path = vim/submodules/pathogen
+	url = https://github.com/tpope/vim-pathogen
+[submodule "vim/submodules/vim-airline"]
+	path = vim/submodules/vim-airline
+	url = https://github.com/bling/vim-airline
+[submodule "vim/submodules/nerdtree"]
+	path = vim/submodules/nerdtree
+	url = https://github.com/scrooloose/nerdtree
+[submodule "vim/submodules/tagbar"]
+	path = vim/submodules/tagbar
+	url = https://github.com/majutsushi/tagbar.git
+[submodule "vim/submodules/vim-monokai"]
+	path = vim/submodules/vim-monokai
+	url = https://github.com/sickill/vim-monokai.git
+[submodule "vim/submodules/vim-node"]
+	path = vim/submodules/vim-node
+	url = https://github.com/moll/vim-node.git
+[submodule "vim/submodules/vim-javascript-syntax"]
+	path = vim/submodules/vim-javascript-syntax
+	url = https://github.com/jelera/vim-javascript-syntax.git
