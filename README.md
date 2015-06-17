@@ -9,4 +9,5 @@ chrised's dotfiles
     cd ~
 
 Or as a one-liner
+
     git clone https://github.com/chrised/dotfiles ~/.dotfiles; cd ~/.dotfiles; ./bootstrap.sh; cd ~
