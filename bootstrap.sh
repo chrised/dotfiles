@@ -30,10 +30,10 @@ cd $dir
 # move any existing dotfiles in homedir to dotfiles_old directory, then create symlinks
 for file in $files; do
     echo "Backing up dotfiles to files from ~ to $olddir-$datestr"
-    if [ -f $file ]; then
+    if [ -f ~/.$file ]; then
         cp -L ~/.$file $olddir-$datestr
         rm -f ~/.$file
-    elif [ -d $file ]; then
+    elif [ -d ~/.$file ]; then
         cp -LR ~/.$file $olddir-$datestr
         rm -rf ~/.$file
     fi
