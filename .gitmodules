@@ -19,3 +19,6 @@
 [submodule "vim/submodules/vim-javascript-syntax"]
 	path = vim/submodules/vim-javascript-syntax
 	url = https://github.com/jelera/vim-javascript-syntax.git
+[submodule "vim/bundle/syntastic"]
+	path = vim/bundle/syntastic
+	url = https://github.com/scrooloose/syntastic.git
