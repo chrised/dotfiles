@@ -19,12 +19,12 @@
 [submodule "vim/submodules/vim-javascript-syntax"]
 	path = vim/submodules/vim-javascript-syntax
 	url = https://github.com/jelera/vim-javascript-syntax.git
-[submodule "vim/bundle/syntastic"]
-	path = vim/bundle/syntastic
+[submodule "vim/submodules/syntastic"]
+	path = vim/submodules/syntastic
 	url = https://github.com/scrooloose/syntastic.git
-[submodule "vim/bundle/trailing-whitespace"]
-	path = vim/bundle/trailing-whitespace
+[submodule "vim/submodules/trailing-whitespace"]
+	path = vim/submodules/trailing-whitespace
 	url = https://github.com/vim-scripts/trailing-whitespace.git
-[submodule "vim/powerline-fonts"]
-	path = vim/powerline-fonts
+[submodule "vim/submodules/powerline-fonts"]
+	path = vim/submodules/powerline-fonts
 	url = https://github.com/powerline/fonts.git
