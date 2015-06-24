@@ -41,5 +41,6 @@ for file in $files; do
     ln -s $dir/$file ~/.$file
 done
 
-
+# Finally, set up powerline-fonts
+~/.vim/powerline-fonts/install.sh
 
