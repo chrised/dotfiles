@@ -27,4 +27,4 @@
 	url = https://github.com/vim-scripts/trailing-whitespace.git
 [submodule "vim/submodules/powerline-fonts"]
 	path = vim/submodules/powerline-fonts
-	url = https://github.com/powerline/fonts.git
+	url = https://github.com/chrised/fonts
