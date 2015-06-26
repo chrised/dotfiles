@@ -7,8 +7,11 @@ if [[ $- != *i* ]] ; then
     # Shell is non-interactive.  Be done now!
     return
 fi
-
-export PS1="[\[\033[1;31m\]\$(uname)\[\033[m\]]\[\033[36m\]\u\[\033[m\]@\[\033[32m\]\h:\[\033[33;1m\]\w\[\033[m\]\$ "
+if [[ ${EUID} == 0 ]] ; then
+    export PS1="[\[\033[1;31m\]\$(uname)\[\033[m\]]\[\033[1;31m\]\u\[\033[m\]@\[\033[32m\]\h:\[\033[33;1m\]\w\[\033[m\]\$ "
+else
+    export PS1="[\[\033[1;31m\]\$(uname)\[\033[m\]]\[\033[36m\]\u\[\033[m\]@\[\033[32m\]\h:\[\033[33;1m\]\w\[\033[m\]\$ "
+fi
 
 export CLICOLOR=1
 export LSCOLORS=GxFxCxDxBxegedabagaced
