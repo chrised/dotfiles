@@ -19,8 +19,8 @@ git submodule update --init --recursive $dir
 
 # create dotfiles_old in homedir
 echo "Creating $olddir-$datestr for backup of any existing dotfiles in ~"
-if [ ! -d $olddir-$datestr ]; then
-    mkdir -p $olddir-$datestr
+if [ ! -d "$olddir-$datestr" ]; then
+    mkdir -p "$olddir-$datestr"
 fi
 
 # change to the dotfiles directory
@@ -30,19 +30,19 @@ cd $dir
 # move any existing dotfiles in homedir to dotfiles_old directory, then create symlinks
 echo "Backing up dotfiles to files from ~ to $olddir-$datestr/"
 for file in $files; do
-    if [ -f ~/.$file ]; then
-        cp -L ~/.$file $olddir-$datestr/
-        rm -f ~/.$file
-    elif [ -d ~/.$file ]; then
-        cp -LR ~/.$file $olddir-$datestr/
-        rm -rf ~/.$file
+    if [ -f ~/."$file" ]; then
+        cp -L ~/."$file" "$olddir-$datestr"/
+        rm -f ~/."$file"
+    elif [ -d ~/."$file" ]; then
+        cp -LR ~/."$file" "$olddir-$datestr"/
+        rm -rf ~/."$file"
     fi
     echo "Creating symlink to $file in home directory."
-    ln -s $dir/$file ~/.$file
+    ln -s "$dir/$file" ~/."$file"
 done
 
 # Handle the bashrc/bash_profile mess
-[[ -f ~/.bash_profile ]] && cp -LR ~/.bash_profile $olddir-$datestr/ && rm -rf ~/.bash_profile
+[[ -f ~/.bash_profile ]] && cp -LR ~/.bash_profile "$olddir-$datestr"/ && rm -rf ~/.bash_profile
 ln -s ~/.bashrc ~/.bash_profile
 
 
@@ -57,7 +57,7 @@ echo "Installing powerline-fonts"
 # javascript linting hints
 jslinters="jslint jshint eslint"
 for linter in $jslinters; do
-    if [ ! $(which $linter) ]; then
+    if [ ! "$(which "$linter")" ]; then
         echo "$linter not found, install with:"
         echo "npm install -g $linter"
     fi
