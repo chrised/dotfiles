@@ -33,6 +33,9 @@ alias grep='grep --exclude-dir=.git --exclude-dir=.svn'
 export CSCOPE_DB=$HOME/.cscope.out
 export PYCSCOPE_DB=$HOME/.pycscope.out
 
+export LESSCOLOR=yes
+export LESSOPEN="|lesspipe %s"
+
 if [ -f $HOME/.bashrc.local ]; then
     . $HOME/.bashrc.local
 fi
