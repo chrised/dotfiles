@@ -7,7 +7,7 @@
 
 dir=~/.dotfiles                    # dotfiles directory
 olddir=~/.dotfiles_old             # old dotfiles backup directory
-files="bashrc vimrc vim gitconfig gitignore_global subversion"    # list of files/folders to symlink in homedir
+files="bashrc vimrc vim gitconfig gitignore_global subversion eslintrc"    # list of files/folders to symlink in homedir
 
 datestr=$(date -u "+%m%d%H%M%Y")
 
@@ -18,7 +18,7 @@ git submodule update --init --recursive $dir
 ########## Create symlinks
 
 # create dotfiles_old in homedir
-echo "Creating $olddir for backup of any existing dotfiles in ~"
+echo "Creating $olddir-$datestr for backup of any existing dotfiles in ~"
 if [ ! -d $olddir-$datestr ]; then
     mkdir -p $olddir-$datestr
 fi
@@ -53,20 +53,16 @@ echo "Installing powerline-fonts"
 # local bashrc hint
 [[ ! -f ~/.bashrc.local ]] && echo "Note: Custom bashrc/profile options can be added in ~/.bashrc.local"
 
-# create some whitespace
-echo
 
 # javascript linting hints
-if [ ! $(which jslint) ]; then
-    echo "jslint not found, install with:"
-    echo "npm install -g jslint"
-fi
-if [ ! $(which jshint) ]; then
-    echo "jshint not found, install with:"
-    echo "npm install -g jshint"
-fi
+jslinters="jslint jshint eslint"
+for linter in $jslinters; do
+    if [ ! $(which $linter) ]; then
+        echo "$linter not found, install with:"
+        echo "npm install -g $linter"
+    fi
+done
 
 echo
-echo "DONE"
-
+echo "Dotfiles bootstrap complete."
 
