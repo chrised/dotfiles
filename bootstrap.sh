@@ -28,8 +28,8 @@ echo "Changing to the $dir directory"
 cd $dir
 
 # move any existing dotfiles in homedir to dotfiles_old directory, then create symlinks
+echo "Backing up dotfiles to files from ~ to $olddir-$datestr/"
 for file in $files; do
-    echo "Backing up dotfiles to files from ~ to $olddir-$datestr/"
     if [ -f ~/.$file ]; then
         cp -L ~/.$file $olddir-$datestr/
         rm -f ~/.$file
@@ -50,5 +50,23 @@ ln -s ~/.bashrc ~/.bash_profile
 echo "Installing powerline-fonts"
 ~/.vim/powerline-fonts/install.sh
 
-
+# local bashrc hint
 [[ ! -f ~/.bashrc.local ]] && echo "Note: Custom bashrc/profile options can be added in ~/.bashrc.local"
+
+# create some whitespace
+echo
+
+# javascript linting hints
+if [ ! $(which jslint) ]; then
+    echo "jslint not found, install with:"
+    echo "npm install -g jslint"
+fi
+if [ ! $(which jshint) ]; then
+    echo "jshint not found, install with:"
+    echo "npm install -g jshint"
+fi
+
+echo
+echo "DONE"
+
+
