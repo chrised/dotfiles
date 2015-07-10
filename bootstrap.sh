@@ -3,8 +3,15 @@
 # This script creates symlinks from the home directory to any desired dotfiles in ~/dotfiles
 ############################
 
-########## Variables
+function result() {
+    if [ $? = 0 ]; then
+        printf ' [\033[0;32mOK\033[0m]\n'
+    else
+        printf ' [\033[0;31mERROR\033[0m]\n'
+    fi
+}
 
+########## Variables
 dir=~/.dotfiles                    # dotfiles directory
 olddir=~/.dotfiles_old             # old dotfiles backup directory
 files="bashrc vimrc vim gitconfig gitignore_global subversion eslintrc"    # list of files/folders to symlink in homedir
@@ -18,7 +25,7 @@ git submodule update --init --recursive $dir
 ########## Create symlinks
 
 # create dotfiles_old in homedir
-echo "Creating $olddir-$datestr for backup of any existing dotfiles in ~"
+echo -n "Creating $olddir-$datestr for backup of any existing dotfiles in ~"
 if [ ! -d "$olddir-$datestr" ]; then
     mkdir -p "$olddir-$datestr"
 fi
@@ -37,18 +44,21 @@ for file in $files; do
         cp -LR ~/."$file" "$olddir-$datestr"/
         rm -rf ~/."$file"
     fi
-    echo "Creating symlink to $file in home directory."
-    ln -s "$dir/$file" ~/."$file"
+    echo -n "Creating symlink to $file in home directory."
+    ln -s "$dir/$file" "$HOME/.$file"
+    result
 done
 
 # Handle the bashrc/bash_profile mess
 [[ -f ~/.bash_profile ]] && cp -LR ~/.bash_profile "$olddir-$datestr"/ && rm -rf ~/.bash_profile
+echo -n "Making a mess of bashrc and bash_profile"
 ln -s ~/.bashrc ~/.bash_profile
+result
 
 
 # Finally, set up powerline-fonts
 echo "Installing powerline-fonts"
-~/.vim/powerline-fonts/install.sh
+"$HOME/.vim/powerline-fonts/install.sh"
 
 # local bashrc hint
 [[ ! -f ~/.bashrc.local ]] && echo "Note: Custom bashrc/profile options can be added in ~/.bashrc.local"
