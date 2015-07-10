@@ -28,3 +28,6 @@
 [submodule "vim/submodules/powerline-fonts"]
 	path = vim/submodules/powerline-fonts
 	url = https://github.com/chrised/fonts.git
+[submodule "vim/submodules/lusty"]
+	path = vim/submodules/lusty
+	url = https://github.com/sjbach/lusty
