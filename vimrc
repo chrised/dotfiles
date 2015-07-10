@@ -144,19 +144,19 @@ let g:airline#extensions#tabline#fnamemod = ':t'
 
 
 " Close the current buffer and move to the previous one
-nmap <leader>bq :bp <BAR> bd #<CR>
+"nmap <leader>bq :bp <BAR> bd #<CR>
 
 " Show all open buffers and their status
-nmap <leader>bl :ls<CR>
+"nmap <leader>bl :ls<CR>
 
 " To open a new empty buffer
-nmap <leader>T :enew<cr>
+"nmap <leader>T :enew<cr>
 
 " Move to the next buffer
-nmap <leader>l :bnext<CR>
+"nmap <leader>l :bnext<CR>
 
 " Move to the previous buffer
-nmap <leader>h :bprevious<CR>
+"nmap <leader>h :bprevious<CR>
 
 " Fix bell stall/Disable bells
 set vb
@@ -177,3 +177,4 @@ let g:syntastic_check_on_wq = 0
 let g:syntastic_javascript_checkers = ['jshint', 'jslint', 'eslint']
 let g:syntastic_aggregate_errors = 1
 
+set hidden
