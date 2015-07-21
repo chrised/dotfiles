@@ -1,0 +1,1 @@
+../submodules/logstash-syntax/syntax/logstash.vim

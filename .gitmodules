@@ -31,3 +31,6 @@
 [submodule "vim/submodules/lusty"]
 	path = vim/submodules/lusty
 	url = https://github.com/sjbach/lusty
+[submodule "vim/submodules/logstash-syntax"]
+	path = vim/submodules/logstash-syntax
+	url = https://github.com/vim-scripts/logstash.vim
