@@ -9,3 +9,5 @@
     prompt = false
 [alias]
     d = difftool
+[core]
+    excludesfile = /home/chrised/.gitignore_global
