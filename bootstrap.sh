@@ -14,7 +14,7 @@ function result() {
 ########## Variables
 dir=~/.dotfiles                    # dotfiles directory
 olddir=~/.dotfiles_old             # old dotfiles backup directory
-files="bashrc vimrc vim gitconfig gitignore_global subversion eslintrc"    # list of files/folders to symlink in homedir
+files="bashrc vimrc gvimrc vim gitconfig gitignore_global subversion eslintrc"    # list of files/folders to symlink in homedir
 
 datestr=$(date -u "+%m%d%H%M%Y")
 
