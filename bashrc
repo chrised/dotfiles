@@ -7,6 +7,12 @@ if [[ $- != *i* ]] ; then
     # Shell is non-interactive.  Be done now!
     return
 fi
+
+# Pull in the system shell first so we inherit any specifics (and override the ones we care about)
+if [ -f /etc/profile ]; then
+    source /etc/profile
+fi
+
 if [[ ${EUID} == 0 ]] ; then
     export PS1="[\[\033[1;31m\]\$(uname)\[\033[m\]:\[\033[32m\]\h\[\033[m\]]\[\033[1;31m\]\u\[\033[m\]:\[\033[33;1m\]\w\[\033[m\]\$ "
 else
@@ -20,7 +26,7 @@ shopt -s checkwinsize
 shopt -s no_empty_cmd_completion
 shopt -s histappend
 
-if [ $(uname) == 'Darwin' ]; then
+if [ "$(uname)" == 'Darwin' ]; then
     alias ls='ls -GFh'
 else
     alias ls='ls -Fh --color=auto'
@@ -36,7 +42,7 @@ export PYCSCOPE_DB=$HOME/.pycscope.out
 export LESSCOLOR=yes
 export LESSOPEN="|lesspipe %s"
 
-if [ -f $HOME/.bashrc.local ]; then
-    . $HOME/.bashrc.local
+if [ -f "$HOME/.bashrc.local" ]; then
+    source "$HOME/.bashrc.local"
 fi
 
