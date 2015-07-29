@@ -11,3 +11,4 @@
     d = difftool
 [core]
     excludesfile = /home/chrised/.gitignore_global
+    editor = vim
