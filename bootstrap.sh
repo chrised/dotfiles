@@ -25,7 +25,7 @@ git submodule update --init --recursive $dir
 ########## Create symlinks
 
 # create dotfiles_old in homedir
-echo -n "Creating $olddir-$datestr for backup of any existing dotfiles in ~"
+echo "Creating $olddir-$datestr for backup of any existing dotfiles in ~"
 if [ ! -d "$olddir-$datestr" ]; then
     mkdir -p "$olddir-$datestr"
 fi
