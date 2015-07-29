@@ -42,6 +42,8 @@ export PYCSCOPE_DB=$HOME/.pycscope.out
 export LESSCOLOR=yes
 export LESSOPEN="|lesspipe %s"
 
+alias gitupmod='git submodule foreach --recursive git checkout master; git submodule foreach --recursive git pull'
+
 if [ -f "$HOME/.bashrc.local" ]; then
     source "$HOME/.bashrc.local"
 fi
