@@ -67,6 +67,12 @@ echo "Installing powerline-fonts"
 # local bashrc hint
 [[ ! -f ~/.bashrc.local ]] && echo "Note: Custom bashrc/profile options can be added in ~/.bashrc.local"
 
+linters="shellcheck syntaxerl eslint"
+for linter in $linters; do
+    if [ ! "$(which "$linter")" ]; then
+        echo "$linter not found. Please install"
+    fi
+done
 
 # javascript linting hints
 jslinters="jslint jshint eslint"
