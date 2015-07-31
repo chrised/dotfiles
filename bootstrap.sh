@@ -67,9 +67,11 @@ echo "Installing powerline-fonts"
 # local bashrc hint
 [[ ! -f ~/.bashrc.local ]] && echo "Note: Custom bashrc/profile options can be added in ~/.bashrc.local"
 
+missing_linters=0
 linters="shellcheck syntaxerl eslint"
 for linter in $linters; do
     if [ ! "$(which "$linter")" ]; then
+        missing_linters="$((missing_linters + 1))"
         echo "$linter not found. Please install"
     fi
 done
@@ -78,10 +80,17 @@ done
 jslinters="jslint jshint eslint"
 for linter in $jslinters; do
     if [ ! "$(which "$linter")" ]; then
+        missing_linters="$((missing_linters + 1))"
         echo "$linter not found, install with:"
         echo "npm install -g $linter"
     fi
 done
+
+if [[ $missing_linters -gt 0 ]]; then
+    printf "You are missing %s linters [\033[0;31mERROR\033[0m]\n" "$missing_linters"
+else
+    printf "All expected linters were detected. [\033[0;32mOK\033[0m]\n"
+fi
 
 echo
 echo "Dotfiles bootstrap complete."
