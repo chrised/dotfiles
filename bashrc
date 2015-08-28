@@ -1,4 +1,5 @@
-# ~/.bashrc
+#!/bin/bash
+#~/.bashrc
 
 # Test for an interactive shell.  There is no need to set anything
 # past this point for scp and rcp, and it's important to refrain from
@@ -48,3 +49,12 @@ if [ -f "$HOME/.bashrc.local" ]; then
     source "$HOME/.bashrc.local"
 fi
 
+if [ -f "/usr/local/bin/virtualenvwrapper.sh" ]; then
+    export WORKON_HOME="$HOME/virtualenvs"
+    mkdir "$WORKON_HOME"
+    source "/usr/local/bin/virtualenvwrapper.sh"
+elif [ -f "/usr/bin/virtualenvwrapper.sh" ]; then
+    export WORKON_HOME="$HOME/virtualenvs"
+    mkdir "$WORKON_HOME"
+    source "/usr/bin/virtualenvwrapper.sh"
+fi

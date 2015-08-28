@@ -175,6 +175,7 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_python_checkers = ['pylint', 'pep8']
+let g:syntastic_python_pylint_args = '--rcfile=~/.pylintrc'
 let g:syntastic_javascript_checkers = ['jshint', 'jslint', 'eslint']
 let g:syntastic_erlang_checkers = ['escript', 'syntaxerl']
 let g:syntastic_aggregate_errors = 1
