@@ -49,12 +49,11 @@ if [ -f "$HOME/.bashrc.local" ]; then
     source "$HOME/.bashrc.local"
 fi
 
-if [ -f "/usr/local/bin/virtualenvwrapper.sh" ]; then
+VENV_WRAPPER="$(which virtualenvwrapper.sh)"
+if [ -f "$VENV_WRAPPER" ]; then
     export WORKON_HOME="$HOME/virtualenvs"
-    mkdir "$WORKON_HOME"
-    source "/usr/local/bin/virtualenvwrapper.sh"
-elif [ -f "/usr/bin/virtualenvwrapper.sh" ]; then
-    export WORKON_HOME="$HOME/virtualenvs"
-    mkdir "$WORKON_HOME"
-    source "/usr/bin/virtualenvwrapper.sh"
+    if [ ! -d "$WORKON_HOME" ]; then
+        mkdir "$WORKON_HOME"
+    fi
+    source "$VENV_WRAPPER"
 fi
