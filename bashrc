@@ -49,7 +49,7 @@ if [ -f "$HOME/.bashrc.local" ]; then
     source "$HOME/.bashrc.local"
 fi
 
-VENV_WRAPPER="$(which virtualenvwrapper.sh)"
+VENV_WRAPPER="$(which virtualenvwrapper.sh &> /dev/null)"
 if [ -f "$VENV_WRAPPER" ]; then
     export WORKON_HOME="$HOME/virtualenvs"
     if [ ! -d "$WORKON_HOME" ]; then
