@@ -32,11 +32,10 @@ if [ "$(uname)" == 'Darwin' ]; then
 else
     alias ls='ls -Fh --color=auto'
 fi
-alias grep='grep --colour=auto'
 alias egrep='egrep --colour=auto'
 alias fgrep='fgrep --colour=auto'
 
-alias grep='grep --exclude-dir=.git --exclude-dir=.svn'
+alias grep='grep --color=auto --exclude-dir=.git --exclude-dir=.svn --binary-files=without-match'
 export CSCOPE_DB=$HOME/.cscope.out
 export PYCSCOPE_DB=$HOME/.pycscope.out
 
