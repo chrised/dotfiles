@@ -14,7 +14,7 @@ function result() {
 ########## Variables
 dir=~/.dotfiles                    # dotfiles directory
 olddir=~/.dotfiles_old             # old dotfiles backup directory
-files="bashrc vimrc gvimrc vim gitignore_global subversion eslintrc pylintrc"    # list of files/folders to symlink in homedir
+files="bashrc vimrc gvimrc vim gitignore_global subversion eslintrc"    # list of files/folders to symlink in homedir
 
 datestr=$(date -u "+%m%d%H%M%Y")
 
@@ -36,7 +36,7 @@ fi
 
 # change to the dotfiles directory
 echo "Changing to the $dir directory"
-cd $dir
+cd $dir || exit
 
 # move any existing dotfiles in homedir to dotfiles_old directory, then create symlinks
 echo "Backing up dotfiles to files from ~ to $olddir-$datestr/"
@@ -68,7 +68,7 @@ echo "Installing powerline-fonts"
 [[ ! -f ~/.bashrc.local ]] && echo "Note: Custom bashrc/profile options can be added in ~/.bashrc.local"
 
 missing_linters=0
-linters="shellcheck syntaxerl eslint"
+linters="shellcheck syntaxerl eslint pep8 flake8"
 for linter in $linters; do
     if [ ! "$(which "$linter")" ]; then
         missing_linters="$((missing_linters + 1))"
