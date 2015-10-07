@@ -34,3 +34,6 @@
 [submodule "vim/submodules/logstash-syntax"]
 	path = vim/submodules/logstash-syntax
 	url = https://github.com/vim-scripts/logstash.vim
+[submodule "vim/submodules/vim-syntax-extra"]
+	path = vim/submodules/vim-syntax-extra
+	url = https://github.com/justinmk/vim-syntax-extra.git
