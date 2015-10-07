@@ -181,3 +181,5 @@ let g:syntastic_erlang_checkers = ['escript', 'syntaxerl']
 let g:syntastic_aggregate_errors = 1
 
 set hidden
+
+
