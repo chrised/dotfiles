@@ -37,3 +37,9 @@
 [submodule "vim/submodules/vim-syntax-extra"]
 	path = vim/submodules/vim-syntax-extra
 	url = https://github.com/justinmk/vim-syntax-extra.git
+[submodule "vim/submodules/ctrlp"]
+	path = vim/submodules/ctrlp
+	url = git://github.com/kien/ctrlp.vim.git
+[submodule "vim/submodules/vimerl"]
+	path = vim/submodules/vimerl
+	url = git://github.com/jimenezrick/vimerl.git
