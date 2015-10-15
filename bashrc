@@ -38,6 +38,7 @@ alias fgrep='fgrep --colour=auto'
 alias grep='grep --color=auto --exclude-dir=.git --exclude-dir=.svn --binary-files=without-match'
 export CSCOPE_DB=$HOME/.cscope.out
 export PYCSCOPE_DB=$HOME/.pycscope.out
+export ERLCSCOPE_DB=$HOME/.erlcscope.out
 
 export LESSCOLOR=yes
 export LESSOPEN="|lesspipe %s"
