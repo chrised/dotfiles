@@ -43,3 +43,6 @@
 [submodule "vim/submodules/vimerl"]
 	path = vim/submodules/vimerl
 	url = git://github.com/jimenezrick/vimerl.git
+[submodule "vim/submodules/vim-expw-syntax"]
+	path = vim/submodules/vim-expw-syntax
+	url = git://github.com/chrised/vim-expw-syntax.git
