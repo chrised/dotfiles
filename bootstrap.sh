@@ -92,6 +92,11 @@ else
     printf "All expected linters were detected. [\033[0;32mOK\033[0m]\n"
 fi
 
+echo "Running arbitrary application configuration commands"
+
+# Git lg alias: https://coderwall.com/p/euwpig/a-better-git-log
+git config --global alias.lg "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
+
 echo
 echo "Dotfiles bootstrap complete."
 
