@@ -182,4 +182,8 @@ let g:syntastic_aggregate_errors = 1
 
 set hidden
 
+" MacOS PList support
+let g:plist_display_format = 'xml'
+let g:plist_json_filetype = 'javascript'
+
 
