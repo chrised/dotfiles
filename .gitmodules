@@ -46,3 +46,6 @@
 [submodule "vim/submodules/vim-expw-syntax"]
 	path = vim/submodules/vim-expw-syntax
 	url = git://github.com/chrised/vim-expw-syntax.git
+[submodule "vim/submodules/vim-plist"]
+	path = vim/submodules/vim-plist
+	url = git://github.com/darfink/vim-plist.git
