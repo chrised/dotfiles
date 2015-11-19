@@ -3,6 +3,9 @@
 # This script creates symlinks from the home directory to any desired dotfiles in ~/dotfiles
 ############################
 
+HOSTTYPE=$(uname -s)
+
+
 function result() {
     if [ $? = 0 ]; then
         printf ' [\033[0;32mOK\033[0m]\n'
@@ -96,6 +99,14 @@ echo "Running arbitrary application configuration commands"
 
 # Git lg alias: https://coderwall.com/p/euwpig/a-better-git-log
 git config --global alias.lg "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
+
+if [[ "$HOSTTYPE" = "Darwin" ]]; then
+    echo "Ah, this is a Mac, let's do some Mac setup too!"
+    for f in $dir/$HOSTTYPE/Library/Preferences/*; do
+        echo "Copying $f into $HOME/Library/Preferences/"
+        cp "$f" "$HOME/Library/Preferences"
+    done
+fi
 
 echo
 echo "Dotfiles bootstrap complete."
