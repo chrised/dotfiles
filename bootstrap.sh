@@ -4,6 +4,9 @@
 ############################
 
 HOSTTYPE=$(uname -s)
+MACOS_HOMEBREW="ruby -e \"$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)\""
+
+INSTALL_HOMEBREW=0
 
 
 function result() {
@@ -113,6 +116,9 @@ git config --global alias.d difftool
 if [[ "$HOSTTYPE" = "Darwin" ]]; then
     echo
     echo "Ah, this is a Mac, let's do some Mac setup too!"
+    if [[ "$INSTALL_HOMEBREW" -eq 1 ]]; then
+        $MACOS_HOMEBREW
+    fi
     for f in $dir/$HOSTTYPE/Library/Preferences/*; do
         cp -n "$f" "$HOME/Library/Preferences" && \
             echo "Copied $f into $HOME/Library/Preferences/"
