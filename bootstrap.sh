@@ -24,10 +24,10 @@ datestr=$(date -u "+%m%d%H%M%Y")
 ########## Update Submodules
 
 # hack to make sure we get the latest committed versions
-rm -rf "$dir/vim/submodules/"
-mkdir "$dir/vim/submodules"
+#rm -rf "$dir/vim/submodules/"
+#mkdir "$dir/vim/submodules"
 
-git submodule update --init --recursive $dir
+#git submodule update --init --recursive $dir
 
 ########## Create symlinks
 
