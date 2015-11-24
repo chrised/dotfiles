@@ -103,6 +103,12 @@ git config --global alias.lg "log --color --graph --pretty=format:'%Cred%h%Crese
 git config --global core.excludesfile "$HOME/.gitignore_global"
 # Simple git pushing
 git config --global push.default simple
+# Set editor
+git config --global core.editor vim
+# Set git d as difftool -> vimdiff
+git config --global diff.tool vimdiff
+git config --global difftool.prompt false
+git config --global alias.d difftool
 
 if [[ "$HOSTTYPE" = "Darwin" ]]; then
     echo
