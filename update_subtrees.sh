@@ -14,7 +14,6 @@ SUBTREES=(
 'vim-logstash-syntax     https://github.com/vim-scripts/logstash.vim.git         vim/submodules/logstash-syntax       master'
 'vim-syntax-extra        https://github.com/justinmk/vim-syntax-extra.git        vim/submodules/vim-syntax-extra      master'
 'vim-ctrlp               https://github.com/kien/ctrlp.vim.git                   vim/submodules/ctrlp                 master'
-'vim-vimerl              https://github.com/jimenezrick/vimerl.git               vim/submodules/vimerl                master'
 'vim-expw-syntax         https://github.com/chrised/vim-expw-syntax.git          vim/submodules/vim-expw-syntax       master'
 'vim-plist               https://github.com/darfink/vim-plist.git                vim/submodules/vim-plist             master'
 'powerline-fonts         https://github.com/chrised/fonts.git                    vim/submodules/powerline-fonts       master'
