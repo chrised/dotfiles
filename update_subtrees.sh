@@ -17,6 +17,9 @@ SUBTREES=(
 'vim-expw-syntax         https://github.com/chrised/vim-expw-syntax.git          vim/submodules/vim-expw-syntax       master'
 'vim-plist               https://github.com/darfink/vim-plist.git                vim/submodules/vim-plist             master'
 'powerline-fonts         https://github.com/chrised/fonts.git                    vim/submodules/powerline-fonts       master'
+'vim-erlang-runtime      https://github.com/vim-erlang/vim-erlang-runtime        vim/submodules/vim-erlang-runtime    master'
+'vim-erlang-compiler     https://github.com/vim-erlang/vim-erlang-compiler       vim/submodules/vim-erlang-compiler   master'
+'vim-erlang-tags         https://github.com/vim-erlang/vim-erlang-tags           vim/submodules/vim-erlang-tags       master'
 )
 
 
