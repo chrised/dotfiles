@@ -57,3 +57,7 @@ if [ -f "$VENV_WRAPPER" ]; then
     fi
     source "$VENV_WRAPPER"
 fi
+
+if [ -d "${HOME}/bin" ]; then
+    export PATH="${HOME}/bin:${PATH}"
+fi
