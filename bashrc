@@ -13,6 +13,9 @@ fi
 if [ -f /etc/profile ]; then
     source /etc/profile
 fi
+if [ -f "$HOME/.bashrc_functions" ]; then
+    source "$HOME/.bashrc_functions"
+fi
 
 if [[ ${EUID} == 0 ]] ; then
     export PS1="[\[\033[1;31m\]\$(uname)\[\033[m\]:\[\033[32m\]\h\[\033[m\]]\[\033[1;31m\]\u\[\033[m\]:\[\033[33;1m\]\w\[\033[m\]\$ "
@@ -61,3 +64,5 @@ fi
 if [ -d "${HOME}/bin" ]; then
     export PATH="${HOME}/bin:${PATH}"
 fi
+
+test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
