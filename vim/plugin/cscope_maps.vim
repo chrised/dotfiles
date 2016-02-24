@@ -41,13 +41,13 @@ if has("cscope")
     if filereadable("cscope.out")
         cs add cscope.out
     " else add the database pointed to by environment variable 
-    elseif $CSCOPE_DB != ""
+    elseif filereadable($CSCOPE_DB)
         cs add $CSCOPE_DB
     endif
-    if $PYCSCOPE_DB != ""
+    if filereadable($PYCSCOPE_DB)
         cs add $PYCSCOPE_DB
     endif
-    if $ERLCSCOPE_DB != ""
+    if filereadable($ERLCSCOPE_DB)
         cs add $ERLCSCOPE_DB
     endif
     " show msg when any other cscope db added
