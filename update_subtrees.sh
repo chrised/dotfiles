@@ -33,7 +33,7 @@ subtree_handle() {
     fi
     git remote add -f "$1" "$2"
     git fetch "$1"
-    git subtree pull --prefix "$3" "$1" "$4" --squash
+    git subtree pull -q --prefix "$3" "$1" "$4" --squash
 }
 
 for subtree in "${SUBTREES[@]}"; do
