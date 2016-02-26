@@ -9,4 +9,4 @@ dir=~/.dotfiles
 cd $dir || exit
 
 git pull
-./bootstrap.sh
+./bootstrap
