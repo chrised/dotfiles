@@ -45,6 +45,12 @@ export LESSOPEN="|lesspipe %s"
 
 alias gitupmod='git submodule foreach --recursive git checkout master; git submodule foreach --recursive git pull'
 
+# Elongate bash_history
+HISTSIZE=5000
+HISTFILESIZE=10000
+# Enforce history appending
+shopt -s histappend
+
 if [ -f "$HOME/.bashrc.local" ]; then
     source "$HOME/.bashrc.local"
 fi
