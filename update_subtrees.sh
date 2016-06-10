@@ -1,6 +1,7 @@
 #!/bin/bash
 
 SUBTREES=(
+# vim
 'vim-pathogen            https://github.com/tpope/vim-pathogen.git               vim/submodules/pathogen              master'
 'vim-airline             https://github.com/bling/vim-airline.git                vim/submodules/vim-airline           master'
 'vim-nerdtree            https://github.com/scrooloose/nerdtree.git              vim/submodules/nerdtree              master'
@@ -21,6 +22,8 @@ SUBTREES=(
 'vim-erlang-compiler     https://github.com/vim-erlang/vim-erlang-compiler       vim/submodules/vim-erlang-compiler   master'
 'vim-erlang-tags         https://github.com/vim-erlang/vim-erlang-tags           vim/submodules/vim-erlang-tags       master'
 'vim-gitgutter           https://github.com/airblade/vim-gitgutter               vim/submodules/vim-gitgutter         master'
+# emacs
+'use-package             https://github.com/jwiegley/use-package                 emacs.d/use-package                  master'
 )
 
 
