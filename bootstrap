@@ -126,6 +126,7 @@ if [[ "$HOSTTYPE" = "Darwin" ]]; then
     if [[ "$INSTALL_HOMEBREW" -eq 1 ]]; then
         $MACOS_HOMEBREW
     fi
+    ln -s ~/.vimrc ~/.xvimrc
     for f in $dir/$HOSTTYPE/Library/Preferences/*; do
         cp -n "$f" "$HOME/Library/Preferences" && \
             echo "Copied $f into $HOME/Library/Preferences/"
