@@ -1,7 +1,12 @@
 #!/bin/bash
 #~/.bashrc
 
-# Test for an interactive shell.  There is no need to set anything
+# Do this early, so we get magic local aliases
+if [ -f "$HOME/.bashrc.local" ]; then
+    source "$HOME/.bashrc.local"
+fi
+
+# Test for an interactive shell.  There is no need to set anything else
 # past this point for scp and rcp, and it's important to refrain from
 # outputting anything in those cases.
 if [[ $- != *i* ]] ; then
@@ -50,10 +55,6 @@ HISTSIZE=5000
 HISTFILESIZE=10000
 # Enforce history appending
 shopt -s histappend
-
-if [ -f "$HOME/.bashrc.local" ]; then
-    source "$HOME/.bashrc.local"
-fi
 
 VENV_WRAPPER="$(which virtualenvwrapper.sh 2> /dev/null)"
 if [ -f "$VENV_WRAPPER" ]; then
