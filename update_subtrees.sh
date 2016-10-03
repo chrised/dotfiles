@@ -21,6 +21,7 @@ SUBTREES=(
 'vim-erlang-runtime      https://github.com/vim-erlang/vim-erlang-runtime        vim/submodules/vim-erlang-runtime    master'
 'vim-erlang-compiler     https://github.com/vim-erlang/vim-erlang-compiler       vim/submodules/vim-erlang-compiler   master'
 'vim-erlang-tags         https://github.com/vim-erlang/vim-erlang-tags           vim/submodules/vim-erlang-tags       master'
+'vim-erlang-skeletons    https://github.com/vim-erlang/vim-erlang-skeletons      vim/submodules/vim-erlang-skeletons  master'
 'vim-gitgutter           https://github.com/airblade/vim-gitgutter               vim/submodules/vim-gitgutter         master'
 # emacs
 'use-package             https://github.com/jwiegley/use-package                 emacs.d/use-package                  master'
