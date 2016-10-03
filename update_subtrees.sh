@@ -38,7 +38,7 @@ subtree_handle() {
     fi
     git remote add -f "$1" "$2"
     if [ ! -d "$3" ]; then
-        git subtree add --squash --prefix "$3" "$1" "$4"
+        git subtree add -q --squash --prefix "$3" "$1" "$4"
     fi
     git fetch "$1"
     git subtree pull -q --prefix "$3" "$1" "$4" --squash
