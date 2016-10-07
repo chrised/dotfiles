@@ -47,6 +47,7 @@ export ERLCSCOPE_DB=$HOME/.erlcscope.out
 
 export LESSCOLOR=yes
 export LESSOPEN="|lesspipe %s"
+export EDITOR=vim
 
 alias gitupmod='git submodule foreach --recursive git checkout master; git submodule foreach --recursive git pull'
 
