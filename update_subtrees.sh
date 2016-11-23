@@ -23,6 +23,7 @@ SUBTREES=(
 'vim-erlang-tags         https://github.com/vim-erlang/vim-erlang-tags           vim/submodules/vim-erlang-tags       master'
 'vim-erlang-skeletons    https://github.com/vim-erlang/vim-erlang-skeletons      vim/submodules/vim-erlang-skeletons  master'
 'vim-gitgutter           https://github.com/airblade/vim-gitgutter               vim/submodules/vim-gitgutter         master'
+'dash.vim                https://github.com/rizzatti/dash.vim                    vim/submodules/dash.vim              master'
 # emacs
 'use-package             https://github.com/jwiegley/use-package                 emacs.d/use-package                  master'
 )
