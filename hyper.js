@@ -87,10 +87,16 @@ module.exports = {
     'hyperyellow',
   //  'hyperlinks2', // Annoying, interrupts copy/paste on selection
   //  'hyperterm-mactabs', // Broken - messes up tab colours
-  //  'hyperterm-tab-numbers', // Broken - messes up tab colours
-  //  'hyperterm-tabs', // Broken - messes up tab colours
-  //  'hyperterm-paste', // Broken - pastes twice
-  //  'hyperterm-bold-tab', // Broken - messes up tab colours
+    'hyperterm-tab-numbers',
+    'hyperterm-tabs',
+    //'hyperterm-paste',
+    'hyperterm-bold-tab',
+    'hypertheme',
+    'hyper-font-smoothing',
+    'hyperline',
+    //'hyperpair',
+    //'hyperdrop',
+    'hyperterm-tab-icons',
   ],
 
   // in development, you can create a directory under
