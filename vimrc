@@ -187,3 +187,4 @@ let g:plist_display_format = 'xml'
 let g:plist_json_filetype = 'javascript'
 
 
+command FixCommaSpacing %s/,\( \)\@!\($\)\@!/, /g
