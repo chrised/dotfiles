@@ -92,7 +92,7 @@ module.exports = {
     'hyper-font-smoothing',
     'hyperterm-tab-icons',
     "hyperline",
-    "hyperterm-focus-reporting",
+    // "hyperterm-focus-reporting", // Inserts random crap in the terminal when you switch to it, boo
     "hyperborder"
   ],
 
