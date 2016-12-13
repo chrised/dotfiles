@@ -2277,6 +2277,13 @@ Type: string
 Default: unset
 Additional arguments to pass to "cgc".
 
+Note~
+
+You probably also need a plugin to set |filetype| for OpenGL files, such as
+"vim-glsl":
+
+    https://github.com/tikhomirov/vim-glsl
+
 ==============================================================================
 SYNTAX CHECKERS FOR GO                                 *syntastic-checkers-go*
 
@@ -6011,8 +6018,6 @@ Maintainer:  LCD 47 <lcd047@gmail.com>
 the project's page at GitHub for details:
 
     https://github.com/SimenB/stylint
-
-Syntastic doesn't support "Stylint" version 1.5.7 or later.
 
 Checker options~
 
