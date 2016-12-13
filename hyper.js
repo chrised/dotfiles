@@ -85,18 +85,15 @@ module.exports = {
     'hyperterm-monokai',
     'hyperterm-subpixel-antialiased',
     'hyperyellow',
-  //  'hyperlinks2', // Annoying, interrupts copy/paste on selection
-  //  'hyperterm-mactabs', // Broken - messes up tab colours
     'hyperterm-tab-numbers',
     'hyperterm-tabs',
-    //'hyperterm-paste',
     'hyperterm-bold-tab',
     'hypertheme',
     'hyper-font-smoothing',
-    'hyperline',
-    //'hyperpair',
-    //'hyperdrop',
     'hyperterm-tab-icons',
+    "hyperline",
+    "hyperterm-focus-reporting",
+    "hyperborder"
   ],
 
   // in development, you can create a directory under
