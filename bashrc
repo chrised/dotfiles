@@ -69,4 +69,6 @@ fi
 if [ -d "${HOME}/bin" ]; then
     export PATH="${HOME}/bin:${PATH}"
 fi
-
+if [ -d "${HOME}/.cache/rebar3/bin" ]; then
+    export PATH="${HOME}/.cache/rebar3/bin:${PATH}"
+fi
