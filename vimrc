@@ -186,5 +186,7 @@ set hidden
 let g:plist_display_format = 'xml'
 let g:plist_json_filetype = 'javascript'
 
+let g:LookOfDisapprovalTabTreshold=5
+let g:LookOfDisapprovalSpaceTreshold=(&tabstop*5)
 
 command FixCommaSpacing %s/,\( \)\@!\($\)\@!/, /g
