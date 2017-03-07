@@ -49,7 +49,10 @@ export LESSCOLOR=yes
 export LESSOPEN="|lesspipe %s"
 export EDITOR=vim
 
-alias gitupmod='git submodule foreach --recursive git checkout master; git submodule foreach --recursive git pull'
+# Other aliaii
+alias docker-clean-untagged="docker images --no-trunc | grep '<none>' | awk '{ print \$3 }' | xargs docker rmi"
+alias docker-clean-dead="docker ps --filter status=dead --filter status=exited -aq | xargs docker rm -v"
+alias docker-clean-volumes="docker volume ls -qf dangling=true | xargs -r docker volume rm"
 
 # Elongate bash_history
 HISTSIZE=5000
