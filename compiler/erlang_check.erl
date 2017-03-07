@@ -256,12 +256,13 @@ check_module(File) ->
             debug_info],
 
     {BuildSystem, Files} = guess_build_system(ProjectRoot),
-    BuildSystemOpts = load_build_files(BuildSystem, ProjectRoot, Files),
+    FixedProjectRoot = fix_project_root(BuildSystem, Files, ProjectRoot),
+    BuildSystemOpts = load_build_files(BuildSystem, FixedProjectRoot, Files),
     {ExtOpts, OutDir} = case get(outdir) of
                             undefined ->
                                 {[strong_validation], undefined};
                             OutDir0 ->
-                                AbsOutDir = filename:join(ProjectRoot, OutDir0),
+                                AbsOutDir = filename:join(FixedProjectRoot, OutDir0),
                                 {[{outdir, AbsOutDir}], AbsOutDir}
                         end,
 
@@ -269,8 +270,12 @@ check_module(File) ->
         {result, Result} ->
             log("Result: ~p", [Result]);
         {opts, Opts} ->
-            CompileOpts = Defs ++ Opts ++ ExtOpts ++
-                          [{i, absname(filename:dirname(Path), "include")}],
+            %% for file: .../app/src/xx.erl
+            %% add .../app/src/../include
+            CompileOpts =
+              Defs ++ Opts ++ ExtOpts ++
+              [{i, filename:join([Path, "..", "include"])}
+              ],
             log("Code paths: ~p~n", [code:get_path()]),
             log("Compiling: compile:file(~p,~n    ~p)~n",
                 [AbsFile, CompileOpts]),
@@ -300,6 +305,11 @@ find_app_root(Path) ->
         false -> find_app_root(filename:dirname(Path))
     end.
 
+fix_project_root(rebar3, Files, _) ->
+    [RebarLock] = [F || F <- Files, filename:basename(F) == "rebar.lock"],
+    filename:dirname(RebarLock);
+fix_project_root(_BuildSystem, _Files, ProjectRoot) ->
+    ProjectRoot.
 %%------------------------------------------------------------------------------
 %% @doc Check directory if it is the root of an OTP application.
 %% @end
@@ -571,6 +581,23 @@ process_rebar3_config(ConfigPath, Terms) ->
                             || SubDir <- string:tokens(Paths, " ")],
             code:add_pathsa(CleanedPaths),
 
+            % _checkouts -> code_path (see
+            % https://www.rebar3.org/docs/dependencies#section-checkout-dependencies)
+            code:add_pathsa(filelib:wildcard(absname(ConfigPath, "_checkouts") ++ "/*/ebin")),
+
+            lists:foreach(
+              fun({ProfileName, Deps}) ->
+                      Apps = string:join([atom_to_list(D) || D <- Deps], ","),
+                      file:set_cwd(ConfigPath),
+                      ProfilePaths = os:cmd(io_lib:format("QUIET=1 ~p as ~p path --app=~s",
+                                                          [Rebar3, ProfileName, Apps])),
+                      file:set_cwd(Cwd),
+                      Cleaned = [absname(ConfigPath, SubDir)
+                                 || SubDir <- string:tokens(ProfilePaths, " ")],
+                      code:add_pathsa(Cleaned);
+                 (_) -> ok
+              end, rebar3_get_extra_profiles(Terms)),
+
             ErlOpts = proplists:get_value(erl_opts, Terms, []),
             remove_warnings_as_errors(ErlOpts)
     end.
@@ -591,6 +618,25 @@ rebar3_get_profile(Terms) ->
     undefined -> "default";
     Options -> proplists:get_value(profile, Options, "default")
   end.
+
+%%------------------------------------------------------------------------------
+%% @doc Read all extra profile names declared within the rebar.config
+%%
+%%------------------------------------------------------------------------------
+rebar3_get_extra_profiles(Terms) ->
+    case proplists:get_value(profiles, Terms, []) of
+        [] -> [];
+        Profiles ->
+            lists:flatmap(
+              fun({ProfileName, Profile}) ->
+                      case proplists:get_value(deps, Profile, []) of
+                          [] -> [];
+                          Deps -> [{ProfileName, [Dep || {Dep, _} <- Deps]}]
+                      end;
+                 (_) -> []
+              end, Profiles)
+    end.
+%%------------------------------------------------------------------------------
 
 %%------------------------------------------------------------------------------
 %% @doc Find the rebar3 executable.
@@ -643,8 +689,10 @@ load_makefiles([Makefile|_Rest]) ->
     Path = filename:dirname(Makefile),
     code:add_pathsa([absname(Path, "ebin")]),
     code:add_pathsa(filelib:wildcard(absname(Path, "deps") ++ "/*/ebin")),
+    code:add_pathsa(filelib:wildcard(absname(Path, "lib") ++ "/*/ebin")),
     {opts, [{i, absname(Path, "include")},
-            {i, absname(Path, "deps")}]}.
+            {i, absname(Path, "deps")},
+            {i, absname(Path, "lib")}]}.
 
 %%------------------------------------------------------------------------------
 %% @doc Perform tasks after successful compilation (xref, etc.)
