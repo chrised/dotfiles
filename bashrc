@@ -52,7 +52,7 @@ export EDITOR=vim
 # Other aliaii
 alias docker-clean-untagged="docker images --no-trunc | grep '<none>' | awk '{ print \$3 }' | xargs docker rmi"
 alias docker-clean-dead="docker ps --filter status=dead --filter status=exited -aq | xargs docker rm -v"
-alias docker-clean-volumes="docker volume ls -qf dangling=true | xargs -r docker volume rm"
+alias docker-clean-volumes="docker volume ls -qf dangling=true | xargs docker volume rm"
 
 # Elongate bash_history
 HISTSIZE=5000
