@@ -23,15 +23,10 @@ olddir=~/.dotfiles_old             # old dotfiles backup directory
 files="bashrc bashrc_functions vimrc gvimrc vim gitignore_global subversion eslintrc emacs.d hyper.js"    # list of files/folders to symlink in homedir
 rm_files="emacs"
 
+config_dirs="nvim"
+
 datestr=$(date -u "+%Y%m%d-%H%M")
 
-########## Update Submodules
-
-# hack to make sure we get the latest committed versions
-#rm -rf "$dir/vim/submodules/"
-#mkdir "$dir/vim/submodules"
-
-#git submodule update --init --recursive $dir
 
 ########## Create symlinks
 
@@ -44,6 +39,21 @@ fi
 # change to the dotfiles directory
 echo "Changing to the $dir directory"
 cd $dir || exit
+
+[ ! -d "${HOME}/.config" ] && mkdir -p "${HOME}/.config"
+for file in ${config_dirs}; do
+    if [ -d "${HOME}/.config/$file" ]; then
+        cp -LR "${HOME}/.config/$file" "$olddir-$datestr/.config"
+        rm -rf "${HOME}/.config/$file"
+    elif [ -e "${HOME}/.config/$file" ]; then
+        cp -L "${HOME}/.config/$file" "$olddir-$datestr/.config"
+        rm -f "${HOME}/.config/$file"
+    fi
+    echo -n "Creating symlink to $file in home directory."
+    ln -s "$dir/$file" "${HOME}/.config/$file"
+    result
+done
+[ ! -f "${HOME}/.config/nvim/init.vim" ] && ln -s "${dir}/vimrc" "${HOME}/.config/nvim/init.vim"
 
 # move any existing dotfiles in homedir to dotfiles_old directory, then create symlinks
 echo "Backing up dotfiles to files from ~ to $olddir-$datestr/"
