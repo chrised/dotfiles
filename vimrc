@@ -3,6 +3,13 @@ syntax enable
 colorscheme monokai
 set nofoldenable
 
+if has('nvim')
+    if has('macunix')
+        let g:python2_host_prog = '/usr/local/bin/python'
+        let g:python3_host_prog = '/usr/local/bin/python3'
+    endif
+endif
+
 " Sweet colorscheme
 " colorscheme codeschool
 set background=dark
