@@ -49,7 +49,7 @@ for file in ${config_dirs}; do
         cp -L "${HOME}/.config/$file" "$olddir-$datestr/.config"
         rm -f "${HOME}/.config/$file"
     fi
-    echo -n "Creating symlink to $file in home directory."
+    echo -n "Creating symlink to $file in $HOME/.config directory."
     ln -s "$dir/$file" "${HOME}/.config/$file"
     result
 done
