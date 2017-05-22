@@ -32,6 +32,9 @@ shopt -s checkwinsize
 shopt -s no_empty_cmd_completion
 shopt -s histappend
 
+# Mostly for MacOS, but yes
+[ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion
+
 if [ "$(uname)" == 'Darwin' ]; then
     alias ls='ls -GFh'
 else
