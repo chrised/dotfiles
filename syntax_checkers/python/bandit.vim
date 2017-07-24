@@ -1,7 +1,7 @@
 "============================================================================
-"File:        lisp.vim
-"Description: Syntax checking plugin for syntastic.vim
-"Maintainer:  Karl Yngve Lervåg <karl.yngve@lervag.net>
+"File:        bandit
+"Description: Syntax checking plugin for syntastic
+"Maintainer:  LCD 47 <lcd047 at gmail dot com>
 "License:     This program is free software. It comes without any warranty,
 "             to the extent permitted by applicable law. You can redistribute
 "             it and/or modify it under the terms of the Do What The Fuck You
@@ -10,46 +10,43 @@
 "
 "============================================================================
 
-if exists('g:loaded_syntastic_lisp_clisp_checker')
+if exists('g:loaded_syntastic_python_bandit_checker')
     finish
 endif
-let g:loaded_syntastic_lisp_clisp_checker = 1
+let g:loaded_syntastic_python_bandit_checker = 1
 
 let s:save_cpo = &cpo
 set cpo&vim
 
-function! SyntaxCheckers_lisp_clisp_GetLocList() dict
-    let buf = bufnr('')
-    let tmpdir = syntastic#util#tmpdir()
-
+function! SyntaxCheckers_python_bandit_GetLocList() dict
     let makeprg = self.makeprgBuild({
-        \ 'args_after': '-q',
-        \ 'fname_before': '-c',
-        \ 'post_args_after': ['-o', tmpdir] })
+        \ 'args_after': '--format json',
+        \ 'tail': '2> ' . syntastic#util#DevNull() })
 
-    let errorformat  =
-        \ '%-G;%.%#,' .
-        \ '%W%>WARNING:%.%# line %l : %m,' .
-        \ '%Z  %#%m,' .
-        \ '%W%>WARNING:%.%# lines %l%\%.%\%.%\d%\+ : %m,' .
-        \ '%Z  %#%m,' .
-        \ '%E%>The following functions were %m,' .
-        \ '%Z %m,' .
-        \ '%-G%.%#'
+    let errorformat = '%f:%l:%t:%n:%m'
+
+    let env = syntastic#util#isRunningWindows() ? {} : { 'TERM': 'dumb' }
 
     let loclist = SyntasticMake({
         \ 'makeprg': makeprg,
         \ 'errorformat': errorformat,
-        \ 'defaults': {'bufnr': buf} })
+        \ 'env': env,
+        \ 'preprocess': 'bandit',
+        \ 'returns': [0, 1] })
 
-    call syntastic#util#rmrf(tmpdir)
+    for e in loclist
+        if e['type'] ==? 'I'
+            let e['type'] = 'W'
+            let e['subtype'] = 'Style'
+        endif
+    endfor
 
     return loclist
 endfunction
 
 call g:SyntasticRegistry.CreateAndRegisterChecker({
-    \ 'filetype': 'lisp',
-    \ 'name': 'clisp'})
+    \ 'filetype': 'python',
+    \ 'name': 'bandit' })
 
 let &cpo = s:save_cpo
 unlet s:save_cpo
