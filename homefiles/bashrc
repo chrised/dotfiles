@@ -9,8 +9,12 @@ if [[ $- != *i* ]] ; then
     return
 fi
 
+OTHER_SOURCES=/etc/profile
+if [ "${TERM_PROGRAM}" = "iTerm.app" ]; then
+    OTHER_SOURCES="${OTHER_SOURCES} ${HOME}/.iterm2_shell_integration.bash ${HOME}/.bashrc_functions"
+fi
 # Pull in the system shell first so we inherit any specifics (and override the ones we care about)
-for rc in "/etc/profile" "${HOME}/.iterm2_shell_integration.bash" "${HOME}/.bashrc_functions"; do
+for rc in ${OTHER_SOURCES}; do
     test -e "$rc" && source "$rc"
 done
 
