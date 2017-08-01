@@ -1,6 +1,6 @@
 #!/bin/bash
-if [ -d ~/bash_completions ]; then
-    for f in ~/bash_completions/*; do
+if [ -d ~/.bash_completions ]; then
+    for f in ~/.bash_completions/*; do
         . $f
     done
 fi
