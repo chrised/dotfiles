@@ -20,7 +20,7 @@ function result() {
 dir=~/.dotfiles                    # dotfiles directory
 olddir=~/.dotfiles_old             # old dotfiles backup directory
 # list of files/folders to symlink in homedir
-home_files="bashrc bashrc_functions vimrc gvimrc vim gitignore_global subversion eslintrc emacs.d hyper.js"
+home_files="bashrc bashrc_functions vimrc gvimrc vim gitignore_global subversion eslintrc emacs.d hyper.js bash_completion bash_completions"
 # list of files/folders to symlink in $HOME/.config/
 config_files="nvim"
 rm_files="emacs"
