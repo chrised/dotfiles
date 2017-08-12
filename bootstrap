@@ -152,6 +152,7 @@ if [[ "$HOSTTYPE" = "Darwin" ]]; then
             echo "Copied $f into $HOME/Library/Preferences/"
     done
     defaults write -g KeyRepeat -int 0
+    defaults write -g ApplePressAndHoldEnabled -bool false
 fi
 
 echo
