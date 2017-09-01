@@ -77,9 +77,14 @@ if [ -f "$VENV_WRAPPER" ]; then
     source "$VENV_WRAPPER"
 fi
 
+# Add some paths
 if [ -d "${HOME}/bin" ]; then
     export PATH="${HOME}/bin:${PATH}"
 fi
 if [ -d "${HOME}/.cache/rebar3/bin" ]; then
     export PATH="${HOME}/.cache/rebar3/bin:${PATH}"
 fi
+if [ -d "/Applications/Visual Studio Code.app/Contents/Resources/app/bin" ]; then
+    export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
+fi
+
