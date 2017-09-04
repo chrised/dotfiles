@@ -9,20 +9,20 @@ if [[ $- != *i* ]] ; then
     return
 fi
 
-OTHER_SOURCES=/etc/profile
+test -e "/etc/profile" && source "/etc/profile"
+
 if [ "${TERM_PROGRAM}" = "iTerm.app" ]; then
-    OTHER_SOURCES="${OTHER_SOURCES} ${HOME}/.iterm2_shell_integration.bash ${HOME}/.bashrc_functions"
+    test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
+    test -e "${HOME}/.bashrc_functions" && source "${HOME}/.bashrc_functions"
 fi
-# Pull in the system shell first so we inherit any specifics (and override the ones we care about)
-for rc in ${OTHER_SOURCES}; do
-    test -e "$rc" && source "$rc"
-done
 
 # Do this early, so we get magic local aliases
 # but after we source the local profile, otherwise we might get overriden
-if [ -f "$HOME/.bashrc.local" ]; then
-    source "$HOME/.bashrc.local"
-fi
+test -e  "$HOME/.bashrc.local" && source "$HOME/.bashrc.local"
+
+
+# Mostly for MacOS, but yes
+[ -f /usr/local/etc/bash_completion ] && source /usr/local/etc/bash_completion
 
 if [[ ${EUID} == 0 ]] ; then
     export PS1="[\[\033[1;31m\]\$(uname)\[\033[m\]:\[\033[32m\]\h\[\033[m\]]\[\033[1;31m\]\u\[\033[m\]:\[\033[33;1m\]\w\[\033[m\]\$ "
@@ -36,9 +36,6 @@ export LSCOLORS=GxFxCxDxBxegedabagaced
 shopt -s checkwinsize
 shopt -s no_empty_cmd_completion
 shopt -s histappend
-
-# Mostly for MacOS, but yes
-[ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion
 
 if [ "$(uname)" == 'Darwin' ]; then
     alias ls='ls -GFh'
@@ -62,6 +59,10 @@ alias docker-clean-untagged="docker images --no-trunc | grep '<none>' | awk '{ p
 alias docker-clean-dead="docker ps --filter status=dead --filter status=exited -aq | xargs docker rm -v"
 alias docker-clean-volumes="docker volume ls -qf dangling=true | xargs docker volume rm"
 
+# Kubernetes
+alias kube-gc="kubectl config get-contexts"
+alias kube-uc="kubectl config use-context"
+
 # Elongate bash_history
 HISTSIZE=5000
 HISTFILESIZE=10000
@@ -80,6 +81,9 @@ fi
 # Add some paths
 if [ -d "${HOME}/bin" ]; then
     export PATH="${HOME}/bin:${PATH}"
+fi
+if [ -d "${HOME}/go/bin" ]; then
+    export PATH="${HOME}/go/bin:${PATH}"
 fi
 if [ -d "${HOME}/.cache/rebar3/bin" ]; then
     export PATH="${HOME}/.cache/rebar3/bin:${PATH}"
