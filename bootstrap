@@ -17,6 +17,7 @@ function result() {
 }
 
 ########## Variables
+topdir="$(git rev-parse --show-toplevel)"
 dir=~/.dotfiles                    # dotfiles directory
 olddir=~/.dotfiles_old             # old dotfiles backup directory
 # list of files/folders to symlink in homedir
@@ -78,8 +79,8 @@ file "${HOME}/.config/nvim/init.vim" | grep "broken symbolic link" > /dev/null 2
 
 for file in $rm_files; do
     if [ -e ~/."${file}" ]; then
-	cp -L ~/."${file}" "${olddir}-${datestr}"/
-	rm -f ~/."${file}"
+        cp -L ~/."${file}" "${olddir}-${datestr}"/
+        rm -f ~/."${file}"
     fi
 done
 
@@ -154,6 +155,15 @@ if [[ "$HOSTTYPE" = "Darwin" ]]; then
     defaults write -g KeyRepeat -int 2
     defaults write -g ApplePressAndHoldEnabled -bool false
 fi
+
+echo "Configuring Applications"
+for app in ${topdir}/apps/*; do
+    appname=$(basename "${app}")
+    if [ -f "${dir}/scripts/${appname}" ]; then
+        echo "Configuring: ${appname}"
+        "${dir}/scripts/${appname}"
+    fi
+done
 
 echo
 echo "Dotfiles bootstrap complete."

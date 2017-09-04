@@ -1,0 +1,29 @@
+#!/bin/sh
+APPDIR="$(git rev-parse --show-toplevel)/apps/vscode"
+HOSTTYPE="$(uname -s)"
+CODE="$(which code)"
+CONFDIR=${HOME}
+if [ -z "${CODE}" ] && [ "${HOSTTYPE}" = "Darwin" ]; then
+    CODE="/Applications/Visual Studio Code.app/Contents/Resources/app/bin/code"
+fi
+
+# Abort if code doesn't exist
+[ -f "${CODE}" ] || exit 0
+
+if [ "${HOSTTYPE}" = "Darwin" ]; then
+    CONFDIR="${HOME}/Library/Application Support/Code/User"
+    CONFFILE="${CONFDIR}/settings.json"
+
+    if [ -f "${CONFFILE}" ]; then
+        rm -f "${CONFFILE}-old"
+        cp -L "${CONFFILE}" "${CONFFILE}-old" 
+        rm -f "${CONFFILE}"
+    fi
+
+    echo "Installing VSCode config to: ${CONFFILE}"
+    ln -s "${APPDIR}/settings.json" "${CONFDIR}/settings.json"
+fi
+
+while read -r extension; do
+    code --install-extension "${extension}"
+done < "${APPDIR}/extensions"

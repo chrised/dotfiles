@@ -1,0 +1,17 @@
+{
+    "vim.disableAnnoyingNeovimMessage": true,
+    "vim.enableNeovim": true,
+    "vim.neovimPath": "/usr/local/bin/nvim",
+
+    "go.inferGopath": true,
+    //"go.lintOnSave": "off",
+    //"go.buildOnSave": "off",
+    //"go.vetOnSave": "off",
+    "go.formatOnSave": false,
+
+    "python.linting.pylintEnabled": false,
+    "python.linting.flake8Enabled": true,
+    "workbench.colorTheme": "Monokai",
+    "editor.minimap.enabled": false,
+    "editor.renderWhitespace": "all"
+}
