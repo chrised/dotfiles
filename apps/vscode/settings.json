@@ -13,5 +13,6 @@
     "python.linting.flake8Enabled": true,
     "workbench.colorTheme": "Monokai",
     "editor.minimap.enabled": false,
-    "editor.renderWhitespace": "all"
+    "editor.renderWhitespace": "all",
+    "editor.autoClosingBrackets": false
 }
