@@ -60,6 +60,7 @@ alias docker-clean-dead="docker ps --filter status=dead --filter status=exited -
 alias docker-clean-volumes="docker volume ls -qf dangling=true | xargs docker volume rm"
 
 # Kubernetes
+alias kc="kubectl"
 alias kube-gc="kubectl config get-contexts"
 alias kube-uc="kubectl config use-context"
 
