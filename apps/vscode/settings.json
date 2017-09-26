@@ -1,4 +1,6 @@
 {
+    "python.venvPath": "~/virtualenvs/",
+
     "vim.disableAnnoyingNeovimMessage": true,
     "vim.enableNeovim": true,
     "vim.neovimPath": "/usr/local/bin/nvim",
@@ -14,5 +16,15 @@
     "workbench.colorTheme": "Monokai",
     "editor.minimap.enabled": false,
     "editor.renderWhitespace": "all",
-    "editor.autoClosingBrackets": false
+    "editor.autoClosingBrackets": false,
+    "editor.rulers": [
+        79
+    ],
+    "files.autoSave": "onFocusChange",
+    "jslint.enable": false,
+    "gitlens.theme.annotations.line.trailing.dark.foregroundColor": "rgba(193, 187, 0, 0.6)",
+    "workbench.startupEditor": "newUntitledFile",
+    "gitlens.blame.file.lineHighlight.locations": [
+        "line",
+    ]
 }
