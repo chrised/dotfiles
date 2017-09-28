@@ -1,18 +1,6 @@
 {
-    "python.venvPath": "~/virtualenvs/",
-
-    "vim.disableAnnoyingNeovimMessage": true,
-    "vim.enableNeovim": true,
-    "vim.neovimPath": "/usr/local/bin/nvim",
-
-    "go.inferGopath": true,
-    //"go.lintOnSave": "off",
-    //"go.buildOnSave": "off",
-    //"go.vetOnSave": "off",
-    "go.formatOnSave": false,
-
-    "python.linting.pylintEnabled": false,
-    "python.linting.flake8Enabled": true,
+    // Internal
+    "workbench.startupEditor": "newUntitledFile",
     "workbench.colorTheme": "Monokai",
     "editor.minimap.enabled": false,
     "editor.renderWhitespace": "all",
@@ -20,11 +8,27 @@
     "editor.rulers": [
         79
     ],
+
     "files.autoSave": "onFocusChange",
-    "jslint.enable": false,
+
+    // Vimlike
+    "vim.disableAnnoyingNeovimMessage": true,
+    "vim.enableNeovim": true,
+    "vim.neovimPath": "/usr/local/bin/nvim",
+
+    // Gitlens
     "gitlens.theme.annotations.line.trailing.dark.foregroundColor": "rgba(193, 187, 0, 0.6)",
-    "workbench.startupEditor": "newUntitledFile",
-    "gitlens.blame.file.lineHighlight.locations": [
-        "line",
-    ]
+    "gitlens.codeLens.enabled": false,
+
+    // Python
+    "python.venvPath": "~/virtualenvs/",
+    "python.linting.pylintEnabled": false,
+    "python.linting.flake8Enabled": true,
+
+    // Go
+    "go.inferGopath": true,
+    "go.formatOnSave": false,
+
+    // JavaScript
+    "jslint.enable": false
 }
