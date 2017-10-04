@@ -100,7 +100,7 @@ echo "Installing powerline-fonts"
 [[ ! -f ~/.bashrc.local ]] && echo "Note: Custom bashrc/profile options can be added in ~/.bashrc.local"
 
 missing_linters=0
-linters="shellcheck syntaxerl eslint pep8 flake8"
+linters="shellcheck syntaxerl pep8 flake8"
 for linter in $linters; do
     if [ ! "$(which "$linter")" ]; then
         missing_linters="$((missing_linters + 1))"
@@ -109,7 +109,7 @@ for linter in $linters; do
 done
 
 # javascript linting hints
-jslinters="jslint jshint eslint"
+jslinters="jshint eslint"
 for linter in $jslinters; do
     if [ ! "$(which "$linter")" ]; then
         missing_linters="$((missing_linters + 1))"
