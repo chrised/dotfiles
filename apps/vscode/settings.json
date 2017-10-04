@@ -30,5 +30,6 @@
     "go.formatOnSave": false,
 
     // JavaScript
-    "jslint.enable": false
+    "jslint.enable": false,
+    "shellcheck.customArgs": ["-x"]
 }
