@@ -12,12 +12,16 @@
     "files.autoSave": "onFocusChange",
 
     // Vimlike
-    "vim.disableAnnoyingNeovimMessage": true,
+    "vim.cmdLineInitialColon": true,
     "vim.enableNeovim": true,
+    "vim.foldfix": true,
     "vim.neovimPath": "/usr/local/bin/nvim",
+    "vim.statusBarColorControl": true,
 
     // Gitlens
-    "gitlens.theme.annotations.line.trailing.dark.foregroundColor": "rgba(193, 187, 0, 0.6)",
+    "workbench.colorCustomizations": {
+        "gitlens.trailingLineForegroundColor": "#c1bb00"
+    },
     "gitlens.codeLens.enabled": false,
 
     // Python
@@ -31,5 +35,16 @@
 
     // JavaScript
     "jslint.enable": false,
-    "shellcheck.customArgs": ["-x"]
+
+    // Shellcheck
+    "shellcheck.customArgs": [
+        "-x"
+    ],
+
+
+    // Other
+    "terminal.external.osxExec": "iTerm.app",
+    "terminal.integrated.fontFamily": "Menlo for Powerline",
+    "window.zoomLevel": 0,
+    "explorer.confirmDragAndDrop": false
 }

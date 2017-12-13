@@ -4,11 +4,13 @@ ajhyndman.jslint
 davidhouchin.whitespace-plus
 dbaeumer.jshint
 dbaeumer.vscode-eslint
-donjayamanne.python
 eamodio.gitlens
+eriklynd.json-tools
 gccfeli.vscode-lua
 lukehoban.Go
 minhthai.vscode-todo-parser
+ms-python.python
+ms-vscode.azure-account
 pgourlain.erlang
 shardulm94.trailing-spaces
 technosophos.vscode-helm
