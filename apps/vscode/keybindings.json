@@ -1,0 +1,6 @@
+// Place your key bindings in this file to overwrite the defaults
+[
+    // Add a bypass for Vim overriding global-message displays
+    { "key": "escape",                "command": "workbench.action.closeMessages",
+                                      "when": "editorTextFocus && vim.active && !inDebugRepl && globalMessageVisible" }
+]

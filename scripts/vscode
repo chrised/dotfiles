@@ -12,9 +12,12 @@ fi
 which "${CODE}" || exit 0
 
 if [ "${HOSTTYPE}" = "Darwin" ]; then
-    CONFFILE="${CONFDIR}/settings.json"
-    [ -f "${CONFFILE}" ] && mv "${CONFFILE}" "${CONFFILE}-old"
+    SETTINGS_FILE="${CONFDIR}/settings.json"
+    [ -f "${SETTINGS_FILE}" ] && mv "${SETTINGS_FILE}" "${SETTINGS_FILE}-old"
     ln -s "${APPDIR}/settings.json" "${CONFDIR}/settings.json"
+    KEYBINDINGS_FILE="${CONFDIR}/keybindings.json"
+    [ -f "${KEYBINDINGS_FILE}" ] && mv "${KEYBINDINGS_FILE}" "${KEYBINDINGS_FILE}-old"
+    ln -s "${APPDIR}/keybindings.json" "${CONFDIR}/keybindings.json"
 fi
 
 while read -r extension; do
