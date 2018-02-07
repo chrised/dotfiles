@@ -31,7 +31,7 @@
 
     // Go
     "go.inferGopath": true,
-    "go.formatOnSave": false,
+    "go.formatTool": "gofmt",
 
     // JavaScript
     "jslint.enable": false,
