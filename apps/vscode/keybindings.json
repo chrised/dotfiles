@@ -2,5 +2,22 @@
 [
     // Add a bypass for Vim overriding global-message displays
     { "key": "escape",                "command": "workbench.action.closeMessages",
-                                      "when": "editorTextFocus && vim.active && !inDebugRepl && globalMessageVisible" }
-]
+                                    "when": "editorTextFocus && vim.active && !inDebugRepl && globalMessageVisible"
+                                },
+                                {
+                                    "key": "ctrl+shift+tab",
+                                    "command": "workbench.action.previousEditorInGroup"
+                                },
+                                {
+                                    "key": "ctrl+tab",
+                                    "command": "workbench.action.nextEditorInGroup"
+                                },
+                                {
+                                    "key": "ctrl+tab",
+                                    "command": "-workbench.action.openNextRecentlyUsedEditorInGroup"
+                                },
+                                {
+                                    "key": "ctrl+shift+tab",
+                                    "command": "-workbench.action.openPreviousRecentlyUsedEditorInGroup"
+                                }
+                            ]

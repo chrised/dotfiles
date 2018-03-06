@@ -46,5 +46,8 @@
     "terminal.external.osxExec": "iTerm.app",
     "terminal.integrated.fontFamily": "Menlo for Powerline",
     "window.zoomLevel": 0,
-    "explorer.confirmDragAndDrop": false
+    "explorer.confirmDragAndDrop": false,
+    "python.disablePromptForFeatures": [
+        "flake8"
+    ]
 }
