@@ -49,5 +49,6 @@
     "explorer.confirmDragAndDrop": false,
     "python.disablePromptForFeatures": [
         "flake8"
-    ]
+    ],
+    "gitlens.keymap": "alternate"
 }

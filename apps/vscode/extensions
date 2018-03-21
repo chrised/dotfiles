@@ -1,6 +1,6 @@
-James-Yu.latex-workshop
 PeterJausovec.vscode-docker
 ajhyndman.jslint
+ajshort.latex-preview
 davidhouchin.whitespace-plus
 dbaeumer.jshint
 dbaeumer.vscode-eslint
@@ -8,12 +8,14 @@ eamodio.gitlens
 eriklynd.json-tools
 gccfeli.vscode-lua
 lukehoban.Go
+mathiasfrohlich.latexcompile
 minhthai.vscode-todo-parser
 ms-python.python
-ms-vscode.azure-account
+nickfode.latex-formatter
 pgourlain.erlang
 shardulm94.trailing-spaces
 technosophos.vscode-helm
 timonwong.shellcheck
+torn4dom4n.latex-support
 vscodevim.vim
 wayou.vscode-todo-highlight
