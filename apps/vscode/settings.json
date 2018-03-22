@@ -50,5 +50,6 @@
     "python.disablePromptForFeatures": [
         "flake8"
     ],
-    "gitlens.keymap": "alternate"
+    "gitlens.keymap": "alternate",
+    "cSpell.language": "en-GB"
 }
