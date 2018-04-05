@@ -50,7 +50,7 @@
     "python.disablePromptForFeatures": [
         "flake8"
     ],
-    "gitlens.keymap": "alternate",
+    "gitlens.keymap": "chorded",
     "cSpell.language": "en-GB",
     "cSpell.userWords": [
         "arango",
@@ -58,5 +58,15 @@
         "expressway",
         "gumb",
         "kubernetes"
-    ]
+    ],
+    "gitlens.advanced.messages": {
+        "suppressCommitHasNoPreviousCommitWarning": false,
+        "suppressCommitNotFoundWarning": false,
+        "suppressFileNotUnderSourceControlWarning": false,
+        "suppressGitVersionWarning": false,
+        "suppressLineUncommittedWarning": false,
+        "suppressNoRepositoryWarning": false,
+        "suppressResultsExplorerNotice": false,
+        "suppressShowKeyBindingsNotice": true
+    }
 }
