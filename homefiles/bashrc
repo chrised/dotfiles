@@ -70,14 +70,6 @@ HISTFILESIZE=10000
 # Enforce history appending
 shopt -s histappend
 
-VENV_WRAPPER="$(which virtualenvwrapper.sh 2> /dev/null)"
-if [ -f "$VENV_WRAPPER" ]; then
-    export WORKON_HOME="$HOME/virtualenvs"
-    if [ ! -d "$WORKON_HOME" ]; then
-        mkdir "$WORKON_HOME"
-    fi
-    source "$VENV_WRAPPER"
-fi
 
 # Add some paths
 if [ -d "${HOME}/bin" ]; then
@@ -93,3 +85,11 @@ if [ -d "/Applications/Visual Studio Code.app/Contents/Resources/app/bin" ]; the
     export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
 fi
 
+VENV_WRAPPER="$(which virtualenvwrapper.sh 2> /dev/null)"
+if [ -f "$VENV_WRAPPER" ]; then
+    export WORKON_HOME="$HOME/virtualenvs"
+    if [ ! -d "$WORKON_HOME" ]; then
+        mkdir "$WORKON_HOME"
+    fi
+    source "$VENV_WRAPPER"
+fi
