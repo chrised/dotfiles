@@ -53,10 +53,6 @@
     "gitlens.keymap": "chorded",
     "cSpell.language": "en-GB",
     "cSpell.userWords": [
-        "arango",
-        "db",
-        "expressway",
-        "gumb",
         "kubernetes"
     ],
     "gitlens.advanced.messages": {
@@ -69,4 +65,6 @@
         "suppressResultsExplorerNotice": false,
         "suppressShowKeyBindingsNotice": true
     }
+    },
+    "gitlens.gitExplorer.enabled": false
 }
