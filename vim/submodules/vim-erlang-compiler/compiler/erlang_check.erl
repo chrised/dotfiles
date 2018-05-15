@@ -274,7 +274,8 @@ check_module(File) ->
             %% add .../app/src/../include
             CompileOpts =
               Defs ++ Opts ++ ExtOpts ++
-              [{i, filename:join([Path, "..", "include"])}
+              [{i, filename:join([Path, "..", "include"])},
+               {i, filename:join([ProjectRoot, "include"])}
               ],
             log("Code paths: ~p~n", [code:get_path()]),
             log("Compiling: compile:file(~p,~n    ~p)~n",
@@ -306,10 +307,46 @@ find_app_root(Path) ->
     end.
 
 fix_project_root(rebar3, Files, _) ->
-    [RebarLock] = [F || F <- Files, filename:basename(F) == "rebar.lock"],
+    RebarLocks = [F || F <- Files, filename:basename(F) == "rebar.lock"],
+    RebarLocksWithPriority = [{F, rebar3_lock_priority(F)} || F <- RebarLocks],
+    {RebarLock, _Priority} = hd(lists:keysort(2, RebarLocksWithPriority)),
     filename:dirname(RebarLock);
 fix_project_root(_BuildSystem, _Files, ProjectRoot) ->
     ProjectRoot.
+
+rebar3_lock_priority(Filename) ->
+    %
+    % The following should help us avoid interference from rogue lock files.
+    %
+    Dir = filename:dirname(Filename),
+    AbsDir = filename:absname(Dir),
+    {ok, Siblings} = file:list_dir(AbsDir),
+    {SiblingDirs, SiblingFiles} = lists:partition(fun filelib:is_dir/1, Siblings),
+    AbsDirComponents = filename:split(AbsDir),
+
+    MightBeRebarProject = lists:member("rebar.config", SiblingFiles),
+    MightBeSingleApp = lists:member("src", SiblingDirs),
+    MightBeUmbrellaApp = lists:member("apps", SiblingDirs),
+    Depth = length(AbsDirComponents),
+
+    if MightBeRebarProject ->
+           % Lock files standing beside a rebar.config file
+           % get a higher priority than to those that don't.
+           % Between them, those higher in file system hierarchy will
+           % themselves get prioritised.
+           [1, Depth];
+       MightBeSingleApp xor MightBeUmbrellaApp ->
+           % Lock files standing beside either a src or apps directory
+           % get a higher priority than those that don't.
+           % Between them, those higher in file system hierarchy will
+           % themselves get prioritised.
+           [2, Depth];
+       true ->
+           % No good criteria remain. Prioritise by placement in
+           % file system hierarchy.
+           [3, Depth]
+    end.
+
 %%------------------------------------------------------------------------------
 %% @doc Check directory if it is the root of an OTP application.
 %% @end
@@ -563,7 +600,10 @@ process_rebar3_config(ConfigPath, Terms) ->
             % give an explicit error instead of proceeding anyway.
             log_error("rebar3 executable not found.~n"),
             error;
-        {ok, Rebar3} ->
+        {ok, Rebar3Rel} ->
+            log("rebar3 executable found: ~s~n", [Rebar3Rel]),
+            Rebar3 = filename:absname(Rebar3Rel),
+            log("Absolute path to rebar3 executable: ~s~n", [Rebar3]),
             % load the profile used by rebar3 to print the dependency path list
             Profile = rebar3_get_profile(Terms),
             % "rebar3 path" prints all paths that belong to the project; we add
@@ -573,9 +613,10 @@ process_rebar3_config(ConfigPath, Terms) ->
             % https://github.com/erlang/rebar3/issues/1143.
             {ok, Cwd} = file:get_cwd(),
             file:set_cwd(ConfigPath),
-            Paths = os:cmd(
-                      io_lib:format("QUIET=1 ~p as ~p path", [Rebar3, Profile])
-                     ),
+            Cmd = io_lib:format("QUIET=1 ~p as ~p path", [Rebar3, Profile]),
+            log("Call: ~s~n", [Cmd]),
+            Paths = os:cmd(Cmd),
+            log("Result: ~s~n", [Paths]),
             file:set_cwd(Cwd),
             CleanedPaths = [absname(ConfigPath, SubDir)
                             || SubDir <- string:tokens(Paths, " ")],
@@ -589,8 +630,11 @@ process_rebar3_config(ConfigPath, Terms) ->
               fun({ProfileName, Deps}) ->
                       Apps = string:join([atom_to_list(D) || D <- Deps], ","),
                       file:set_cwd(ConfigPath),
-                      ProfilePaths = os:cmd(io_lib:format("QUIET=1 ~p as ~p path --app=~s",
-                                                          [Rebar3, ProfileName, Apps])),
+                      Cmd = io_lib:format("QUIET=1 ~p as ~p path --app=~s",
+                                          [Rebar3, ProfileName, Apps]),
+                      log("Call: ~s~n", [Cmd]),
+                      ProfilePaths = os:cmd(Cmd),
+                      log("Result: ~s~n", [Paths]),
                       file:set_cwd(Cwd),
                       Cleaned = [absname(ConfigPath, SubDir)
                                  || SubDir <- string:tokens(ProfilePaths, " ")],
