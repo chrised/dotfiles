@@ -1,4 +1,6 @@
 {
+    // Fix for Vim-mode on Linux
+    "keyboard.dispatch": "keyCode",
     // Internal
     "workbench.startupEditor": "newUntitledFile",
     "workbench.colorTheme": "Monokai",
