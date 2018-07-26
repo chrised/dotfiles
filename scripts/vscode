@@ -6,19 +6,22 @@ CONFDIR=${HOME}
 if [ -z ${CODE} ] && [ "${HOSTTYPE}" = "Darwin" ]; then
     CODE="/Applications/Visual Studio Code.app/Contents/Resources/app/bin/code"
     CONFDIR="${HOME}/Library/Application Support/Code/User"
+elif [ -z ${CODE} ] && [ "${HOSTTYPE}" = "Linux" ]; then
+    CODE="/usr/bin/code"
+    CONFDIR="${HOME}/.config/Code/User"
 fi
 
 # Abort if code doesn't exist
 which "${CODE}" || exit 0
 
-if [ "${HOSTTYPE}" = "Darwin" ]; then
-    SETTINGS_FILE="${CONFDIR}/settings.json"
-    [ -f "${SETTINGS_FILE}" ] && mv "${SETTINGS_FILE}" "${SETTINGS_FILE}-old"
-    ln -s "${APPDIR}/settings.json" "${CONFDIR}/settings.json"
-    KEYBINDINGS_FILE="${CONFDIR}/keybindings.json"
-    [ -f "${KEYBINDINGS_FILE}" ] && mv "${KEYBINDINGS_FILE}" "${KEYBINDINGS_FILE}-old"
-    ln -s "${APPDIR}/keybindings.json" "${CONFDIR}/keybindings.json"
-fi
+[ ! -d "${CONFDIR}" ] && mkdir "${CONFDIR}"
+SETTINGS_FILE="${CONFDIR}/settings.json"
+KEYBINDINGS_FILE="${CONFDIR}/keybindings.json"
+
+[ -f "${SETTINGS_FILE}" ] && mv "${SETTINGS_FILE}" "${SETTINGS_FILE}-old"
+ln -s "${APPDIR}/settings.json" "${CONFDIR}/settings.json"
+[ -f "${KEYBINDINGS_FILE}" ] && mv "${KEYBINDINGS_FILE}" "${KEYBINDINGS_FILE}-old"
+ln -s "${APPDIR}/keybindings.json" "${CONFDIR}/keybindings.json"
 
 while read -r extension; do
     code --install-extension "${extension}"
