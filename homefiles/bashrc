@@ -55,7 +55,7 @@ export LESSOPEN="|lesspipe %s"
 export EDITOR=vim
 
 # Add titles to Terminal windows
-export PROMPT_COMMAND='printf "\033]0;%s@%s:%s\007" $(echo ${PWD} | awk -v home="${HOME}" "{sub(home,\"~\");print}")'
+export PROMPT_COMMAND='printf "\033]0;%s@%s:%s\007" $(echo ${PWD} | awk -v home="${HOME}" "{sub(home,\"~\");print}") "$0"'
 
 # Other aliaii
 alias docker-clean-untagged="docker images --no-trunc | grep '<none>' | awk '{ print \$3 }' | xargs docker rmi"
@@ -75,15 +75,23 @@ shopt -s histappend
 
 
 # Add some paths
+# User-custom bin
 if [ -d "${HOME}/bin" ]; then
     export PATH="${HOME}/bin:${PATH}"
 fi
+# Default Go bin
 if [ -d "${HOME}/go/bin" ]; then
     export PATH="${HOME}/go/bin:${PATH}"
 fi
+# Default Haskell cabal bin
+if [ -d "${HOME}/.cabal/bin" ]; then
+    export PATH="${HOME}/.cabal/bin:${PATH}"
+fi
+# Default rebar3 bin
 if [ -d "${HOME}/.cache/rebar3/bin" ]; then
     export PATH="${HOME}/.cache/rebar3/bin:${PATH}"
 fi
+# Default VSCode directory on a Mac
 if [ -d "/Applications/Visual Studio Code.app/Contents/Resources/app/bin" ]; then
     export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
 fi
