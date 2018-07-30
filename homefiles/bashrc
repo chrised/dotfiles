@@ -20,6 +20,7 @@ fi
 # but after we source the local profile, otherwise we might get overriden
 test -e  "$HOME/.bashrc.local" && source "$HOME/.bashrc.local"
 
+[ -f "${HOME}/.dotfiles/apps/bash/subtree/git-prompt/gitprompt.sh" ] && source "${HOME}/.dotfiles/apps/bash/subtree/git-prompt/gitprompt.sh"
 
 # Mostly for MacOS, but yes
 [ -f /usr/local/etc/bash_completion ] && source /usr/local/etc/bash_completion
