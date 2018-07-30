@@ -1,6 +1,8 @@
 #!/bin/bash
 
 SUBTREES=(
+# shell
+'bash-git-prompt                    https://github.com/magicmonty/bash-git-prompt.git           apps/bash/subtrees/git-prompt                   master'
 # vim
 'vim-pathogen                       https://github.com/tpope/vim-pathogen.git                   vim/submodules/pathogen                         master'
 'vim-airline                        https://github.com/bling/vim-airline.git                    vim/submodules/vim-airline                      master'
