@@ -1,1 +1,0 @@
-../submodules/vim-expw-syntax/syntax/expwlog.vim
