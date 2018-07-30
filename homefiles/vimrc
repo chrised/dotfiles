@@ -7,6 +7,9 @@ if has('nvim')
     if has('macunix')
         let g:python2_host_prog = '/usr/local/bin/python'
         let g:python3_host_prog = '/usr/local/bin/python3'
+    else
+        let g:python2_host_prog = '/usr/bin/python'
+        let g:python3_host_prog = '/usr/bin/python3'
     endif
 endif
 
@@ -114,16 +117,6 @@ set undoreload=10000        " number of lines to save for undo
 
 " cursorLine
 set cursorline
-
-" YouCompleteMe
-let g:ycm_global_ycm_extra_conf = "~/.vim/bundle/YouCompleteMe/.ycm_extra_conf.py"
-nnoremap <leader>g :YcmCompleter GoToDefinitionElseDeclaration<CR>
-
-" NERDTree
-"autocmd StdinReadPre * let s:std_in=1
-"autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
-map <C-n> :NERDTreeToggle<CR>
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
 " TagBar
 nmap <F8> :TagbarToggle<CR>
