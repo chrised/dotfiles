@@ -1,1 +1,1 @@
-../submodules/dash.vim
+../subtrees/dash.vim/

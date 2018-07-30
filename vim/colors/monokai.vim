@@ -1,1 +1,1 @@
-../submodules/vim-monokai/colors/monokai.vim
+../subtrees/vim-monokai/colors/monokai.vim
