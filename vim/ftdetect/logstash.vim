@@ -1,1 +1,1 @@
-../submodules/logstash-syntax/ftdetect/logstash.vim
+../subtrees/logstash-syntax/ftdetect/logstash.vim
