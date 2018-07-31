@@ -18,7 +18,6 @@
     },
 
     // Vimlike
-    "vim.cmdLineInitialColon": true,
     "vim.enableNeovim": true,
     "vim.foldfix": true,
     "vim.neovimPath": "/usr/local/bin/nvim",
@@ -47,21 +46,20 @@
         "-x"
     ],
 
+    // cSpell
+    "cSpell.enabled": false,
+    "cSpell.language": "en-GB",
+    "cSpell.userWords": [
+        "kubernetes"
+    ],
 
     // Other
     "terminal.external.osxExec": "iTerm.app",
     "terminal.integrated.fontFamily": "Menlo for Powerline",
     "window.zoomLevel": 0,
     "explorer.confirmDragAndDrop": false,
-    "python.disablePromptForFeatures": [
-        "flake8"
-    ],
     "gitlens.keymap": "chorded",
-    "cSpell.enabled": false,
-    "cSpell.language": "en-GB",
-    "cSpell.userWords": [
-        "kubernetes"
-    ],
+
     "gitlens.advanced.messages": {
         "suppressCommitHasNoPreviousCommitWarning": false,
         "suppressCommitNotFoundWarning": false,
@@ -72,5 +70,18 @@
         "suppressResultsExplorerNotice": false,
         "suppressShowKeyBindingsNotice": true
     },
-    "gitlens.gitExplorer.enabled": false
+    "gitlens.gitExplorer.enabled": false,
+
+    // Ansible
+    "files.associations": {
+        "**/defaults/**/*": "ansible",
+        "**/tasks/**/*.yml" : "ansible",
+        "**/handler/*.yml" : "ansible",
+        "**/*_vars/**/*.yml" : "ansible",
+        "**/roles/**/*.yml" : "ansible",
+        "**/playbooks/**/*.yml" : "ansible",
+        "**/*ansible*/**/*.yml" : "ansible",
+        "**/vars/**/*.yml": "ansible",
+        "**/inventory/*/*": "ansible"
+    }
 }
