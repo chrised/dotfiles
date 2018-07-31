@@ -21,7 +21,7 @@ topdir="$(git rev-parse --show-toplevel)"
 dir=~/.dotfiles                    # dotfiles directory
 olddir=~/.dotfiles_old             # old dotfiles backup directory
 # list of files/folders to symlink in homedir
-home_files="bashrc bashrc_functions vimrc vim gitignore_global subversion eslintrc emacs.d hyper.js bash_completion bash_completions"
+home_files="bashrc bashrc_functions vimrc vim gitignore_global eslintrc emacs.d hyper.js bash_completion bash_completions"
 if [ "${HOSTTYPE}" != "Linux" ]; then
     home_files="${home_files} gvimrc-nonlinux"
 else
