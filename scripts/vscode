@@ -1,7 +1,7 @@
 #!/bin/sh
 APPDIR="$(git rev-parse --show-toplevel)/apps/vscode"
 HOSTTYPE="$(uname -s)"
-CODE=""
+CODE="$(which code)"
 CONFDIR=${HOME}
 if [ -z ${CODE} ] && [ "${HOSTTYPE}" = "Darwin" ]; then
     CODE="/Applications/Visual Studio Code.app/Contents/Resources/app/bin/code"
