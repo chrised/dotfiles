@@ -134,6 +134,8 @@ fi
 
 echo "Running arbitrary application configuration commands"
 
+# Set privacy email for this repo (dotfiles)
+git config user.email 7331206+chrised@users.noreply.github.com
 # Git lg alias: https://coderwall.com/p/euwpig/a-better-git-log
 git config --global alias.lg "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
 # Gitignore globals
