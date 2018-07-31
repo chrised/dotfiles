@@ -9,7 +9,7 @@ INSTALL_HOMEBREW=0
 
 
 function result() {
-    if [ $? = 0 ]; then
+    if [ ${?} = 0 ]; then
         printf ' [\033[0;32mOK\033[0m]\n'
     else
         printf ' [\033[0;31mERROR\033[0m]\n'
