@@ -24,11 +24,16 @@ test -e  "$HOME/.bashrc.local" && source "$HOME/.bashrc.local"
 # Mostly for MacOS, but yes
 [ -f /usr/local/etc/bash_completion ] && source /usr/local/etc/bash_completion
 
+PS1_START="[\[\033[1;31m\]\$(uname)\[\033[m\]:\[\033[32m\]\h\[\033[m\]]"
+PS1_DIR="\[\033[33;1m\]\w\[\033[m\]"
 if [[ ${EUID} == 0 ]] ; then
-    export PS1="[\[\033[1;31m\]\$(uname)\[\033[m\]:\[\033[32m\]\h\[\033[m\]]\[\033[1;31m\]\u\[\033[m\]:\[\033[33;1m\]\w\[\033[m\]\$ "
+    PS1_USER="\[\033[1;31m\]\u\[\033[m\]"
+    PS1_SUFFIX="# "
 else
-    export PS1="[\[\033[1;31m\]\$(uname)\[\033[m\]:\[\033[32m\]\h\[\033[m\]]\[\033[36m\]\u\[\033[m\]:\[\033[33;1m\]\w\[\033[m\]\$ "
+    PS1_USER="\[\033[36m\]\u\[\033[m\]"
+    PS1_SUFFIX="\$ "
 fi
+export PS1="${PS1_START}${PS1_USER}:${PS1_DIR}${PS1_SUFFIX}"
 
 export CLICOLOR=1
 export LSCOLORS=GxFxCxDxBxegedabagaced
@@ -110,20 +115,17 @@ fi
 GIT_PROMPT_ONLY_IN_REPO=1
 
 # GIT_PROMPT_FETCH_REMOTE_STATUS=0   # uncomment to avoid fetching remote status
- GIT_PROMPT_IGNORE_SUBMODULES=1 # uncomment to avoid searching for changed files in submodules
+GIT_PROMPT_IGNORE_SUBMODULES=1
 
- GIT_PROMPT_SHOW_UPSTREAM=1 # uncomment to show upstream tracking branch
-# GIT_PROMPT_SHOW_UNTRACKED_FILES=all # can be no, normal or all; determines counting of untracked files
+GIT_PROMPT_SHOW_UPSTREAM=1
 
-# GIT_PROMPT_SHOW_CHANGED_FILES_COUNT=0 # uncomment to avoid printing the number of changed files
-
-# GIT_PROMPT_STATUS_COMMAND=gitstatus_pre-1.7.10.sh # uncomment to support Git older than 1.7.10
-
-# GIT_PROMPT_START=...    # uncomment for custom prompt start sequence
-# GIT_PROMPT_END=...      # uncomment for custom prompt end sequence
+GIT_PROMPT_LEADING_SPACE=0
+GIT_PROMPT_START="${PS1_START}${PS1_USER}:${PS1_DIR}\n"
+GIT_PROMPT_END="\n${PS1_SUFFIX}"
 
 # as last entry source the gitprompt script
+GIT_PROMPT_THEME_FILE=~/.dotfiles/apps/bash/Custom.bgptemplate
 # GIT_PROMPT_THEME=Custom # use custom theme specified in file GIT_PROMPT_THEME_FILE (default ~/.git-prompt-colors.sh)
-# GIT_PROMPT_THEME_FILE=~/.git-prompt-colors.sh
- GIT_PROMPT_THEME=Solarized # use theme optimized for solarized color scheme
+GIT_PROMPT_THEME=Custom
+# GIT_PROMPT_THEME=Solarized # use theme optimized for solarized color scheme
 [ -f "${HOME}/.dotfiles/apps/bash/subtrees/git-prompt/gitprompt.sh" ] && source "${HOME}/.dotfiles/apps/bash/subtrees/git-prompt/gitprompt.sh"
