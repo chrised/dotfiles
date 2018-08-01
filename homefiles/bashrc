@@ -110,6 +110,14 @@ if [ -f "$VENV_WRAPPER" ]; then
     source "$VENV_WRAPPER"
 fi
 
+PYENV_BASE="${HOME}/.pyenv"
+if [ -d "${PYENV_BASE}" ]; then
+    PYENV_BIN="${PYENV_BASE}/bin"
+    PATH="${PYENV_BIN}:${PATH}"
+    eval "$(${PYENV_BIN}/pyenv init -)"
+    eval "$(${PYENV_BIN}/pyenv virtualenv-init -)"
+fi
+
 # gitprompt config
 # Set config variables first
 GIT_PROMPT_ONLY_IN_REPO=1
