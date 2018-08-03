@@ -10,6 +10,7 @@
     "editor.rulers": [
         79
     ],
+    "workbench.editor.closeEmptyGroups": false,
 
     "files.autoSave": "onFocusChange",
     "npm.enableScriptExplorer": true,
@@ -71,6 +72,7 @@
         "suppressShowKeyBindingsNotice": true
     },
     "gitlens.gitExplorer.enabled": false,
+    "gitlens.historyExplorer.enabled": true,
 
     // Ansible
     "files.associations": {
