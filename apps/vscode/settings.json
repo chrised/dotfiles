@@ -25,7 +25,10 @@
 
     // Gitlens
     "workbench.colorCustomizations": {
-        "gitlens.trailingLineForegroundColor": "#c1bb00"
+        "gitlens.trailingLineForegroundColor": "#c1bb00",
+        "statusBar.background": "#005f5f",
+        "statusBar.noFolderBackground": "#005f5f",
+        "statusBar.debuggingBackground": "#005f5f"
     },
     "gitlens.codeLens.enabled": false,
 
@@ -56,7 +59,7 @@
     // Other
     "terminal.external.osxExec": "iTerm.app",
     "terminal.integrated.fontFamily": "Menlo for Powerline",
-    "window.zoomLevel": 0,
+    "window.zoomLevel": -1,
     "explorer.confirmDragAndDrop": false,
     "gitlens.keymap": "chorded",
 
