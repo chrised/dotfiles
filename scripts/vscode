@@ -3,10 +3,10 @@ APPDIR="$(git rev-parse --show-toplevel)/apps/vscode"
 HOSTTYPE="$(uname -s)"
 CODE="$(which code)"
 CONFDIR=${HOME}
-if [ -z ${CODE} ] && [ "${HOSTTYPE}" = "Darwin" ]; then
+if [ -z "${CODE}" ] && [ "${HOSTTYPE}" = "Darwin" ]; then
     CODE="/Applications/Visual Studio Code.app/Contents/Resources/app/bin/code"
     CONFDIR="${HOME}/Library/Application Support/Code/User"
-elif [ -z ${CODE} ] && [ "${HOSTTYPE}" = "Linux" ]; then
+elif [ -z "${CODE}" ] && [ "${HOSTTYPE}" = "Linux" ]; then
     CODE="/usr/bin/code"
     CONFDIR="${HOME}/.config/Code/User"
 fi
