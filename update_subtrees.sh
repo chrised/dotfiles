@@ -43,7 +43,9 @@ subtree_handle() {
         git subtree add -q --squash --prefix "$3" "$1" "$4"
     fi
     git fetch "$1"
-    git subtree pull -q --prefix "$3" "$1" "$4" --squash -m "Merge ${4} of ${1} to path ${3}"
+    git merge --squash -s subtree -Xsubtree="$3" -Xtheirs --allow-unrelated-histories --no-commit "$1/$4"
+    git commit -m "Merge ${4} of ${1} to path ${3}"
+    #git subtree pull -q --prefix "$3" "$1" "$4" --squash -m "Merge ${4} of ${1} to path ${3}"
 }
 
 for subtree in "${SUBTREES[@]}"; do
