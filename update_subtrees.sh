@@ -2,7 +2,7 @@
 
 SUBTREES=(
 # shell
-'bash-git-prompt                    https://github.com/magicmonty/bash-git-prompt.git           apps/bash/subtrees/git-prompt                   master'
+'bash-git-prompt                    https://github.com/magicmonty/bash-git-prompt.git           apps/bash/subtrees/git-prompt                 master'
 # vim
 'vim-pathogen                       https://github.com/tpope/vim-pathogen.git                   vim/subtrees/pathogen                         master'
 'vim-airline                        https://github.com/bling/vim-airline.git                    vim/subtrees/vim-airline                      master'
@@ -26,7 +26,7 @@ SUBTREES=(
 'dash.vim                           https://github.com/rizzatti/dash.vim                        vim/subtrees/dash.vim                         master'
 'vim-disapprove-deep-indentation    https://github.com/dodie/vim-disapprove-deep-indentation    vim/subtrees/vim-disapprove-deep-indentation  master'
 # emacs
-'use-package                        https://github.com/jwiegley/use-package                     emacs.d/use-package                             master'
+'use-package                        https://github.com/jwiegley/use-package                     emacs.d/use-package                           master'
 )
 
 
