@@ -123,6 +123,7 @@ fi
 if [ -n "${PYENV}" ]; then
     eval "$(${PYENV} init -)"
     eval "$(${PYENV} virtualenv-init -)"
+    export PYENV_VIRTUALENVWRAPPER_PREFER_PYVENV="true"
 fi
 
 # gitprompt config
