@@ -110,12 +110,19 @@ if [ -f "$VENV_WRAPPER" ]; then
     source "$VENV_WRAPPER"
 fi
 
+
 PYENV_BASE="${HOME}/.pyenv"
-if [ -d "${PYENV_BASE}" ]; then
-    PYENV_BIN="${PYENV_BASE}/bin"
+PYENV_BIN="${PYENV_BASE}/bin"
+PYENV="$(which pyenv 2> /dev/null)"
+if [ -d "${PYENV_BIN}" ]; then
     PATH="${PYENV_BIN}:${PATH}"
-    eval "$(${PYENV_BIN}/pyenv init -)"
-    eval "$(${PYENV_BIN}/pyenv virtualenv-init -)"
+fi
+if [ -f "${PYENV_BIN}/pyenv" ]; then
+    PYENV="${PYENV_BIN}/pyenv"
+fi
+if [ -n "${PYENV}" ]; then
+    eval "$(${PYENV} init -)"
+    eval "$(${PYENV} virtualenv-init -)"
 fi
 
 # gitprompt config
