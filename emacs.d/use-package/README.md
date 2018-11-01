@@ -11,6 +11,11 @@ created it because I have over 80 packages that I use in Emacs, and things
 were getting difficult to manage.  Yet with this utility my total load time is
 around 2 seconds, with no loss of functionality!
 
+Note that `use-package` is **not** a package manager! Although `use-package`
+does have the useful capability to interface with package managers (see
+[below](#package-installation)), its primary purpose is for the configuration
+and loading of packages.
+
 Notes for users upgrading to 2.x are located [at the bottom](#upgrading-to-2x).
 
 ## Installing use-package
@@ -798,7 +803,7 @@ Here’s an example of usage:
 
 This will expect a global binary package to exist called `rg`. If it
 does not, it will use your system package manager (using the package
-[`system-packages`](https://github.com/jabranham/system-packages)) to
+[`system-packages`](https://gitlab.com/jabranham/system-packages)) to
 attempt an install of a binary by the same name asyncronously. For
 example, for most `macOS` users this would call: `brew install rg`.
 
