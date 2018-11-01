@@ -174,17 +174,22 @@ values):
   " or copy paste the following into your vimrc for shortform text
   let g:airline_mode_map = {
       \ '__' : '-',
-      \ 'n'  : 'N',
-      \ 'i'  : 'I',
-      \ 'R'  : 'R',
       \ 'c'  : 'C',
-      \ 'v'  : 'V',
-      \ 'V'  : 'V',
-      \ '' : 'V',
+      \ 'i'  : 'I',
+      \ 'ic' : 'I',
+      \ 'ix' : 'I',
+      \ 'n'  : 'N',
+      \ 'ni' : 'N',
+      \ 'no' : 'N',
+      \ 'R'  : 'R',
+      \ 'Rv' : 'R',
       \ 's'  : 'S',
       \ 'S'  : 'S',
       \ '' : 'S',
       \ 't'  : 'T',
+      \ 'v'  : 'V',
+      \ 'V'  : 'V',
+      \ '' : 'V',
       \ }
 <
 * define the set of filename match queries which excludes a window from having
@@ -201,7 +206,7 @@ values):
   let g:airline_exclude_preview = 0
 <
 * disable the Airline customization for selective windows (this is a
-  window-local variable so you can disable it for only some windows) >
+  window-local variable so you can disable it per-window) >
   let w:airline_disabled = 1
 
 * Do not draw separators for empty sections (only for the active window) >
@@ -214,6 +219,9 @@ values):
 * Caches the changes to the highlighting groups, should therefore be faster.
   Set this to one, if you experience a sluggish Vim: >
   let g:airline_highlighting_cache = 0
+<
+* disable airline on FocusLost autocommand (e.g. when Vim loses focus): >
+  let g:airline_focuslost_inactive = 1
 <
 ==============================================================================
 COMMANDS                                                  *airline-commands*
@@ -331,7 +339,13 @@ section.
 Determines a pattern to ignore a buffer name for various things (e.g. the
 tabline extension) or the read-only check. Default is
 `g:airline#extensions#tabline#ignore_bufadd_pat` (see below) or
-`'gundo|undotree|vimfiler|tagbar|nerd_tree|startify'` if it is unset.
+`'gundo|undotree|vimfiler|tagbar|nerd_tree|startify|!'` if it is unset.
+
+The "!" prevents terminal buffers to appear in the tabline.
+
+                                *airline#extensions#tabline#exclude_buffers*
+Buffer numbers to be excluded from showing in the tabline (similar to
+|airline#ignore_bufadd_pat|.
 
 ==============================================================================
 EXTENSIONS                                              *airline-extensions*
@@ -586,14 +600,15 @@ eclim <https://eclim.org>
   let g:airline#extensions#eclim#enabled = 1
 
 -------------------------------------                    *airline-wordcount*
-* enable/disable word counting. >
+* enable/disable word counting of the document/visual selection >
   let g:airline#extensions#wordcount#enabled = 1
 <
-* regex of filetypes to enable word counting. >
-  " the default value matches filetypes typically used for documentation
+* set list of filetypes for which word counting is enabled: >
+  " The default value matches filetypes typically used for documentation
   " such as markdown and help files.
-  let g:airline#extensions#wordcount#filetypes = ...
-  (default: markdown,rst,org,help,text,tex,mail)
+  let g:airline#extensions#wordcount#filetypes =
+    \ ['help', 'markdown', 'rst', 'org', 'text', 'asciidoc', 'tex', 'mail']
+  " Use ['all'] to enable for all filetypes.
 
 * defines the name of a formatter for word count will be displayed: >
   " The default will try to guess LC_NUMERIC and format number accordingly
@@ -601,14 +616,14 @@ eclim <https://eclim.org>
   let g:airline#extensions#wordcount#formatter = 'default'
 
   " here is how you can define a 'foo' formatter:
-  " create a file in the dir autoload/airline/extensions/wordcount/formatters/
-  " called foo.vim
-  " this example needs at least Vim > 7.4.1042
-  function! airline#extensions#wordcount#formatters#foo#format(format,fmt)
-    return (wordcount()['words'] == 0 ? 'NONE' :
-        \ wordcount()['words'] > 100 ? 'okay' : 'not enough')
+  " create a file in autoload/airline/extensions/wordcount/formatters/
+  " called foo.vim, which defines the following function signature:
+  function! airline#extensions#wordcount#formatters#foo#to_string(wordcount)
+    return a:wordcount == 0 ? 'NONE' :
+        \ a:wordcount > 100 ? 'okay' : 'not enough')
   endfunction
   let g:airline#extensions#wordline#formatter = 'foo'
+  " The function is passed the word count of the document or visual selection
 
 * defines how to display the wordcount statistics for the default formatter: >
   " Defaults are below.  If fmt_short isn't defined, fmt is used.
