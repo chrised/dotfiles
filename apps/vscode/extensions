@@ -10,17 +10,20 @@ dunstontc.viml
 eamodio.gitlens
 eriklynd.json-tools
 gccfeli.vscode-lua
+haaaad.ansible
 James-Yu.latex-workshop
 jtavin.ldif
 mathiasfrohlich.latexcompile
 mechatroner.rainbow-csv
 minhthai.vscode-todo-parser
+ms-kubernetes-tools.vscode-kubernetes-tools
 ms-python.python
 ms-vscode.Go
 nickfode.latex-formatter
 PeterJausovec.vscode-docker
 pgourlain.erlang
 redhat.java
+redhat.vscode-yaml
 shardulm94.trailing-spaces
 sidneys1.gitconfig
 streetsidesoftware.code-spell-checker
@@ -32,5 +35,4 @@ vscjava.vscode-java-pack
 vscjava.vscode-java-test
 vscjava.vscode-maven
 vscodevim.vim
-vscoss.vscode-ansible
 wayou.vscode-todo-highlight
