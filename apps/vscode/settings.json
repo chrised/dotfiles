@@ -6,7 +6,7 @@
     "workbench.colorTheme": "Monokai",
     "editor.minimap.enabled": false,
     "editor.renderWhitespace": "all",
-    "editor.autoClosingBrackets": false,
+    "editor.autoClosingBrackets": "beforeWhitespace",
     "editor.rulers": [
         79
     ],
@@ -88,5 +88,6 @@
         "**/*ansible*/**/*.yml" : "ansible",
         "**/vars/**/*.yml": "ansible",
         "**/inventory/*/*": "ansible"
-    }
+    },
+    "editor.autoClosingQuotes": "beforeWhitespace"
 }
