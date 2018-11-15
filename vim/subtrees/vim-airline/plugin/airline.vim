@@ -23,7 +23,7 @@ function! s:init()
     try
       let palette = g:airline#themes#{g:airline_theme}#palette
     catch
-      echom 'Could not resolve airline theme "' . g:airline_theme . '". Themes have been migrated to github.com/vim-airline/vim-airline-themes.'
+      call airline#util#warning(printf('Could not resolve airline theme "%s". Themes have been migrated to github.com/vim-airline/vim-airline-themes.', g:airline_theme))
       let g:airline_theme = 'dark'
     endtry
     silent call airline#switch_theme(g:airline_theme)
@@ -102,9 +102,6 @@ function! s:airline_toggle()
         " Make sure that g_airline_gui_mode is refreshed
         autocmd OptionSet termguicolors call <sid>on_colorscheme_changed()
       endif
-      if exists("##TerminalOpen")
-        autocmd TerminalOpen * call <sid>on_colorscheme_changed()
-      endif
       " Set all statuslines to inactive
       autocmd FocusLost * call airline#update_statusline_focuslost()
       " Refresh airline for :syntax off
@@ -149,13 +146,15 @@ function! s:airline_toggle()
 endfunction
 
 function! s:get_airline_themes(a, l, p)
-  let files = split(globpath(&rtp, 'autoload/airline/themes/'.a:a.'*'), "\n")
-  return map(files, 'fnamemodify(v:val, ":t:r")')
+  return airline#util#themes(a:a)
 endfunction
 
 function! s:airline_theme(...)
   if a:0
-    call airline#switch_theme(a:1)
+    try
+      call airline#switch_theme(a:1)
+    catch " discard error
+    endtry
   else
     echo g:airline_theme
   endif
@@ -180,10 +179,25 @@ function! s:FocusGainedHandler(timer)
   endif
 endfu
 
+function! s:airline_extensions()
+  let loaded = airline#extensions#get_loaded_extensions()
+  let files = split(globpath(&rtp, "autoload/airline/extensions/*.vim"), "\n")
+  call map(files, 'fnamemodify(v:val, ":t:r")')
+  if !empty(files)
+    echohl Title
+    echo printf("%-15s\t%s", "Extension", "Status")
+    echohl Normal
+  endif
+  for ext in sort(files)
+    echo printf("%-15s\t%sloaded", ext, (index(loaded, ext) == -1 ? 'not ' : ''))
+  endfor
+endfunction
+
 command! -bar -nargs=? -complete=customlist,<sid>get_airline_themes AirlineTheme call <sid>airline_theme(<f-args>)
 command! -bar AirlineToggleWhitespace call airline#extensions#whitespace#toggle()
-command! -bar AirlineToggle call s:airline_toggle()
+command! -bar AirlineToggle  call s:airline_toggle()
 command! -bar AirlineRefresh call s:airline_refresh()
+command! AirlineExtensions   call s:airline_extensions()
 
 call airline#init#bootstrap()
 call s:airline_toggle()
