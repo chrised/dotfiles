@@ -67,6 +67,16 @@ for file in ${home_files}; do
 done
 
 
+echo "Trimming old backups of dotfiles"
+BACKUPS_TO_KEEP="$(ls -d ${olddir}-* | sort | tail -n 4)"
+for f in "${olddir}-"*; do
+    if ! echo "${BACKUPS_TO_KEEP}" | grep "${f}" -q; then
+        echo "Removing backup: ${f}"
+        rm -rf "${f}"
+    fi
+done
+
+
 echo "Installing dotfiles"
 # Install the current dotfiles
 [ ! -d "${HOME}/.config" ] && mkdir -p "${HOME}/.config"
