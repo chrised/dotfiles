@@ -18,43 +18,43 @@ function result() {
 }
 
 ########## Variables
-topdir="$(git rev-parse --show-toplevel)"
-dir=~/.dotfiles                    # dotfiles directory
-olddir=~/.dotfiles_old             # old dotfiles backup directory
+REPO_ROOT="$(git rev-parse --show-toplevel)"
+DOTFILES_DIR="${HOME}/.dotfiles"         # dotfiles directory
+BACKUP_PREFIX="${HOME}/.dotfiles_old"  # old dotfiles backup directory
+BACKUP_SUFFIX=$(date -u "+%Y%m%d-%H%M")
 # list of files/folders to symlink in homedir
-home_files="bashrc bashrc_functions vimrc vim gitignore_global eslintrc emacs.d hyper.js bash_completion bash_completions"
+HOME_FILES="bashrc bashrc_functions vimrc vim gitignore_global eslintrc emacs.d hyper.js bash_completion bash_completions"
 if [ "${HOSTTYPE}" != "Linux" ]; then
-    home_files="${home_files} gvimrc-nonlinux"
+    HOME_FILES="${HOME_FILES} gvimrc-nonlinux"
 else
-    home_files="${home_files} gvimrc"
+    HOME_FILES="${HOME_FILES} gvimrc"
 fi
 # list of files/folders to symlink in $HOME/.config/
-config_files="nvim"
-rm_files="emacs"
+CONFIG_FILES="nvim"
+RM_FILES="emacs"
 
-datestr=$(date -u "+%Y%m%d-%H%M")
 
 
 # create dotfiles_old in homedir
-echo "Creating ${olddir}-${datestr} for backup of any existing dotfiles in ~"
-if [ ! -d "${olddir}-${datestr}" ]; then
-    mkdir -p "${olddir}-${datestr}"
+echo "Creating ${BACKUP_PREFIX}-${BACKUP_SUFFIX} for backup of any existing dotfiles in ~"
+if [ ! -d "${BACKUP_PREFIX}-${BACKUP_SUFFIX}" ]; then
+    mkdir -p "${BACKUP_PREFIX}-${BACKUP_SUFFIX}"
 fi
 
 
 # change to the dotfiles directory
-echo "Changing to the ${dir} directory"
-cd ${dir} || exit
+echo "Changing to the ${DOTFILES_DIR} DOTFILES_DIRectory"
+cd ${DOTFILES_DIR} || exit
 
 
 # move any existing dotfiles in homedir to dotfiles_old directory, then create symlinks
-echo "Backing up dotfiles to files from ~ to ${olddir}-${datestr}/"
-for file in ${home_files}; do
+echo "Backing up dotfiles to files from ~ to ${BACKUP_PREFIX}-${BACKUP_SUFFIX}/"
+for file in ${HOME_FILES}; do
     if [ -d ~/."${file}" ]; then
-        cp -LR ~/."${file}" "${olddir}-${datestr}"/
+        cp -LR ~/."${file}" "${BACKUP_PREFIX}-${BACKUP_SUFFIX}"/
         rm -rf ~/."${file}"
     elif [ -e ~/."${file}" ]; then
-        cp -L ~/."${file}" "${olddir}-${datestr}"/
+        cp -L ~/."${file}" "${BACKUP_PREFIX}-${BACKUP_SUFFIX}"/
         rm -f ~/."${file}"
     elif file ~/."${file}" | grep "broken symbolic link"; then
         rm ~/."${file}"
@@ -62,14 +62,14 @@ for file in ${home_files}; do
     echo -n "Creating symlink to $file in home directory."
     destfile=${file}
     [ "${file}" = "gvimrc-nonlinux" ] && destfile="gvimrc"
-    ln -s "${dir}/homefiles/${file}" "${HOME}/.${destfile}"
+    ln -s "${DOTFILES_DIR}/homefiles/${file}" "${HOME}/.${destfile}"
     result
 done
 
 
 echo "Trimming old backups of dotfiles"
-BACKUPS_TO_KEEP="$(ls -d ${olddir}-* | sort | tail -n 4)"
-for f in "${olddir}-"*; do
+BACKUPS_TO_KEEP="$(ls -d ${BACKUP_PREFIX}-* | sort | tail -n 4)"
+for f in "${BACKUP_PREFIX}-"*; do
     if ! echo "${BACKUPS_TO_KEEP}" | grep "${f}" -q; then
         echo "Removing backup: ${f}"
         rm -rf "${f}"
@@ -80,34 +80,34 @@ done
 echo "Installing dotfiles"
 # Install the current dotfiles
 [ ! -d "${HOME}/.config" ] && mkdir -p "${HOME}/.config"
-for file in ${config_files}; do
+for file in ${CONFIG_FILES}; do
     if [ -d "${HOME}/.config/${file}" ]; then
-        cp -LR "${HOME}/.config/${file}" "${olddir}-${datestr}/.config"
+        cp -LR "${HOME}/.config/${file}" "${BACKUP_PREFIX}-${BACKUP_SUFFIX}/.config"
         rm -rf "${HOME}/.config/${file}"
     elif [ -e "${HOME}/.config/${file}" ]; then
-        cp -L "${HOME}/.config/${file}" "${olddir}-${datestr}/.config"
+        cp -L "${HOME}/.config/${file}" "${BACKUP_PREFIX}-${BACKUP_SUFFIX}/.config"
         rm -f "${HOME}/.config/${file}"
     elif file "${HOME}/.config/${file}" | grep "broken symbolic link"; then
         rm "${HOME}/.config/${file}"
     fi
     destfile=${file}
     echo -n "Creating symlink to ${file} in ${HOME}/.config directory."
-    ln -s "${dir}/configfiles/${file}" "${HOME}/.config/${destfile}"
+    ln -s "${DOTFILES_DIR}/configfiles/${file}" "${HOME}/.config/${destfile}"
     result
 done
 
 file "${HOME}/.config/nvim/init.vim" | grep "broken symbolic link" > /dev/null 2>&1 && rm "${HOME}/.config/nvim/init.vim"
-[ ! -f "${HOME}/.config/nvim/init.vim" ] && ln -s "${dir}/homefiles/vimrc" "${HOME}/.config/nvim/init.vim"
+[ ! -f "${HOME}/.config/nvim/init.vim" ] && ln -s "${DOTFILES_DIR}/homefiles/vimrc" "${HOME}/.config/nvim/init.vim"
 
-for file in $rm_files; do
+for file in $RM_FILES; do
     if [ -e ~/."${file}" ]; then
-        cp -L ~/."${file}" "${olddir}-${datestr}"/
+        cp -L ~/."${file}" "${BACKUP_PREFIX}-${BACKUP_SUFFIX}"/
         rm -f ~/."${file}"
     fi
 done
 
 # Handle the bashrc/bash_profile mess
-[[ -f ~/.bash_profile ]] && cp -LR ~/.bash_profile "${olddir}-${datestr}"/ && rm -rf ~/.bash_profile
+[[ -f ~/.bash_profile ]] && cp -LR ~/.bash_profile "${BACKUP_PREFIX}-${BACKUP_SUFFIX}"/ && rm -rf ~/.bash_profile
 echo -n "Making a mess of bashrc and bash_profile"
 file ~/.bash_profile | grep "broken symbolic link" > /dev/null 2>&1 && rm ~/.bash_profile
 ln -s ~/.bashrc ~/.bash_profile
@@ -148,7 +148,7 @@ if [ "${HOSTTYPE}" = "Darwin" ]; then
     if [ ! -f ~/.xvimrc ]; then
         ln -s ~/.vimrc ~/.xvimrc
     fi
-    for f in "${dir}/${HOSTTYPE}/Library/Preferences"/*; do
+    for f in "${DOTFILES_DIR}/${HOSTTYPE}/Library/Preferences"/*; do
         cp -n "${f}" "${HOME}/Library/Preferences" && \
             echo "Copied ${f} into ${HOME}/Library/Preferences/"
     done
@@ -157,11 +157,11 @@ if [ "${HOSTTYPE}" = "Darwin" ]; then
 fi
 
 echo "Configuring Applications"
-for app in "${topdir}/apps"/*; do
+for app in "${REPO_ROOT}/apps"/*; do
     appname=$(basename "${app}")
-    if [ -f "${dir}/scripts/${appname}" ]; then
+    if [ -f "${DOTFILES_DIR}/scripts/${appname}" ]; then
         echo "Configuring: ${appname}"
-        "${dir}/scripts/${appname}"
+        "${DOTFILES_DIR}/scripts/${appname}"
     fi
 done
 
