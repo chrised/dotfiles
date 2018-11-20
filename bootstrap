@@ -9,6 +9,7 @@ INSTALL_HOMEBREW=0
 
 
 function result() {
+    # shellcheck disable=SC2181
     if [ ${?} = 0 ]; then
         printf ' [\033[0;32mOK\033[0m]\n'
     else
@@ -34,17 +35,17 @@ rm_files="emacs"
 datestr=$(date -u "+%Y%m%d-%H%M")
 
 
-########## Create symlinks
-
 # create dotfiles_old in homedir
 echo "Creating ${olddir}-${datestr} for backup of any existing dotfiles in ~"
 if [ ! -d "${olddir}-${datestr}" ]; then
     mkdir -p "${olddir}-${datestr}"
 fi
 
+
 # change to the dotfiles directory
 echo "Changing to the ${dir} directory"
 cd ${dir} || exit
+
 
 # move any existing dotfiles in homedir to dotfiles_old directory, then create symlinks
 echo "Backing up dotfiles to files from ~ to ${olddir}-${datestr}/"
@@ -65,6 +66,9 @@ for file in ${home_files}; do
     result
 done
 
+
+echo "Installing dotfiles"
+# Install the current dotfiles
 [ ! -d "${HOME}/.config" ] && mkdir -p "${HOME}/.config"
 for file in ${config_files}; do
     if [ -d "${HOME}/.config/${file}" ]; then
@@ -149,16 +153,16 @@ git config --global diff.tool vimdiff
 git config --global difftool.prompt false
 git config --global alias.d difftool
 
-if [[ "${HOSTTYPE}" = "Darwin" ]]; then
+if [ "${HOSTTYPE}" = "Darwin" ]; then
     echo
     echo "Ah, this is a Mac, let's do some Mac setup too!"
-    if [[ "${INSTALL_HOMEBREW}" -eq 1 ]]; then
+    if [ "${INSTALL_HOMEBREW}" -eq 1 ]; then
         ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
     fi
     if [ ! -f ~/.xvimrc ]; then
         ln -s ~/.vimrc ~/.xvimrc
     fi
-    for f in ${dir}/${HOSTTYPE}/Library/Preferences/*; do
+    for f in "${dir}/${HOSTTYPE}/Library/Preferences"/*; do
         cp -n "${f}" "${HOME}/Library/Preferences" && \
             echo "Copied ${f} into ${HOME}/Library/Preferences/"
     done
@@ -167,7 +171,7 @@ if [[ "${HOSTTYPE}" = "Darwin" ]]; then
 fi
 
 echo "Configuring Applications"
-for app in ${topdir}/apps/*; do
+for app in "${topdir}/apps"/*; do
     appname=$(basename "${app}")
     if [ -f "${dir}/scripts/${appname}" ]; then
         echo "Configuring: ${appname}"
