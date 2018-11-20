@@ -6,7 +6,6 @@ SUBTREES=(
 # vim
 'powerline-fonts                    https://github.com/chrised/fonts.git                        vim/subtrees/powerline-fonts                  master'
 'vim-airline                        https://github.com/bling/vim-airline.git                    vim/subtrees/vim-airline                      master'
-'vim-ctrlp                          https://github.com/kien/ctrlp.vim.git                       vim/subtrees/ctrlp                            master'
 'vim-disapprove-deep-indentation    https://github.com/dodie/vim-disapprove-deep-indentation    vim/subtrees/vim-disapprove-deep-indentation  master'
 'vim-erlang-skeletons               https://github.com/vim-erlang/vim-erlang-skeletons          vim/subtrees/vim-erlang-skeletons             master'
 'vim-gitgutter                      https://github.com/airblade/vim-gitgutter                   vim/subtrees/vim-gitgutter                    master'
@@ -27,23 +26,24 @@ SUBTREES=(
 
 subtree_handle() {
     # subtree_handle remote_name remote_url relative_path branch
-    if [ -z $4 ]; then
+    if [ -z "${4}" ]; then
         echo "Not enough args"
-        echo $4
+        echo "${4}"
         return
     fi
-    git remote add -f "$1" "$2"
-    if [ ! -d "$3" ]; then
-        git subtree add -q --squash --prefix "$3" "$1" "$4"
+    git remote add -f "${1}" "${2}"
+    if [ ! -d "${3}" ]; then
+        git subtree add -q --squash --prefix "${3}" "${1}" "${4}"
     fi
-    git fetch "$1"
-    git merge --squash -s subtree -Xsubtree="$3" -Xtheirs --allow-unrelated-histories --no-commit "$1/$4"
+    git fetch "${1}"
+    git merge --squash -s subtree -Xsubtree="${3}" -Xtheirs --allow-unrelated-histories --no-commit "${1}/${4}"
     git commit -m "Merge ${4} of ${1} to path ${3}"
-    #git subtree pull -q --prefix "$3" "$1" "$4" --squash -m "Merge ${4} of ${1} to path ${3}"
+    #git subtree pull -q --prefix "${3}" "${1}" "${4}" --squash -m "Merge ${4} of ${1} to path ${3}"
 }
 
 for subtree in "${SUBTREES[@]}"; do
-    subtree_handle $subtree
+    # shellcheck disable=SC2086
+    subtree_handle ${subtree}
 done
 
 
