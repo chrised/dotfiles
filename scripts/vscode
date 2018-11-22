@@ -24,5 +24,5 @@ ln -s "${APPDIR}/settings.json" "${CONFDIR}/settings.json"
 ln -s "${APPDIR}/keybindings.json" "${CONFDIR}/keybindings.json"
 
 while read -r extension; do
-    code --install-extension "${extension}"
+    code --install-extension "${extension}" --force
 done < "${APPDIR}/extensions"
