@@ -43,7 +43,7 @@ fi
 
 
 # change to the dotfiles directory
-echo "Changing to the ${DOTFILES_DIR} DOTFILES_DIRectory"
+echo "Changing to the ${DOTFILES_DIR} directory"
 cd ${DOTFILES_DIR} || exit
 
 
