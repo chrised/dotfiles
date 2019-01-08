@@ -140,8 +140,9 @@ set_up_gitprompt() {
     GIT_PROMPT_SHOW_UPSTREAM=1
 
     GIT_PROMPT_LEADING_SPACE=0
-    GIT_PROMPT_START="$(echo -e '\u2063')" # Invisible character
-    GIT_PROMPT_END="\n${PS1_START}${PS1_USER}:${PS1_DIR}\n${PS1_SUFFIX}"
+    GIT_PROMPT_START="$(echo -e '\xE2\x81\xA0')" # Invisible character
+    GIT_PROMPT_START="_LAST_COMMAND_INDICATOR_"
+    GIT_PROMPT_END="\n ${PS1_START}${PS1_USER}:${PS1_DIR}\n${PS1_SUFFIX}"
 
     # as last entry source the gitprompt script
     GIT_PROMPT_THEME_FILE=~/.dotfiles/apps/bash/Custom.bgptemplate
