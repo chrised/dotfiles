@@ -10,6 +10,8 @@ if [[ $- != *i* ]] ; then
     return
 fi
 
+UNAME="$(uname)"
+
 test -e "/etc/profile" && source "/etc/profile"
 
 if [ "${TERM_PROGRAM}" = "iTerm.app" ]; then
@@ -25,7 +27,7 @@ test -e  "$HOME/.bashrc.local" && source "$HOME/.bashrc.local"
 # Mostly for MacOS, but yes
 [ -f /usr/local/etc/bash_completion ] && source /usr/local/etc/bash_completion
 
-PS1_START="[\[\033[1;31m\]\$(uname)\[\033[m\]:\[\033[32m\]\h\[\033[m\]]"
+PS1_START="[\[\033[1;31m\]\${UNAME}\[\033[m\]:\[\033[32m\]\h\[\033[m\]]"
 PS1_DIR="\[\033[33;1m\]\w\[\033[m\]"
 if [[ ${EUID} == 0 ]] ; then
     PS1_USER="\[\033[1;31m\]\u\[\033[m\]"
@@ -43,7 +45,7 @@ shopt -s checkwinsize
 shopt -s no_empty_cmd_completion
 shopt -s histappend
 
-if [ "$(uname)" == 'Darwin' ]; then
+if [ "${UNAME}" == 'Darwin' ]; then
     alias ls='ls -GFh'
 else
     alias ls='ls -Fh --color=auto'
