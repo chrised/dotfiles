@@ -60,7 +60,7 @@
     // Other
     "terminal.external.osxExec": "iTerm.app",
     "terminal.integrated.fontFamily": "Menlo for Powerline",
-    "window.zoomLevel": -1,
+    "window.zoomLevel": 0,
     "explorer.confirmDragAndDrop": false,
     "gitlens.keymap": "chorded",
 
