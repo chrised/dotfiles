@@ -1,5 +1,12 @@
 #!/bin/bash
-COMPLETION_DIRS="${HOME}/.bash_completions /usr/local/etc/bash_completion.d"
+COMPLETION_DIRS=""
+DOTFILES_BC="${HOME}/.bash_completions"
+if [ -d "${DOTFILES_BC}" ]; then
+    COMPLETION_DIRS="${DOTFILES_BC}"
+fi
+if [ "$(uname)" = "Darwin" ]; then
+    COMPLETION_DIRS="${COMPLETION_DIRS} /usr/local/etc/bash_completion.d"
+fi
 
 load_completions() {
     # ${1}: directory/file to load
