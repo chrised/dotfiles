@@ -89,5 +89,6 @@
         "**/vars/**/*.yml": "ansible",
         "**/inventory/*/*": "ansible"
     },
-    "editor.autoClosingQuotes": "beforeWhitespace"
+    "editor.autoClosingQuotes": "beforeWhitespace",
+    "python.formatting.provider": "none"
 }
