@@ -11,19 +11,13 @@
         79
     ],
     "workbench.editor.closeEmptyGroups": false,
-
     "files.autoSave": "onFocusChange",
     "npm.enableScriptExplorer": true,
-    "editor.codeActionsOnSave": {
-        "source.organizeImports": true
-    },
-
     // Vimlike
     "vim.enableNeovim": true,
     "vim.foldfix": true,
     "vim.neovimPath": "/usr/local/bin/nvim",
     "vim.statusBarColorControl": true,
-
     // Gitlens
     "workbench.colorCustomizations": {
         "gitlens.trailingLineForegroundColor": "#c1bb00",
@@ -32,7 +26,6 @@
         "statusBar.debuggingBackground": "#005f5f"
     },
     "gitlens.codeLens.enabled": false,
-
     // Python
     "python.venvPath": "~/virtualenvs/",
     "python.linting.pylintEnabled": false,
@@ -41,29 +34,24 @@
     // Go
     "go.inferGopath": true,
     "go.formatTool": "gofmt",
-
     // JavaScript
     "jslint.enable": false,
-
     // Shellcheck
     "shellcheck.customArgs": [
         "-x"
     ],
-
     // cSpell
-    "cSpell.enabled": false,
-    "cSpell.language": "en-GB",
-    "cSpell.userWords": [
-        "kubernetes"
-    ],
-
+    //"cSpell.enabled": false,
+    //"cSpell.language": "en-GB",
+    //"cSpell.userWords": [
+    //    "kubernetes"
+    //],
     // Other
     "terminal.external.osxExec": "iTerm.app",
     "terminal.integrated.fontFamily": "Menlo for Powerline",
     "window.zoomLevel": 0,
     "explorer.confirmDragAndDrop": false,
     "gitlens.keymap": "chorded",
-
     "gitlens.advanced.messages": {
         "suppressCommitHasNoPreviousCommitWarning": false,
         "suppressCommitNotFoundWarning": false,
@@ -74,21 +62,25 @@
         "suppressResultsExplorerNotice": false,
         "suppressShowKeyBindingsNotice": true
     },
-    "gitlens.gitExplorer.enabled": false,
-    "gitlens.historyExplorer.enabled": true,
-
     // Ansible
     "files.associations": {
         "**/defaults/**/*": "ansible",
-        "**/tasks/**/*.yml" : "ansible",
-        "**/handler/*.yml" : "ansible",
-        "**/*_vars/**/*.yml" : "ansible",
-        "**/roles/**/*.yml" : "ansible",
-        "**/playbooks/**/*.yml" : "ansible",
-        "**/*ansible*/**/*.yml" : "ansible",
+        "**/tasks/**/*.yml": "ansible",
+        "**/handler/*.yml": "ansible",
+        "**/*_vars/**/*.yml": "ansible",
+        "**/roles/**/*.yml": "ansible",
+        "**/playbooks/**/*.yml": "ansible",
+        "**/*ansible*/**/*.yml": "ansible",
         "**/vars/**/*.yml": "ansible",
         "**/inventory/*/*": "ansible"
     },
     "editor.autoClosingQuotes": "beforeWhitespace",
-    "python.formatting.provider": "none"
+    "editor.formatOnSave": false,
+    "editor.formatOnPaste": false,
+    // This mythical incantation disables isort for Python
+    "[python]": {
+        "editor.codeActionsOnSave": {
+            "source.organizeImports": false
+        }
+    }
 }
