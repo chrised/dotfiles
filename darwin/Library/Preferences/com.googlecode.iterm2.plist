@@ -679,7 +679,7 @@
 	<key>NSWindow Frame SharedPreferences</key>
 	<string>62 198 796 473 0 0 1920 1178 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>85 509 850 610 0 0 1920 1177 </string>
+	<string>226 155 850 625 0 0 1920 1177 </string>
 	<key>NeverWarnAboutShortLivedSessions_4F878D0E-C266-4652-9FB1-6F6C238543C3</key>
 	<true/>
 	<key>NeverWarnAboutShortLivedSessions_4F878D0E-C266-4652-9FB1-6F6C238543C3_selection</key>
@@ -1405,6 +1405,21 @@
 							<dict>
 								<key>algorithm</key>
 								<integer>0</integer>
+								<key>font</key>
+								<string>.AppleSystemUIFont 12</string>
+								<key>separator color</key>
+								<dict>
+									<key>Alpha Component</key>
+									<real>0.25</real>
+									<key>Blue Component</key>
+									<real>0.0</real>
+									<key>Color Space</key>
+									<string>sRGB</string>
+									<key>Green Component</key>
+									<real>0.0</real>
+									<key>Red Component</key>
+									<real>0.0</real>
+								</dict>
 							</dict>
 						</dict>
 					</dict>
@@ -1470,6 +1485,8 @@
 								<integer>1</integer>
 								<key>base: priority</key>
 								<real>5</real>
+								<key>path</key>
+								<string>username</string>
 								<key>shared text color</key>
 								<dict>
 									<key>Alpha Component</key>
@@ -1671,11 +1688,11 @@
 							<key>knobs</key>
 							<dict>
 								<key>base: compression resistance</key>
-								<integer>1</integer>
+								<real>1.5</real>
 								<key>base: priority</key>
 								<real>5</real>
 								<key>format</key>
-								<string>M-dd h:mm</string>
+								<string>YYYY-MM-dd H:mm</string>
 								<key>shared text color</key>
 								<dict>
 									<key>Alpha Component</key>
@@ -1762,7 +1779,7 @@
 	<key>NoSyncInstallationId</key>
 	<string>C2C4F7E1-45D3-484E-AB4C-3F41B60D6A4E</string>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>1</integer>
+	<integer>3</integer>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
