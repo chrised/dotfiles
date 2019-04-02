@@ -72,7 +72,8 @@
         "**/playbooks/**/*.yml": "ansible",
         "**/*ansible*/**/*.yml": "ansible",
         "**/vars/**/*.yml": "ansible",
-        "**/inventory/*/*": "ansible"
+        "**/inventory/*/*": "ansible",
+        "Dockerfile*": "dockerfile"
     },
     "editor.autoClosingQuotes": "beforeWhitespace",
     "editor.formatOnSave": false,
@@ -82,5 +83,8 @@
         "editor.codeActionsOnSave": {
             "source.organizeImports": false
         }
-    }
+    },
+    "workbench.sideBar.location": "left",
+    "files.insertFinalNewline": true,
+    "files.trimFinalNewlines": true
 }
