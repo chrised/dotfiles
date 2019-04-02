@@ -603,7 +603,7 @@
 	<key>HideScrollbar</key>
 	<false/>
 	<key>HideTab</key>
-	<false/>
+	<true/>
 	<key>HideTabNumber</key>
 	<false/>
 	<key>HighlightTabLabels</key>
@@ -667,19 +667,50 @@
 	</data>
 	<key>NSTableView Supports v2 KeyBingingTable</key>
 	<true/>
-	<key>NSToolbar Configuration com.apple.NSColorPanel</key>
-	<dict>
-		<key>TB Is Shown</key>
-		<integer>1</integer>
-	</dict>
-	<key>NSWindow Frame SUStatusFrame</key>
-	<string>1049 330 400 129 0 0 1920 1177 </string>
 	<key>NSWindow Frame SUUpdateAlert</key>
-	<string>677 588 620 392 0 0 1920 1177 </string>
+	<string>1370 1106 620 392 0 0 3360 1867 </string>
+	<key>NSWindow Frame SessionsPreferences</key>
+	<string>3441 -297 606 469 3360 -483 1440 2537 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>62 198 796 473 0 0 1920 1178 </string>
+	<string>-954 766 796 486 -1440 -383 1440 2537 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>226 155 850 625 0 0 1920 1177 </string>
+	<string>-1338 1455 847 617 -1440 -411 1440 2537 </string>
+	<key>NSWindow Frame iTerm Window 1</key>
+	<string>47 86 1417 1724 0 0 3360 1867 </string>
+	<key>NSWindow Frame iTerm Window 10</key>
+	<string>-1368 -287 1312 1105 -1440 -411 1440 2537 </string>
+	<key>NSWindow Frame iTerm Window 11</key>
+	<string>173 1221 710 587 0 0 3360 1867 </string>
+	<key>NSWindow Frame iTerm Window 12</key>
+	<string>-1119 515 710 587 -1440 -411 1440 2537 </string>
+	<key>NSWindow Frame iTerm Window 13</key>
+	<string>73 717 1354 1063 0 0 3360 1867 </string>
+	<key>NSWindow Frame iTerm Window 14</key>
+	<string>2313 938 710 587 0 0 3360 1867 </string>
+	<key>NSWindow Frame iTerm Window 15</key>
+	<string>-949 -345 710 587 -1440 -411 1440 2537 </string>
+	<key>NSWindow Frame iTerm Window 16</key>
+	<string>-928 -368 710 587 -1440 -411 1440 2537 </string>
+	<key>NSWindow Frame iTerm Window 17</key>
+	<string>-1392 -397 1395 1175 -1440 -411 1440 2537 </string>
+	<key>NSWindow Frame iTerm Window 18</key>
+	<string>-886 1539 710 587 -1440 -411 1440 2537 </string>
+	<key>NSWindow Frame iTerm Window 2</key>
+	<string>193 1043 1123 772 0 0 3360 1867 </string>
+	<key>NSWindow Frame iTerm Window 3</key>
+	<string>25 72 1228 1091 0 0 3360 1867 </string>
+	<key>NSWindow Frame iTerm Window 4</key>
+	<string>4 1280 710 587 0 0 3360 1867 </string>
+	<key>NSWindow Frame iTerm Window 5</key>
+	<string>109 125 1270 1623 0 0 3360 1867 </string>
+	<key>NSWindow Frame iTerm Window 6</key>
+	<string>750 65 2572 988 0 0 3360 1867 </string>
+	<key>NSWindow Frame iTerm Window 7</key>
+	<string>271 974 710 587 0 0 3360 1867 </string>
+	<key>NSWindow Frame iTerm Window 8</key>
+	<string>-1395 306 1368 979 -1440 -411 1440 2537 </string>
+	<key>NSWindow Frame iTerm Window 9</key>
+	<string>-1073 1115 710 587 -1440 -411 1440 2537 </string>
 	<key>NeverWarnAboutShortLivedSessions_4F878D0E-C266-4652-9FB1-6F6C238543C3</key>
 	<true/>
 	<key>NeverWarnAboutShortLivedSessions_4F878D0E-C266-4652-9FB1-6F6C238543C3_selection</key>
@@ -1763,29 +1794,25 @@
 			<string>/Users/chrised</string>
 		</dict>
 	</array>
-	<key>NoSyncCommandHistoryHasEverBeenUsed</key>
-	<true/>
 	<key>NoSyncFrame_SharedPreferences</key>
 	<dict>
 		<key>screenFrame</key>
-		<string>{{0, 0}, {1920, 1200}}</string>
+		<string>{{0, 0}, {3360, 1890}}</string>
 		<key>topLeft</key>
-		<string>{164, 640}</string>
+		<string>{1836, 778}</string>
 	</dict>
 	<key>NoSyncHaveRequestedFullDiskAccess</key>
 	<true/>
 	<key>NoSyncHaveWarnedAboutPasteConfirmationChange</key>
 	<true/>
 	<key>NoSyncInstallationId</key>
-	<string>C2C4F7E1-45D3-484E-AB4C-3F41B60D6A4E</string>
+	<string>70FCEA44-83D9-4063-ABB8-6F4668E2FE3E</string>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>3</integer>
-	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
+	<integer>7</integer>
+	<key>NoSyncNeverAskAboutSettingAlternateMouseScroll</key>
 	<true/>
-	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
-	<integer>0</integer>
 	<key>NoSyncNextAnnoyanceTime</key>
-	<real>575249942.393543</real>
+	<real>575509759.423298</real>
 	<key>NoSyncOnboardingWindowHasBeenShown</key>
 	<true/>
 	<key>NoSyncPermissionToShowTip</key>
@@ -2374,7 +2401,7 @@
 		</array>
 	</dict>
 	<key>NoSyncTimeOfFirstLaunchOfVersionWithTip</key>
-	<real>518714761.27179301</real>
+	<real>568651237.30774903</real>
 	<key>OnlyWhenMoreTabs</key>
 	<true/>
 	<key>OpenArrangementAtStartup</key>
@@ -2435,7 +2462,7 @@
 		</dict>
 	</dict>
 	<key>PrefsCustomFolder</key>
-	<string>/Users/chris/.dotfiles/darwin/Library/Preferences</string>
+	<string>/Users/chrised/.dotfiles/darwin/Library/Preferences</string>
 	<key>Print In Black And White</key>
 	<true/>
 	<key>PromptOnQuit</key>
@@ -2451,12 +2478,14 @@
 	<key>SUFeedAlternateAppNameKey</key>
 	<string>iTerm</string>
 	<key>SUFeedURL</key>
-	<string>https://iterm2.com/appcasts/testing_new.xml?shard=23</string>
+	<string>https://iterm2.com/appcasts/testing_new.xml?shard=15</string>
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2019-03-24T23:38:32Z</date>
+	<date>2019-04-02T15:46:33Z</date>
 	<key>SUSendProfileInfo</key>
+	<false/>
+	<key>SUUpdateRelaunchingMarker</key>
 	<false/>
 	<key>SavePasteHistory</key>
 	<false/>
@@ -2470,6 +2499,8 @@
 	<true/>
 	<key>SplitPaneDimmingAmount</key>
 	<real>0.38954577919764399</real>
+	<key>StatusBarPosition</key>
+	<integer>1</integer>
 	<key>SwitchTabModifier</key>
 	<integer>4</integer>
 	<key>SwitchWindowModifier</key>
@@ -7575,7 +7606,7 @@
 	<key>findRegex_iTerm</key>
 	<false/>
 	<key>iTerm Version</key>
-	<string>3.3.0beta1</string>
+	<string>3.3.0beta2</string>
 	<key>kCPKSelectionViewPreferredModeKey</key>
 	<integer>0</integer>
 	<key>kCPKSelectionViewShowHSBTextFieldsKey</key>
