@@ -18,8 +18,6 @@ SUBTREES=(
 'vim-syntastic                      https://github.com/scrooloose/syntastic.git                 vim/subtrees/syntastic                        master'
 'vim-tagbar                         https://github.com/majutsushi/tagbar.git                    vim/subtrees/tagbar                           master'
 'vim-trailing-whitespace            https://github.com/vim-scripts/trailing-whitespace.git      vim/subtrees/trailing-whitespace              master'
-# emacs
-'use-package                        https://github.com/jwiegley/use-package                     emacs.d/use-package                           master'
 )
 
 
@@ -45,5 +43,3 @@ for subtree in "${SUBTREES[@]}"; do
     # shellcheck disable=SC2086
     subtree_handle ${subtree}
 done
-
-
