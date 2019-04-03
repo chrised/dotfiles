@@ -1,4 +1,4 @@
-" MIT License. Copyright (c) 2013-2018 Bailey Ling et al.
+" MIT License. Copyright (c) 2013-2019 Bailey Ling Christian Brabandt et al.
 " vim: et ts=2 sts=2 sw=2
 
 scriptencoding utf-8
@@ -135,6 +135,6 @@ function! airline#util#doautocmd(event)
 endfunction
 
 function! airline#util#themes(match)
-  let files = split(globpath(&rtp, 'autoload/airline/themes/'.a:match.'*'), "\n")
-  return map(files, 'fnamemodify(v:val, ":t:r")')
+  let files = split(globpath(&rtp, 'autoload/airline/themes/'.a:match.'*.vim'), "\n")
+  return sort(map(files, 'fnamemodify(v:val, ":t:r")') + ['random'])
 endfunction

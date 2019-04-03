@@ -1,4 +1,4 @@
-" MIT License. Copyright (c) 2013-2018 Bailey Ling et al.
+" MIT License. Copyright (c) 2013-2019 Bailey Ling et al.
 " vim: et ts=2 sts=2 sw=2
 
 scriptencoding utf-8
@@ -377,6 +377,8 @@ function! airline#extensions#load()
         endif
         try
           call airline#extensions#{name}#init(s:ext)
+          " mark as external
+          call add(s:loaded_ext, name.'*')
         catch
         endtry
       endif
