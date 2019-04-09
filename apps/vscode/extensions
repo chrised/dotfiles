@@ -21,9 +21,12 @@ marcostazi.VS-code-vagrantfile
 mathiasfrohlich.latexcompile
 mauve.terraform
 mechatroner.rainbow-csv
+mermade.openapi-lint
 minhthai.vscode-todo-parser
 ms-kubernetes-tools.vscode-kubernetes-tools
+ms-python.python
 ms-vscode.Go
+ms-vsliveshare.vsliveshare
 nickfode.latex-formatter
 PeterJausovec.vscode-docker
 pgourlain.erlang
@@ -40,6 +43,7 @@ vscjava.vscode-java-dependency
 vscjava.vscode-java-pack
 vscjava.vscode-java-test
 vscjava.vscode-maven
-ms-python.python
 vscodevim.vim
 wayou.vscode-todo-highlight
+wholroyd.HCL
+zoellner.openapi-preview

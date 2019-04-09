@@ -87,5 +87,7 @@
     "workbench.sideBar.location": "left",
     "files.insertFinalNewline": true,
     "files.trimFinalNewlines": true,
-    "liveshare.featureSet": "insiders"
+    "liveshare.featureSet": "insiders",
+    "breadcrumbs.enabled": true,
+    "editor.suggestSelection": "first",
 }
