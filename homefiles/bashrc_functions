@@ -3,6 +3,8 @@
 ###############################################################################
 # iTerm2 Functions
 ###############################################################################
-function iterm2_print_user_vars() {
-    iterm2_set_user_var gitBranch "$((git branch 2> /dev/null) | grep \* | cut -c3-)"
-}
+if [ -f "${HOME}/.iterm2_shell_integration.bash" ]; then
+    function iterm2_print_user_vars() {
+        it2git
+    }
+fi
