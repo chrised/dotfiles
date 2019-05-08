@@ -13,9 +13,6 @@
     "workbench.editor.closeEmptyGroups": false,
     "files.autoSave": "onFocusChange",
     "npm.enableScriptExplorer": true,
-    // Vimlike
-    "vim.enableNeovim": true,
-    "vim.foldfix": true,
     "vim.neovimPath": "/usr/local/bin/nvim",
     "vim.statusBarColorControl": true,
     // Gitlens
@@ -29,11 +26,11 @@
     // Python
     "python.venvPath": "~/virtualenvs/",
     "python.linting.pylintEnabled": false,
-    "python.linting.flake8Enabled": true,
 
     // Go
     "go.inferGopath": true,
     "go.formatTool": "gofmt",
+    "go.useLanguageServer": true,
     // JavaScript
     "jslint.enable": false,
     // Shellcheck
@@ -86,8 +83,17 @@
     },
     "workbench.sideBar.location": "left",
     "files.insertFinalNewline": true,
-    "files.trimFinalNewlines": true,
     "liveshare.featureSet": "insiders",
     "breadcrumbs.enabled": true,
     "editor.suggestSelection": "first",
+    "trailing-spaces.highlightCurrentLine": false,
+    "files.trimFinalNewlines": true,
+    "shellcheck.enable": false,
+    "extensions.autoUpdate": false,
+    "python.linting.pylamaEnabled": true,
+    "python.linting.pylamaPath": "pylava",
+    "vim.debug.silent": true,
+    "vim.foldfix": true,
+    "editor.quickSuggestionsDelay": 500,
+    "vim.highlightedyank.enable": true,
 }
