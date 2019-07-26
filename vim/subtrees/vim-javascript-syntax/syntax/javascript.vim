@@ -1,7 +1,8 @@
 " Vim syntax file
 "      Language: JavaScript
-"    Maintainer: Jose Elera Campana <https://github.com/jelera>
-" Last Modified: Wed 24 Feb 2016 03:35:03 AM CST
+"    Maintainer: Jose Elera <https://github.com/jelera>
+"    			 https://jelera.github.io
+" Last Modified: Thu 11 Jul 2019 11:53:28 AM CDT
 "       Version: 0.8.2
 "       Credits: Zhao Yi, Claudio Fleiner, Scott Shattuck (This file is based
 "                on their hard work), gumnos (From the #vim IRC Channel in
@@ -41,7 +42,7 @@ syntax keyword javaScriptBoolean        true false
 syntax keyword javaScriptNull           null undefined
 syntax keyword javaScriptMessage        alert confirm prompt status
 syntax keyword javaScriptGlobal         self top parent
-syntax keyword javaScriptDeprecated     escape unescape all applets alinkColor bgColor fgColor linkColor vlinkColor xmlEncoding
+syntax keyword javaScriptDeprecated     escape unescape applets alinkColor bgColor fgColor linkColor vlinkColor xmlEncoding
 syntax keyword javaScriptConditional    if else switch
 syntax keyword javaScriptRepeat         do while for in of
 syntax keyword javaScriptBranch         break continue
@@ -50,7 +51,7 @@ syntax keyword javaScriptPrototype      prototype
 syntax keyword javaScriptStatement      return with
 syntax keyword javaScriptGlobalObjects  Array Boolean Date Function Math Number Object RegExp String
 syntax keyword javaScriptExceptions     try catch throw finally Error EvalError RangeError ReferenceError SyntaxError TypeError URIError
-syntax keyword javaScriptReserved       abstract enum int short boolean export interface static byte extends long super char final native synchronized class float package throws goto private transient debugger implements protected volatile double import public
+syntax keyword javaScriptReserved       abstract all enum int short boolean export interface static byte extends long super char final native synchronized class float package throws goto private transient debugger implements protected volatile double import public
 "}}}
 " Comments {{{
 syntax keyword javaScriptCommentTodo      TODO FIXME XXX TBD OPTIMIZE HACK REVIEW contained
@@ -91,9 +92,20 @@ syntax keyword javaScriptDOMObjects               document event HTMLElement Anc
 syntax keyword javaScriptDOMMethods               createTextNode createElement insertBefore replaceChild removeChild appendChild  hasChildNodes  cloneNode  normalize  isSupported  hasAttributes  getAttribute  setAttribute  removeAttribute  getAttributeNode  setAttributeNode  removeAttributeNode  getElementsByTagName  hasAttribute  getElementById adoptNode close compareDocumentPosition createAttribute createCDATASection createComment createDocumentFragment createElementNS createEvent createExpression createNSResolver createProcessingInstruction createRange createTreeWalker elementFromPoint evaluate getBoxObjectFor getElementsByClassName getSelection getUserData hasFocus importNode
 syntax keyword javaScriptDOMProperties            nodeName  nodeValue  nodeType  parentNode  childNodes  firstChild  lastChild  previousSibling  nextSibling  attributes  ownerDocument  namespaceURI  prefix  localName  tagName
 
+
+syntax keyword javaScriptLocalStorageObjects      localStorage
+syntax keyword javaScriptLocalStorageMethods      setItem getItem removeItem
+
 syntax keyword javaScriptAjaxObjects              XMLHttpRequest
 syntax keyword javaScriptAjaxProperties           readyState responseText responseXML statusText
 syntax keyword javaScriptAjaxMethods              onreadystatechange abort getAllResponseHeaders getResponseHeader open send setRequestHeader
+
+syntax keyword javaScriptFetchAPIObjects          Response Promise
+syntax keyword javaScriptFetchAPIMethods          fetch then response clone redirect arrayBuffer blob formData allSettled race reject resolve
+syntax keyword javaScriptFetchAPIProperties       headers ok redirected url useFinalURL bodyUsed
+
+syntax keyword javaScriptJSONObject               JSON
+syntax keyword javaScriptJSONMethods              json stringify parse
 
 syntax keyword javaScriptPropietaryObjects        ActiveXObject
 syntax keyword javaScriptPropietaryMethods        attachEvent detachEvent cancelBubble returnValue
@@ -111,7 +123,7 @@ syntax keyword javaScriptEventListenerMethods     scrollIntoView  addEventListen
 	syntax keyword javaScriptWebAPI  Element ElementTraversal Entity EntityReference Entry EntrySync ErrorEvent Event EventListener EventSource EventTarget Extensions File FileEntry FileEntrySync FileError FileException FileList FileReader FileSystem FileSystemSync Float32Array Float64Array FMRadio FocusEvent FormData GainNode Geolocation History
 	syntax keyword javaScriptWebAPI  HTMLAnchorElement HTMLAreaElement HTMLAudioElement HTMLBaseElement HTMLBaseFontElement HTMLBodyElement HTMLBRElement HTMLButtonElement HTMLCanvasElement HTMLCollection HTMLDataElement HTMLDataListElement HTMLDivElement HTMLDListElement HTMLDocument HTMLElement HTMLEmbedElement HTMLFieldSetElement HTMLFormControlsCollection HTMLFormElement HTMLHeadElement HTMLHeadingElement HTMLHRElement HTMLHtmlElement HTMLIFrameElement HTMLImageElement HTMLInputElement HTMLIsIndexElement HTMLKeygenElement HTMLLabelElement HTMLLegendElement HTMLLIElement HTMLLinkElement HTMLMapElement HTMLMediaElement HTMLMetaElement HTMLMeterElement HTMLModElement HTMLObjectElement HTMLOListElement HTMLOptGroupElement HTMLOptionElement HTMLOptionsCollection HTMLOutputElement HTMLParagraphElement HTMLParamElement HTMLPreElement HTMLProgressElement HTMLQuoteElement HTMLScriptElement HTMLSelectElement HTMLSourceElement HTMLSpanElement HTMLStyleElement HTMLTableCaptionElement HTMLTableCellElement HTMLTableColElement HTMLTableElement HTMLTableRowElement HTMLTableSectionElement HTMLTextAreaElement HTMLTimeElement HTMLTitleElement HTMLTrackElement HTMLUListElement HTMLUnknownElement HTMLVideoElement
 	syntax keyword javaScriptWebAPI  IDBCursor IDBCursorWithValue IDBDatabase IDBDatabaseException IDBEnvironment IDBFactory IDBIndex IDBKeyRange IDBObjectStore IDBOpenDBRequest IDBRequest IDBTransaction IDBVersionChangeEvent ImageData Int16Array Int32Array Int8Array KeyboardEvent LinkStyle LocalFileSystem LocalFileSystemSync Location MediaQueryList MediaQueryListListener MediaSource MediaStream MediaStreamTrack MessageEvent MouseEvent MouseScrollEvent MouseWheelEvent MozActivity MozActivityOptions MozActivityRequestHandler MozAlarmsManager MozContact MozContactChangeEvent MozIccManager MozMmsEvent MozMmsMessage MozMobileCellInfo MozMobileCFInfo MozMobileConnection MozMobileConnectionInfo MozMobileICCInfo MozMobileMessageManager MozMobileMessageThread MozMobileNetworkInfo MozNetworkStats MozNetworkStatsData MozNetworkStatsManager MozSettingsEvent MozSmsEvent MozSmsFilter MozSmsManager MozSmsMessage MozSmsSegmentInfo MozTimeManager MozWifiConnectionInfoEvent MutationObserver
-	syntax keyword javaScriptWebAPI  NamedNodeMap NameList Navigator NavigatorGeolocation NavigatorID NavigatorLanguage NavigatorOnLine NavigatorPlugins NetworkInformation Node NodeFilter NodeIterator NodeList Notation Notification NotifyAudioAvailableEvent OfflineAudioCompletionEvent OfflineAudioContext PannerNode ParentNode Performance PerformanceNavigation PerformanceTiming Plugin PluginArray Position PositionError PositionOptions PowerManager ProcessingInstruction ProgressEvent Promise PromiseResolver PushManager
+	syntax keyword javaScriptWebAPI  NamedNodeMap NameList Navigator NavigatorGeolocation NavigatorID NavigatorLanguage NavigatorOnLine NavigatorPlugins NetworkInformation Node NodeFilter NodeIterator NodeList Notation Notification NotifyAudioAvailableEvent OfflineAudioCompletionEvent OfflineAudioContext PannerNode ParentNode Performance PerformanceNavigation PerformanceTiming Plugin PluginArray Position PositionError PositionOptions PowerManager ProcessingInstruction ProgressEvent PromiseResolver PushManager
 	syntax keyword javaScriptWebAPI  Range ScriptProcessorNode Selection SettingsLock SettingsManager SharedWorker StyleSheet StyleSheetList SVGAElement SVGAngle SVGAnimateColorElement SVGAnimatedAngle SVGAnimatedBoolean SVGAnimatedEnumeration SVGAnimatedInteger SVGAnimatedLengthList SVGAnimatedNumber SVGAnimatedNumberList SVGAnimatedPoints SVGAnimatedPreserveAspectRatio SVGAnimatedRect SVGAnimatedString SVGAnimatedTransformList SVGAnimateElement SVGAnimateMotionElement SVGAnimateTransformElement SVGAnimationElement SVGCircleElement SVGClipPathElement SVGCursorElement SVGDefsElement SVGDescElement SVGElement SVGEllipseElement SVGFilterElement SVGFontElement SVGFontFaceElement SVGFontFaceFormatElement SVGFontFaceNameElement SVGFontFaceSrcElement SVGFontFaceUriElement
 	syntax keyword javaScriptWebAPI  SVGForeignObjectElement SVGGElement SVGGlyphElement SVGGradientElement SVGHKernElement SVGImageElement SVGLength SVGLengthList SVGLinearGradientElement SVGLineElement SVGMaskElement SVGMatrix SVGMissingGlyphElement SVGMPathElement SVGNumber SVGNumberList SVGPathElement SVGPatternElement SVGPolygonElement SVGPolylineElement SVGPreserveAspectRatio SVGRadialGradientElement SVGRect SVGRectElement SVGScriptElement SVGSetElement SVGStopElement SVGStringList SVGStylable SVGStyleElement SVGSVGElement SVGSwitchElement SVGSymbolElement SVGTests SVGTextElement SVGTextPositioningElement SVGTitleElement SVGTransform SVGTransformable SVGTransformList SVGTRefElement SVGTSpanElement SVGUseElement SVGViewElement SVGVKernElement TCPSocket Telephony TelephonyCall Text TextDecoder TextEncoder TextMetrics TimeRanges Touch TouchEvent TouchList Transferable TransitionEvent TreeWalker TypeInfo UIEvent Uint16Array Uint32Array Uint8Array Uint8ClampedArray URL URLUtils URLUtilsReadOnly
 	" }}}
@@ -269,6 +281,16 @@ if version >= 508 || !exists("did_javascript_syn_inits")
 	HiLink javaScriptCssStyles              Type
 
 	HiLink javaScriptBrowserObjects         Constant
+
+	HiLink javaScriptLocalStorageObjects    Constant
+	HiLink javaScriptLocalStorageMethods    Type
+
+	HiLink javaScriptFetchAPIObjects        Constant
+	HiLink javaScriptFetchAPIMethods        Type
+	HiLink javaScriptFetchAPIProperties     Label
+
+	HiLink javaScriptJSONObject             Constant
+	HiLink javaScriptJSONMethods            Type
 
 	HiLink javaScriptDOMObjects             Constant
 	HiLink javaScriptDOMMethods             Type
