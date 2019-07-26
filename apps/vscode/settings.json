@@ -14,7 +14,8 @@
     "files.autoSave": "onFocusChange",
     "npm.enableScriptExplorer": true,
     "vim.neovimPath": "/usr/local/bin/nvim",
-    "vim.statusBarColorControl": true,
+    // Disabling this to reduce lag, see: https://github.com/VSCodeVim/Vim/issues/3868
+    "vim.statusBarColorControl": false,
     // Gitlens
     "workbench.colorCustomizations": {
         "gitlens.trailingLineForegroundColor": "#c1bb00",
