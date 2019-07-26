@@ -4,7 +4,7 @@
 scriptencoding utf-8
 
 function! airline#extensions#term#apply(...)
-  if &buftype == 'terminal'
+  if &buftype == 'terminal' || bufname('%')[0] == '!'
     let spc = g:airline_symbols.space
 
     let name=get(g:airline_mode_map, 't', 't')
@@ -33,7 +33,11 @@ function! s:termname()
     return matchstr(bufname, 'term.*:\zs.*')
   else
     " get rid of leading '!'
-    return bufname[1:]
+    if bufname[0] is# '!'
+      return bufname[1:]
+    else
+      return bufname
+    endif
   endif
 endfunction
 
