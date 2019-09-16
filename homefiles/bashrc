@@ -78,8 +78,10 @@ alias kube-gc="kubectl config get-contexts"
 alias kube-uc="kubectl config use-context"
 
 # Elongate bash_history
-HISTSIZE=5000
-HISTFILESIZE=10000
+# In-memory history
+HISTSIZE=500
+# File-on-disk history
+HISTFILESIZE=100000
 # Enforce history appending
 shopt -s histappend
 

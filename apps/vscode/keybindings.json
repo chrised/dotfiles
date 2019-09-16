@@ -6,6 +6,8 @@
     "command": "workbench.action.closeMessages",
     "when": "editorTextFocus && vim.active && !inDebugRepl && globalMessageVisible"
   },
+
+  // Others
   {
       "key": "ctrl+shift+tab",
       "command": "workbench.action.previousEditorInGroup"
