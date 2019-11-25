@@ -23,7 +23,6 @@
         "statusBar.noFolderBackground": "#005f5f",
         "statusBar.debuggingBackground": "#005f5f"
     },
-    "gitlens.codeLens.enabled": false,
     // Python
     "python.venvPath": "~/virtualenvs/",
     "python.linting.pylintEnabled": false,
@@ -97,4 +96,13 @@
     "vim.foldfix": true,
     "editor.quickSuggestionsDelay": 500,
     "vim.highlightedyank.enable": true,
+    "gitlens.defaultDateFormat": "YYYY/MM/DD",
+    "gitlens.defaultDateShortFormat": "YY/MM/DD",
+    "gitlens.views.repositories.location": "scm",
+    "gitlens.views.fileHistory.location": "explorer",
+    "gitlens.views.lineHistory.location": "explorer",
+    "gitlens.views.compare.location": "gitlens",
+    "gitlens.views.search.location": "gitlens",
+    "python.linting.banditEnabled": true,
+    "python.linting.banditPath": "bandit -c .bandit.yaml",
 }
