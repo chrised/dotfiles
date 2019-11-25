@@ -161,3 +161,6 @@ set_up_gitprompt() {
 }
 
 set_up_gitprompt
+
+export BASH_SILENCE_DEPRECATION_WARNING=1
+BASH_SILENCE_DEPRECATION_WARNING=1
