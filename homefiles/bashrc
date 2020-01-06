@@ -111,16 +111,6 @@ if [ -d "/Applications/Visual Studio Code.app/Contents/Resources/app/bin" ]; the
     export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
 fi
 
-VENV_WRAPPER="$(which virtualenvwrapper.sh 2> /dev/null)"
-if [ -f "$VENV_WRAPPER" ]; then
-    export WORKON_HOME="$HOME/virtualenvs"
-    if [ ! -d "$WORKON_HOME" ]; then
-        mkdir "$WORKON_HOME"
-    fi
-    source "$VENV_WRAPPER"
-fi
-
-
 PYENV_BASE="${HOME}/.pyenv"
 PYENV_BIN="${PYENV_BASE}/bin"
 PYENV="$(which pyenv 2> /dev/null)"
@@ -133,7 +123,6 @@ fi
 if [ -n "${PYENV}" ]; then
     eval "$(${PYENV} init -)"
     eval "$(${PYENV} virtualenv-init -)"
-    export PYENV_VIRTUALENVWRAPPER_PREFER_PYVENV="true"
 fi
 
 # shellcheck disable=SC2034

@@ -24,7 +24,6 @@
         "statusBar.debuggingBackground": "#005f5f"
     },
     // Python
-    "python.venvPath": "~/virtualenvs/",
     "python.linting.pylintEnabled": false,
 
     // Go
