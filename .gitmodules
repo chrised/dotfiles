@@ -2,3 +2,11 @@
 	path = submodules/fonts
 	url = https://github.com/chrised/fonts.git
 	branch = master
+[submodule "oh-my-zsh"]
+	path = oh-my-zsh
+	url = https://github.com/ohmyzsh/ohmyzsh.git
+	branch = master
+[submodule "oh-my-zsh-custom/powerlevel10k"]
+	path = oh-my-zsh-custom/powerlevel10k
+	url = https://github.com/romkatv/powerlevel10k.git
+	branch = master
