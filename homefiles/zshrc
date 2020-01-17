@@ -122,3 +122,32 @@ setopt nomenucomplete
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+# Add some paths
+# User-custom bin
+if [ -d "${HOME}/bin" ]; then
+    export PATH="${HOME}/bin:${PATH}"
+fi
+# Default Go bin
+if [ -d "${HOME}/go/bin" ]; then
+    export PATH="${HOME}/go/bin:${PATH}"
+fi
+# Default Haskell cabal bin
+if [ -d "${HOME}/.cabal/bin" ]; then
+    export PATH="${HOME}/.cabal/bin:${PATH}"
+fi
+# Default rebar3 bin
+if [ -d "${HOME}/.cache/rebar3/bin" ]; then
+    export PATH="${HOME}/.cache/rebar3/bin:${PATH}"
+fi
+# Default VSCode directories on a Mac
+if [ -d "/Applications/Visual Studio Code - Insiders.app/Contents/Resources/app/bin" ]; then
+    export PATH="$PATH:/Applications/Visual Studio Code - Insiders.app/Contents/Resources/app/bin"
+fi
+if [ -d "/Applications/Visual Studio Code.app/Contents/Resources/app/bin" ]; then
+    export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
+fi
+
+export PYENV_BASE="${HOME}/.pyenv"
+export PYENV_BIN="${PYENV_BASE}/bin"
+export PYENV="$(which pyenv 2> /dev/null)"
