@@ -3,6 +3,9 @@
 # This script creates symlinks from the home directory to any desired dotfiles in ~/dotfiles
 ############################
 
+# First up, update any and all submodules
+git submodule update --remote
+
 HOSTTYPE=$(uname -s)
 
 INSTALL_HOMEBREW=0
@@ -116,7 +119,7 @@ result
 
 # Finally, set up powerline-fonts
 echo "Installing powerline-fonts"
-"${HOME}/.vim/powerline-fonts/install.sh"
+"${REPO_ROOT}/submodules/fonts/install.sh"
 
 # local bashrc hint
 [[ ! -f ~/.bashrc.local ]] && echo "Note: Custom bashrc/profile options can be added in ~/.bashrc.local"

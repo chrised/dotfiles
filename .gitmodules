@@ -1,0 +1,4 @@
+[submodule "submodules/fonts"]
+	path = submodules/fonts
+	url = https://github.com/chrised/fonts.git
+	branch = master
