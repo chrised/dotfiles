@@ -80,11 +80,24 @@ fi
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(
+    aws
+    brew
+    git
+    history
+    pipenv
+    pyenv
+    screen
+    vscode
+    xcode
+)
 
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
+test -e ${HOME}/.zshrc.local && source ${HOME}/.zshrc.local
+setopt noautomenu
+setopt nomenucomplete
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
