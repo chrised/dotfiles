@@ -38,3 +38,7 @@
 	path = /Users/chrised/.dotfiles/submodules/vim-logstash-syntax
 	url = https://github.com/vim-scripts/logstash.vim.git
 	branch = master
+[submodule "/Users/chrised/.dotfiles/submodules/vim-monokai"]
+	path = /Users/chrised/.dotfiles/submodules/vim-monokai
+	url = https://github.com/sickill/vim-monokai.git
+	branch = master
