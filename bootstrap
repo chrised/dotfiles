@@ -4,9 +4,9 @@
 ############################
 
 # Init all submodules
-git submodule update --init --recursive
+git submodule update --init --recursive --depth 1
 # Update all submodules
-git submodule update --remote
+git submodule update --remote --depth 1
 
 HOSTTYPE=$(uname -s)
 
