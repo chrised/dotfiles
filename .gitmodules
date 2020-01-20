@@ -30,3 +30,7 @@
 	path = /Users/chrised/.dotfiles/submodules/vim-gitgutter
 	url = https://github.com/airblade/vim-gitgutter
 	branch = master
+[submodule "/Users/chrised/.dotfiles/submodules/vim-javascript-syntax"]
+	path = /Users/chrised/.dotfiles/submodules/vim-javascript-syntax
+	url = https://github.com/jelera/vim-javascript-syntax.git
+	branch = master
