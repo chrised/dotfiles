@@ -50,3 +50,7 @@
 	path = /Users/chrised/.dotfiles/submodules/vim-pathogen
 	url = https://github.com/tpope/vim-pathogen.git
 	branch = master
+[submodule "/Users/chrised/.dotfiles/submodules/vim-plist"]
+	path = /Users/chrised/.dotfiles/submodules/vim-plist
+	url = https://github.com/darfink/vim-plist.git
+	branch = master
