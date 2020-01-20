@@ -10,59 +10,59 @@
 	path = oh-my-zsh-custom/powerlevel10k
 	url = https://github.com/romkatv/powerlevel10k.git
 	branch = master
-[submodule "/Users/chrised/.dotfiles/submodules/bash-git-prompt"]
-	path = /Users/chrised/.dotfiles/submodules/bash-git-prompt
+[submodule "submodules/bash-git-prompt"]
+	path = submodules/bash-git-prompt
 	url = https://github.com/magicmonty/bash-git-prompt.git
 	branch = master
-[submodule "/Users/chrised/.dotfiles/submodules/vim-airline"]
-	path = /Users/chrised/.dotfiles/submodules/vim-airline
+[submodule "submodules/vim-airline"]
+	path = submodules/vim-airline
 	url = https://github.com/bling/vim-airline.git
 	branch = master
-[submodule "/Users/chrised/.dotfiles/submodules/vim-disapprove-deep-indentation"]
-	path = /Users/chrised/.dotfiles/submodules/vim-disapprove-deep-indentation
+[submodule "submodules/vim-disapprove-deep-indentation"]
+	path = submodules/vim-disapprove-deep-indentation
 	url = https://github.com/dodie/vim-disapprove-deep-indentation
 	branch = master
-[submodule "/Users/chrised/.dotfiles/submodules/vim-erlang-skeletons"]
-	path = /Users/chrised/.dotfiles/submodules/vim-erlang-skeletons
+[submodule "submodules/vim-erlang-skeletons"]
+	path = submodules/vim-erlang-skeletons
 	url = https://github.com/vim-erlang/vim-erlang-skeletons
 	branch = master
-[submodule "/Users/chrised/.dotfiles/submodules/vim-gitgutter"]
-	path = /Users/chrised/.dotfiles/submodules/vim-gitgutter
+[submodule "submodules/vim-gitgutter"]
+	path = submodules/vim-gitgutter
 	url = https://github.com/airblade/vim-gitgutter
 	branch = master
-[submodule "/Users/chrised/.dotfiles/submodules/vim-javascript-syntax"]
-	path = /Users/chrised/.dotfiles/submodules/vim-javascript-syntax
+[submodule "submodules/vim-javascript-syntax"]
+	path = submodules/vim-javascript-syntax
 	url = https://github.com/jelera/vim-javascript-syntax.git
 	branch = master
-[submodule "/Users/chrised/.dotfiles/submodules/vim-logstash-syntax"]
-	path = /Users/chrised/.dotfiles/submodules/vim-logstash-syntax
+[submodule "submodules/vim-logstash-syntax"]
+	path = submodules/vim-logstash-syntax
 	url = https://github.com/vim-scripts/logstash.vim.git
 	branch = master
-[submodule "/Users/chrised/.dotfiles/submodules/vim-monokai"]
-	path = /Users/chrised/.dotfiles/submodules/vim-monokai
+[submodule "submodules/vim-monokai"]
+	path = submodules/vim-monokai
 	url = https://github.com/sickill/vim-monokai.git
 	branch = master
-[submodule "/Users/chrised/.dotfiles/submodules/vim-node"]
-	path = /Users/chrised/.dotfiles/submodules/vim-node
+[submodule "submodules/vim-node"]
+	path = submodules/vim-node
 	url = https://github.com/moll/vim-node.git
 	branch = master
-[submodule "/Users/chrised/.dotfiles/submodules/vim-pathogen"]
-	path = /Users/chrised/.dotfiles/submodules/vim-pathogen
+[submodule "submodules/vim-pathogen"]
+	path = submodules/vim-pathogen
 	url = https://github.com/tpope/vim-pathogen.git
 	branch = master
-[submodule "/Users/chrised/.dotfiles/submodules/vim-plist"]
-	path = /Users/chrised/.dotfiles/submodules/vim-plist
+[submodule "submodules/vim-plist"]
+	path = submodules/vim-plist
 	url = https://github.com/darfink/vim-plist.git
 	branch = master
-[submodule "/Users/chrised/.dotfiles/submodules/vim-syntastic"]
-	path = /Users/chrised/.dotfiles/submodules/vim-syntastic
+[submodule "submodules/vim-syntastic"]
+	path = submodules/vim-syntastic
 	url = https://github.com/scrooloose/syntastic.git
 	branch = master
-[submodule "/Users/chrised/.dotfiles/submodules/vim-tagbar"]
-	path = /Users/chrised/.dotfiles/submodules/vim-tagbar
+[submodule "submodules/vim-tagbar"]
+	path = submodules/vim-tagbar
 	url = https://github.com/majutsushi/tagbar.git
 	branch = master
-[submodule "/Users/chrised/.dotfiles/submodules/vim-trailing-whitespace"]
-	path = /Users/chrised/.dotfiles/submodules/vim-trailing-whitespace
+[submodule "submodules/vim-trailing-whitespace"]
+	path = submodules/vim-trailing-whitespace
 	url = https://github.com/vim-scripts/trailing-whitespace.git
 	branch = master
