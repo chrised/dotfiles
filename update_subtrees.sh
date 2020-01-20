@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash -xe
 
 SUBTREES=(
 # shell
@@ -39,7 +39,28 @@ subtree_handle() {
     #git subtree pull -q --prefix "${3}" "${1}" "${4}" --squash -m "Merge ${4} of ${1} to path ${3}"
 }
 
+#for subtree in "${SUBTREES[@]}"; do
+#    # shellcheck disable=SC2086
+#    subtree_handle ${subtree}
+#done
+
+
+subtree_migrate() {
+    REPO_ROOT="$(git rev-parse --show-toplevel)"
+    ABSPATH_ST="${REPO_ROOT}/${3}"
+    ABSPATH_SM="${REPO_ROOT}/submodules/${1}"
+    if [ -d "${3}" ]; then
+        git rm -rf ${REPO_ROOT}/${3}
+        git remote remove ${1} || true
+        rm -rf ${ABSPATH_ST}
+        git submodule add --branch ${4} --depth 1 --force ${2} ${ABSPATH_SM}
+        git submodule update --depth 1 --remote ${ABSPATH_SM}
+        read -n1 -p"Update any symlinks from ${ABSPATH_ST} to ${ABSPATH_SM}"
+        git commit -m "Migrate external repository ${2} to submodule, from subtree"
+    fi
+}
+
 for subtree in "${SUBTREES[@]}"; do
     # shellcheck disable=SC2086
-    subtree_handle ${subtree}
+    subtree_migrate ${subtree}
 done
