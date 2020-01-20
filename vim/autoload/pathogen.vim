@@ -1,1 +1,1 @@
-../subtrees/pathogen/autoload/pathogen.vim
+../../submodules/vim-pathogen/autoload/pathogen.vim

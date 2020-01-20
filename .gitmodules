@@ -46,3 +46,7 @@
 	path = /Users/chrised/.dotfiles/submodules/vim-node
 	url = https://github.com/moll/vim-node.git
 	branch = master
+[submodule "/Users/chrised/.dotfiles/submodules/vim-pathogen"]
+	path = /Users/chrised/.dotfiles/submodules/vim-pathogen
+	url = https://github.com/tpope/vim-pathogen.git
+	branch = master
