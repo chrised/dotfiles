@@ -34,3 +34,7 @@
 	path = /Users/chrised/.dotfiles/submodules/vim-javascript-syntax
 	url = https://github.com/jelera/vim-javascript-syntax.git
 	branch = master
+[submodule "/Users/chrised/.dotfiles/submodules/vim-logstash-syntax"]
+	path = /Users/chrised/.dotfiles/submodules/vim-logstash-syntax
+	url = https://github.com/vim-scripts/logstash.vim.git
+	branch = master

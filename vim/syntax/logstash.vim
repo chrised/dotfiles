@@ -1,1 +1,1 @@
-../subtrees/logstash-syntax/syntax/logstash.vim
+../../submodules/vim-logstash-syntax/syntax/logstash.vim
