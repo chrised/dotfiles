@@ -58,3 +58,7 @@
 	path = /Users/chrised/.dotfiles/submodules/vim-syntastic
 	url = https://github.com/scrooloose/syntastic.git
 	branch = master
+[submodule "/Users/chrised/.dotfiles/submodules/vim-tagbar"]
+	path = /Users/chrised/.dotfiles/submodules/vim-tagbar
+	url = https://github.com/majutsushi/tagbar.git
+	branch = master
