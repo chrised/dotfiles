@@ -42,3 +42,7 @@
 	path = /Users/chrised/.dotfiles/submodules/vim-monokai
 	url = https://github.com/sickill/vim-monokai.git
 	branch = master
+[submodule "/Users/chrised/.dotfiles/submodules/vim-node"]
+	path = /Users/chrised/.dotfiles/submodules/vim-node
+	url = https://github.com/moll/vim-node.git
+	branch = master
