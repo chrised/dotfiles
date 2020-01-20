@@ -10,3 +10,7 @@
 	path = oh-my-zsh-custom/powerlevel10k
 	url = https://github.com/romkatv/powerlevel10k.git
 	branch = master
+[submodule "/Users/chrised/.dotfiles/submodules/bash-git-prompt"]
+	path = /Users/chrised/.dotfiles/submodules/bash-git-prompt
+	url = https://github.com/magicmonty/bash-git-prompt.git
+	branch = master
