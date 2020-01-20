@@ -22,3 +22,7 @@
 	path = /Users/chrised/.dotfiles/submodules/vim-disapprove-deep-indentation
 	url = https://github.com/dodie/vim-disapprove-deep-indentation
 	branch = master
+[submodule "/Users/chrised/.dotfiles/submodules/vim-erlang-skeletons"]
+	path = /Users/chrised/.dotfiles/submodules/vim-erlang-skeletons
+	url = https://github.com/vim-erlang/vim-erlang-skeletons
+	branch = master
