@@ -2,70 +2,84 @@
 	path = submodules/fonts
 	url = https://github.com/chrised/fonts.git
 	branch = master
+	ignore = all
 [submodule "oh-my-zsh"]
 	path = oh-my-zsh
 	url = https://github.com/ohmyzsh/ohmyzsh.git
 	branch = master
+	ignore = all
 [submodule "oh-my-zsh-custom/powerlevel10k"]
 	path = oh-my-zsh-custom/powerlevel10k
 	url = https://github.com/romkatv/powerlevel10k.git
 	branch = master
+	ignore = all
 [submodule "submodules/bash-git-prompt"]
 	path = submodules/bash-git-prompt
 	url = https://github.com/magicmonty/bash-git-prompt.git
 	branch = master
+	ignore = all
 [submodule "submodules/vim-airline"]
 	path = submodules/vim-airline
 	url = https://github.com/bling/vim-airline.git
 	branch = master
+	ignore = all
 [submodule "submodules/vim-disapprove-deep-indentation"]
 	path = submodules/vim-disapprove-deep-indentation
 	url = https://github.com/dodie/vim-disapprove-deep-indentation
 	branch = master
-	ignore = dirty
+	ignore = all
 [submodule "submodules/vim-erlang-skeletons"]
 	path = submodules/vim-erlang-skeletons
 	url = https://github.com/vim-erlang/vim-erlang-skeletons
 	branch = master
-	ignore = dirty
+	ignore = all
 [submodule "submodules/vim-gitgutter"]
 	path = submodules/vim-gitgutter
 	url = https://github.com/airblade/vim-gitgutter
 	branch = master
+	ignore = all
 [submodule "submodules/vim-javascript-syntax"]
 	path = submodules/vim-javascript-syntax
 	url = https://github.com/jelera/vim-javascript-syntax.git
 	branch = master
+	ignore = all
 [submodule "submodules/vim-logstash-syntax"]
 	path = submodules/vim-logstash-syntax
 	url = https://github.com/vim-scripts/logstash.vim.git
 	branch = master
+	ignore = all
 [submodule "submodules/vim-monokai"]
 	path = submodules/vim-monokai
 	url = https://github.com/sickill/vim-monokai.git
 	branch = master
+	ignore = all
 [submodule "submodules/vim-node"]
 	path = submodules/vim-node
 	url = https://github.com/moll/vim-node.git
 	branch = master
+	ignore = all
 [submodule "submodules/vim-pathogen"]
 	path = submodules/vim-pathogen
 	url = https://github.com/tpope/vim-pathogen.git
 	branch = master
+	ignore = all
 [submodule "submodules/vim-plist"]
 	path = submodules/vim-plist
 	url = https://github.com/darfink/vim-plist.git
 	branch = master
+	ignore = all
 [submodule "submodules/vim-syntastic"]
 	path = submodules/vim-syntastic
 	url = https://github.com/scrooloose/syntastic.git
 	branch = master
+	ignore = all
 [submodule "submodules/vim-tagbar"]
 	path = submodules/vim-tagbar
 	url = https://github.com/majutsushi/tagbar.git
 	branch = master
+	ignore = all
 [submodule "submodules/vim-trailing-whitespace"]
 	path = submodules/vim-trailing-whitespace
 	url = https://github.com/vim-scripts/trailing-whitespace.git
 	branch = master
-	ignore = dirty
+	ignore = all
