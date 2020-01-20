@@ -18,3 +18,7 @@
 	path = /Users/chrised/.dotfiles/submodules/vim-airline
 	url = https://github.com/bling/vim-airline.git
 	branch = master
+[submodule "/Users/chrised/.dotfiles/submodules/vim-disapprove-deep-indentation"]
+	path = /Users/chrised/.dotfiles/submodules/vim-disapprove-deep-indentation
+	url = https://github.com/dodie/vim-disapprove-deep-indentation
+	branch = master
