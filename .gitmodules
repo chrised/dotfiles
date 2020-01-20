@@ -54,3 +54,7 @@
 	path = /Users/chrised/.dotfiles/submodules/vim-plist
 	url = https://github.com/darfink/vim-plist.git
 	branch = master
+[submodule "/Users/chrised/.dotfiles/submodules/vim-syntastic"]
+	path = /Users/chrised/.dotfiles/submodules/vim-syntastic
+	url = https://github.com/scrooloose/syntastic.git
+	branch = master
