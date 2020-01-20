@@ -26,3 +26,7 @@
 	path = /Users/chrised/.dotfiles/submodules/vim-erlang-skeletons
 	url = https://github.com/vim-erlang/vim-erlang-skeletons
 	branch = master
+[submodule "/Users/chrised/.dotfiles/submodules/vim-gitgutter"]
+	path = /Users/chrised/.dotfiles/submodules/vim-gitgutter
+	url = https://github.com/airblade/vim-gitgutter
+	branch = master
