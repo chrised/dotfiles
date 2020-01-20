@@ -22,10 +22,12 @@
 	path = submodules/vim-disapprove-deep-indentation
 	url = https://github.com/dodie/vim-disapprove-deep-indentation
 	branch = master
+	ignore = dirty
 [submodule "submodules/vim-erlang-skeletons"]
 	path = submodules/vim-erlang-skeletons
 	url = https://github.com/vim-erlang/vim-erlang-skeletons
 	branch = master
+	ignore = dirty
 [submodule "submodules/vim-gitgutter"]
 	path = submodules/vim-gitgutter
 	url = https://github.com/airblade/vim-gitgutter
@@ -66,3 +68,4 @@
 	path = submodules/vim-trailing-whitespace
 	url = https://github.com/vim-scripts/trailing-whitespace.git
 	branch = master
+	ignore = dirty
