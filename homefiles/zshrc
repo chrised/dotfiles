@@ -149,3 +149,5 @@ fi
 export PYENV_BASE="${HOME}/.pyenv"
 export PYENV_BIN="${PYENV_BASE}/bin"
 export PYENV="$(which pyenv 2> /dev/null)"
+
+export PROMPT_EOL_MARK=''
