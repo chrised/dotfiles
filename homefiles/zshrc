@@ -85,8 +85,6 @@ plugins=(
     brew
     git
     history
-    pipenv
-    pyenv
     screen
     vscode
     xcode
