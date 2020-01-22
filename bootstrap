@@ -3,10 +3,8 @@
 # This script creates symlinks from the home directory to any desired dotfiles in ~/dotfiles
 ############################
 
-# Init all submodules
-git submodule update --init --recursive
-# Update all submodules
-git submodule update --remote
+# Init and update all submodules
+git submodule update --init --remote --recursive --checkout
 
 HOSTTYPE=$(uname -s)
 
