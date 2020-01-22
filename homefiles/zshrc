@@ -82,7 +82,6 @@ fi
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
     aws
-    brew
     git
     history
     pyenv
