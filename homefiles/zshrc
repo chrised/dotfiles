@@ -82,10 +82,17 @@ fi
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
     aws
+    docker
     git
+    golang
+    helm
     history
+    jsontools
+    kubectl
     pyenv
+    python
     screen
+    terraform
     vscode
     xcode
 )
