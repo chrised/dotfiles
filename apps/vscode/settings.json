@@ -44,7 +44,6 @@
     //],
     // Other
     "terminal.external.osxExec": "iTerm.app",
-    "terminal.integrated.fontFamily": "Menlo for Powerline",
     "window.zoomLevel": 0,
     "explorer.confirmDragAndDrop": false,
     "gitlens.keymap": "chorded",
@@ -104,4 +103,18 @@
     "gitlens.views.search.location": "gitlens",
     "python.linting.banditEnabled": true,
     "python.linting.banditPath": "bandit -c .bandit.yaml",
+    "terraform.indexing": {
+        "enabled": false,
+        "liveIndexing": false,
+        "delay": 500,
+        "exclude": [
+            ".terraform/**/*",
+            "**/.terraform/**/*"
+        ]
+    },
+    "terraform.languageServer": {
+        "enabled": true,
+        "args": []
+    },
+    "terminal.integrated.fontFamily": "MesloLGS NF",
 }
