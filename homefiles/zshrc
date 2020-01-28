@@ -101,6 +101,7 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 test -e ${HOME}/.zshrc.local && source ${HOME}/.zshrc.local
+setopt no_share_history
 setopt noautomenu
 setopt nomenucomplete
 
