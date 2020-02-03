@@ -10,6 +10,8 @@
 	<false/>
 	<key>AppleAntiAliasingThreshold</key>
 	<integer>1</integer>
+	<key>ApplePressAndHoldEnabled</key>
+	<false/>
 	<key>AppleScrollAnimationEnabled</key>
 	<integer>0</integer>
 	<key>AppleSmoothFixedFontsSizeThreshold</key>
@@ -694,7 +696,7 @@
 	<key>NSWindow Frame UKCrashReporter</key>
 	<string>-1395 1343 592 584 -1440 -411 1440 2537 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>436 474 850 703 0 0 1920 1177 </string>
+	<string>332 403 850 703 0 0 3360 1867 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>47 86 1417 1724 0 0 3360 1867 </string>
 	<key>NSWindow Frame iTerm Window 10</key>
@@ -1785,6 +1787,7 @@
 		<string>3.3.7beta4</string>
 		<string>3.3.8beta1</string>
 		<string>3.3.8beta4</string>
+		<string>3.3.8beta5</string>
 	</array>
 	<key>NoSyncBFPRecents</key>
 	<array>
@@ -1804,9 +1807,9 @@
 	<key>NoSyncFrame_SharedPreferences</key>
 	<dict>
 		<key>screenFrame</key>
-		<string>{{0, 0}, {1920, 1200}}</string>
+		<string>{{-1440, -411}, {1440, 2560}}</string>
 		<key>topLeft</key>
-		<string>{567, 1159}</string>
+		<string>{-1142, 513}</string>
 	</dict>
 	<key>NoSyncHaveRequestedFullDiskAccess</key>
 	<true/>
@@ -1815,7 +1818,7 @@
 	<key>NoSyncInstallationId</key>
 	<string>70FCEA44-83D9-4063-ABB8-6F4668E2FE3E</string>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>161</integer>
+	<integer>167</integer>
 	<key>NoSyncNeverAskAboutSettingAlternateMouseScroll</key>
 	<true/>
 	<key>NoSyncNextAnnoyanceTime</key>
@@ -2752,7 +2755,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2020-01-17T13:50:52Z</date>
+	<date>2020-02-03T10:11:58Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SUUpdateRelaunchingMarker</key>
@@ -7882,7 +7885,7 @@
 	<key>findRegex_iTerm</key>
 	<false/>
 	<key>iTerm Version</key>
-	<string>3.3.8beta4</string>
+	<string>3.3.8beta5</string>
 	<key>kCPKSelectionViewPreferredModeKey</key>
 	<integer>0</integer>
 	<key>kCPKSelectionViewShowHSBTextFieldsKey</key>
