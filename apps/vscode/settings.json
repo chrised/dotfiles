@@ -117,4 +117,17 @@
         "args": []
     },
     "terminal.integrated.fontFamily": "MesloLGS NF",
+    "[concourse-pipeline-yaml]": {
+        "editor.tabSize": 2
+    },
+    "[concourse-task-yaml]": {
+        "editor.tabSize": 2
+    },
+    "[json]": {
+        "editor.tabSize": 2
+    },
+    "[yaml]": {
+        "editor.tabSize": 2
+    },
+    "workbench.view.experimental.allowMovingToNewContainer": true
 }
