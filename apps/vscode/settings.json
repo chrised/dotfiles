@@ -129,5 +129,8 @@
     "[yaml]": {
         "editor.tabSize": 2
     },
+    "[terraform]": {
+        "editor.tabSize": 2
+    },
     "workbench.view.experimental.allowMovingToNewContainer": true
 }
