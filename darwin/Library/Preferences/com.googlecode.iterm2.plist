@@ -26,6 +26,8 @@
 	<true/>
 	<key>BadgeMaxWidthFraction</key>
 	<real>1</real>
+	<key>CGFontRenderingFontSmoothingDisabled</key>
+	<false/>
 	<key>CheckTestRelease</key>
 	<true/>
 	<key>ClosingHotkeySwitchesSpaces</key>
@@ -696,7 +698,7 @@
 	<key>NSWindow Frame UKCrashReporter</key>
 	<string>-1395 1343 592 584 -1440 -411 1440 2537 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>332 403 850 703 0 0 3360 1867 </string>
+	<string>247 132 850 703 0 0 1920 1177 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>47 86 1417 1724 0 0 3360 1867 </string>
 	<key>NSWindow Frame iTerm Window 10</key>
@@ -923,7 +925,7 @@
 			<key>Blinking Cursor</key>
 			<false/>
 			<key>Blur</key>
-			<true/>
+			<false/>
 			<key>Blur Radius</key>
 			<real>30</real>
 			<key>Bold Color</key>
@@ -1003,6 +1005,8 @@
 			<real>1</real>
 			<key>Idle Code</key>
 			<integer>0</integer>
+			<key>Initial Use Transparency</key>
+			<false/>
 			<key>Jobs to Ignore</key>
 			<array>
 				<string>rlogin</string>
@@ -1735,11 +1739,11 @@
 			<key>Terminal Type</key>
 			<string>xterm-256color</string>
 			<key>Thin Strokes</key>
-			<integer>2</integer>
+			<integer>1</integer>
 			<key>Title Components</key>
 			<integer>7</integer>
 			<key>Transparency</key>
-			<real>0.025983502538071065</real>
+			<real>0.0</real>
 			<key>Unicode Normalization</key>
 			<integer>0</integer>
 			<key>Unlimited Scrollback</key>
@@ -1788,6 +1792,7 @@
 		<string>3.3.8beta1</string>
 		<string>3.3.8beta4</string>
 		<string>3.3.8beta5</string>
+		<string>3.3.9beta1</string>
 	</array>
 	<key>NoSyncBFPRecents</key>
 	<array>
@@ -1807,9 +1812,9 @@
 	<key>NoSyncFrame_SharedPreferences</key>
 	<dict>
 		<key>screenFrame</key>
-		<string>{{-1440, -411}, {1440, 2560}}</string>
+		<string>{{0, 0}, {1920, 1200}}</string>
 		<key>topLeft</key>
-		<string>{-1142, 513}</string>
+		<string>{180, 753}</string>
 	</dict>
 	<key>NoSyncHaveRequestedFullDiskAccess</key>
 	<true/>
@@ -1818,7 +1823,7 @@
 	<key>NoSyncInstallationId</key>
 	<string>70FCEA44-83D9-4063-ABB8-6F4668E2FE3E</string>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>167</integer>
+	<integer>181</integer>
 	<key>NoSyncNeverAskAboutSettingAlternateMouseScroll</key>
 	<true/>
 	<key>NoSyncNextAnnoyanceTime</key>
@@ -2755,7 +2760,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2020-02-03T10:11:58Z</date>
+	<date>2020-02-11T18:41:49Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SUUpdateRelaunchingMarker</key>
@@ -2811,7 +2816,7 @@
 	<key>UseLionStyleFullscreen</key>
 	<true/>
 	<key>UseMetal</key>
-	<true/>
+	<false/>
 	<key>VisualIndicatorForEsc</key>
 	<false/>
 	<key>Window Arrangements</key>
@@ -7878,6 +7883,8 @@
 	<integer>0</integer>
 	<key>WordCharacters</key>
 	<string>/-+\~_.</string>
+	<key>disableMetalWhenUnplugged</key>
+	<true/>
 	<key>findIgnoreCase_iTerm</key>
 	<true/>
 	<key>findMode_iTerm</key>
@@ -7885,7 +7892,7 @@
 	<key>findRegex_iTerm</key>
 	<false/>
 	<key>iTerm Version</key>
-	<string>3.3.8beta5</string>
+	<string>3.3.9beta1</string>
 	<key>kCPKSelectionViewPreferredModeKey</key>
 	<integer>0</integer>
 	<key>kCPKSelectionViewShowHSBTextFieldsKey</key>
