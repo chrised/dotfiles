@@ -88,8 +88,6 @@
     "files.trimFinalNewlines": true,
     "shellcheck.enable": false,
     "extensions.autoUpdate": false,
-    "python.linting.pylamaEnabled": true,
-    "python.linting.pylamaPath": "pylava",
     "vim.debug.silent": true,
     "vim.foldfix": true,
     "editor.quickSuggestionsDelay": 500,
@@ -113,8 +111,10 @@
         ]
     },
     "terraform.languageServer": {
-        "enabled": true,
-        "args": []
+        "external": true,
+        "args": [
+            "serve"
+        ]
     },
     "terminal.integrated.fontFamily": "MesloLGS NF",
     "[concourse-pipeline-yaml]": {
@@ -132,5 +132,8 @@
     "[terraform]": {
         "editor.tabSize": 2
     },
-    "workbench.view.experimental.allowMovingToNewContainer": true
+    "workbench.view.experimental.allowMovingToNewContainer": true,
+    "python.linting.pylamaEnabled": true,
+    "python.linting.pylamaPath": "pylava",
+    "python.linting.mypyEnabled": true
 }

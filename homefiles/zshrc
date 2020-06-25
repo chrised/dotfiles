@@ -146,6 +146,11 @@ fi
 if [ -d "${HOME}/.cache/rebar3/bin" ]; then
     export PATH="${HOME}/.cache/rebar3/bin:${PATH}"
 fi
+# Default dotnet tools
+if [ -d "${HOME}/.dotnet/tools" ]; then
+    export PATH="${HOME}/.dotnet/tools:${PATH}"
+fi
+
 # Default VSCode directories on a Mac
 if [ -d "/Applications/Visual Studio Code - Insiders.app/Contents/Resources/app/bin" ]; then
     export PATH="$PATH:/Applications/Visual Studio Code - Insiders.app/Contents/Resources/app/bin"
