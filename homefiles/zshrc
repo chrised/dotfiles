@@ -174,3 +174,8 @@ export PYENV="$(which pyenv 2> /dev/null)"
 export PROMPT_EOL_MARK=""
 
 export LESS="-FRX"
+
+# Set up Direnv
+if command -v direnv &> /dev/null; then
+    eval "$(direnv hook zsh)"
+fi
