@@ -175,6 +175,10 @@ export PROMPT_EOL_MARK=""
 
 export LESS="-FRX"
 
+if [ -f "${HOME}/.zsh_completion" ]; then
+    . "${HOME}/.zsh_completion"
+fi
+
 # Set up Direnv
 if command -v direnv &> /dev/null; then
     eval "$(direnv hook zsh)"

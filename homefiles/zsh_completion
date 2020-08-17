@@ -1,0 +1,24 @@
+#!/usr/bin/env zsh
+COMPLETION_DIRS=""
+DOTFILES_ZC="${HOME}/.zsh_completions"
+if [ -d "${DOTFILES_ZC}" ]; then
+    COMPLETION_DIRS="${DOTFILES_ZC}"
+fi
+
+load_completions() {
+    # ${1}: directory/file to load
+    if [ -d "${1}" ]; then
+        for o in "${1}"/*; do
+            [ -f "${o}" ] && . "${o}"
+            # Disabled recursing, since the helpers dir on a Mac is full of Perl
+            # if [ -d "${o}" ]; then
+            #     load_completions "${o}"
+            # else
+            #     . "${o}"
+            # fi
+        done
+    fi
+}
+for dir in ${COMPLETION_DIRS}; do
+    load_completions "${dir}"
+done

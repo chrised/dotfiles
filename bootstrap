@@ -26,7 +26,7 @@ DOTFILES_DIR="${HOME}/.dotfiles"         # dotfiles directory
 BACKUP_PREFIX="${HOME}/.dotfiles_old"  # old dotfiles backup directory
 BACKUP_SUFFIX=$(date -u "+%Y%m%d-%H%M")
 # list of files/folders to symlink in homedir
-HOME_FILES="zshrc zshrc_functions p10k.zsh bashrc bashrc_functions vimrc vim gitignore_global eslintrc bash_completion bash_completions"
+HOME_FILES="zshrc zshrc_functions p10k.zsh bashrc bashrc_functions vimrc vim gitignore_global eslintrc bash_completion bash_completions zsh_completion zsh_completions"
 if [ "${HOSTTYPE}" != "Linux" ]; then
     HOME_FILES="${HOME_FILES} gvimrc-nonlinux"
 else
