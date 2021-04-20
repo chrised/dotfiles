@@ -9,7 +9,7 @@
 	branch = master
 	ignore = all
 [submodule "oh-my-zsh-custom/powerlevel10k"]
-	path = oh-my-zsh-custom/powerlevel10k
+	path = oh-my-zsh-custom/themes/powerlevel10k
 	url = https://github.com/romkatv/powerlevel10k.git
 	branch = master
 	ignore = all
