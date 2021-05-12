@@ -146,6 +146,10 @@ setopt nomenucomplete
 alias poe="poetry run poe"
 
 # Add some paths
+# Opt-bin
+if [ -d "/opt/bin" ]; then
+    export PATH="/opt/bin:${PATH}"
+fi
 # User-custom bin
 if [ -d "${HOME}/bin" ]; then
     export PATH="${HOME}/bin:${PATH}"
