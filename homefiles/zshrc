@@ -164,6 +164,10 @@ fi
 if [ -d "${HOME}/.dotnet/tools" ]; then
     export PATH="${HOME}/.dotnet/tools:${PATH}"
 fi
+# Pip --user install location
+if [ -d "${HOME}/.local/bin/" ]; then
+    export PATH="${HOME}/.local/bin:${PATH}"
+fi
 
 # Default VSCode directories on a Mac
 if [ -d "/Applications/Visual Studio Code - Insiders.app/Contents/Resources/app/bin" ]; then
