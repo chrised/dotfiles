@@ -41,5 +41,8 @@ Thumbs.db
 .vscode
 *.swp
 
-
 TODO
+
+# Go Vendor hell #
+##################
+!/vendor/**
