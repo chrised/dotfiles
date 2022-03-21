@@ -1,9 +1,1 @@
 #!/usr/bin/env zsh
-###############################################################################
-# iTerm2 Functions
-###############################################################################
-if [ -f "${HOME}/.iterm2_shell_integration.bash" ]; then
-    function iterm2_print_user_vars() {
-        it2git
-    }
-fi
