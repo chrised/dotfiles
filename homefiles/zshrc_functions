@@ -1,1 +1,29 @@
 #!/usr/bin/env zsh
+# Open new iTerm tabs from the command line
+# TODO: Write this in Python
+if [ $(uname -s) = "Darwin" ]; then
+    function tab () {
+        local cmd
+        local cdto
+        local args
+        while getopts d:c:a: o;
+        do
+            case  "${o}" in
+            d) cdto="${OPTARG}";;
+            c) cmd="${OPTARG}";;
+            a) args="${args} ${OPTARG}";;
+            esac
+        done
+        cdto=$(cd "${cdto}"; pwd)
+        osascript <<EOF
+            tell application "iTerm"
+                tell current window
+                    create tab with default profile
+                    tell the current session
+                        write text "cd \"$cdto\"; $cmd $args"
+                    end tell
+                end tell
+            end tell
+EOF
+    }
+fi
