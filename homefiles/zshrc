@@ -249,3 +249,5 @@ if command -v pyenv &> /dev/null; then
 fi
 
 alias yubikey-force-gpg='gpg-connect-agent "scd serialno" "learn --force" /bye'
+
+export GPG_TTY=$(tty)
