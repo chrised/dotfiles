@@ -1,0 +1,15 @@
+#!/bin/bash
+set -o errexit
+set -o nounset
+set -o pipefail
+PR_OUTPUT="$(mktemp)"
+HEADER_LEVEL=${1:-1}
+HEADER=$(python -c "print(\"#\"*${HEADER_LEVEL}, end='')")
+>&2 echo "Output to $PR_OUTPUT"
+git fetch origin $(git remote show origin | grep "HEAD branch" | cut -d " " -f 5)
+
+git log --reverse --no-show-signature --pretty="format:${HEADER} %s%n%h - %ae%n%n%b" \
+    HEAD ^FETCH_HEAD | tee $PR_OUTPUT
+if [ -z $DISPLAY ]; then
+    xclip -sel clip -in < $PR_OUTPUT
+fi

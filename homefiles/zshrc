@@ -203,6 +203,10 @@ fi
 if [ -d "${HOME}/.local/bin/" ]; then
     export PATH="${HOME}/.local/bin:${PATH}"
 fi
+# Dotfiles-provided utilities
+if [ -d "${HOME}/.dotfiles/bin" ]; then
+    export PATH="${HOME}/.dotfiles/bin:${PATH}"
+fi
 
 # Default VSCode directories on a Mac
 if [ -d "/Applications/Visual Studio Code - Insiders.app/Contents/Resources/app/bin" ]; then
