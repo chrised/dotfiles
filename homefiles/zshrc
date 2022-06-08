@@ -117,7 +117,6 @@ plugins=(
     npm
     pipenv
     poetry
-    pyenv
     python
     rebar
     screen
@@ -241,11 +240,12 @@ if command -v thefuck &> /dev/null; then
 fi
 
 if command -v pyenv &> /dev/null; then
-    # Pyenv early init
+    # Pyenv init
     export PYENV_ROOT="${HOME}/.pyenv"
     export PATH="${PYENV_ROOT}/bin:${PATH}"
     eval "$(pyenv init --path)"
     eval "$(pyenv init -)"
+    plugins+=(pyenv)
 fi
 
 alias yubikey-force-gpg='gpg-connect-agent "scd serialno" "learn --force" /bye'
