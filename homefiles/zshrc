@@ -172,7 +172,7 @@ setopt extended_glob
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias poe="poetry run poe"
+alias poe="poetry poe"
 
 # Add some paths
 # Opt-bin
