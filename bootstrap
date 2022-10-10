@@ -33,7 +33,7 @@ else
     HOME_FILES="${HOME_FILES} gvimrc"
 fi
 # list of files/folders to symlink in $HOME/.config/
-CONFIG_FILES="nvim direnv"
+CONFIG_FILES="nvim direnv yabai skhd"
 RM_FILES="emacs"
 
 
