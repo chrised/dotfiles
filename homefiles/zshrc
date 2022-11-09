@@ -2,6 +2,12 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
+# Init ARM Homebrew if it's installed
+# This must run before brew completion
+if [ -f "/opt/homebrew/bin/brew" ]; then
+    eval "$(/opt/homebrew/bin/brew shellenv)"
+fi
+
 # Homebrew completion:
 if type brew &>/dev/null; then
   FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
@@ -226,11 +232,6 @@ fi
 
 if [ -f "${HOME}/.zshrc_functions" ]; then
     . "${HOME}/.zshrc_functions"
-fi
-
-# Init homebrew if it's installed
-if [ -f "/opt/homebrew/bin/brew" ]; then
-    eval "$(/opt/homebrew/bin/brew shellenv)"
 fi
 
 # Set up Direnv
