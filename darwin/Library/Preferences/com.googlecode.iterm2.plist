@@ -10,6 +10,8 @@
 	<false/>
 	<key>AnimateDimming</key>
 	<false/>
+	<key>AutoCommandHistory</key>
+	<false/>
 	<key>AutoHideTmuxClientSession</key>
 	<false/>
 	<key>BadgeFont</key>
@@ -18,6 +20,8 @@
 	<true/>
 	<key>BadgeMaxWidthFraction</key>
 	<real>1</real>
+	<key>BracketedPasteMode</key>
+	<false/>
 	<key>CheckTestRelease</key>
 	<true/>
 	<key>ClosingHotkeySwitchesSpaces</key>
@@ -29,7 +33,7 @@
 	<key>Control</key>
 	<integer>1</integer>
 	<key>ConvertDosNewlines</key>
-	<true/>
+	<false/>
 	<key>CopyLastNewline</key>
 	<false/>
 	<key>CopySelection</key>
