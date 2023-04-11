@@ -27,3 +27,15 @@ if [ $(uname -s) = "Darwin" ]; then
 EOF
     }
 fi
+
+if which code 2> /dev/null > /dev/null; then
+    function coder() {
+        DIR=$(git rev-parse --show-toplevel)
+        if [ $? != 0 ]; then
+            echo "Not in git repo, opening working directory"
+            DIR="."
+        fi
+        "$(which code)" "${DIR}"
+    }
+fi
+
