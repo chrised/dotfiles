@@ -46,3 +46,13 @@ TODO
 # Go Vendor hell #
 ##################
 !/vendor/**
+
+# Images #
+##########
+*.jpg
+*.jpeg
+*.png
+*.gif
+*.bmp
+*.tiff
+*.arw
