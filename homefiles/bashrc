@@ -153,5 +153,3 @@ set_up_gitprompt
 
 export BASH_SILENCE_DEPRECATION_WARNING=1
 BASH_SILENCE_DEPRECATION_WARNING=1
-
-source /Users/chrised/.docker/init-bash.sh || true # Added by Docker Desktop

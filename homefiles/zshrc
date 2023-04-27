@@ -261,5 +261,3 @@ fi
 alias yubikey-force-gpg='gpg-connect-agent "scd serialno" "learn --force" /bye'
 
 export GPG_TTY=$(tty)
-
-source /Users/chrised/.docker/init-zsh.sh || true # Added by Docker Desktop
