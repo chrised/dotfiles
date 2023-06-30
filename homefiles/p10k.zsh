@@ -42,9 +42,6 @@
     dir                     # current directory
     vcs                     # git status
     virtualenv              # python virtual environment (https://docs.python.org/3/library/venv.html)
-    # =========================[ Line #2 ]=========================
-    newline
-    prompt_char             # prompt symbol
   )
 
   # The list of segments shown on the right. Fill it with less important segments.
@@ -91,13 +88,23 @@
     # load                  # CPU load
     todo                    # todo items (https://github.com/todotxt/todo.txt-cli)
     time                    # current time
-    # =========================[ Line #2 ]=========================
-    newline
-    # public_ip             # public IP address
-    # proxy                 # system-wide http/https/ftp proxy
-    # battery               # internal battery
-    # example               # example user-defined segment (see prompt_example function below)
   )
+  # Use a single line for Warp
+  if [ "${TERM_PROGRAM}" != "WarpTerminal" ]; then
+      POWERLEVEL9K_LEFT_PROMPT_ELEMENTS+=(
+          # =========================[ Line #2 ]=========================
+          newline
+          prompt_char             # prompt symbol
+      )
+      POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS+=(
+          # =========================[ Line #2 ]=========================
+          newline
+          # public_ip             # public IP address
+          # proxy                 # system-wide http/https/ftp proxy
+          # battery               # internal battery
+          # example               # example user-defined segment (see prompt_example function below)
+      )
+  fi
 
   # To disable default icons for all segments, set POWERLEVEL9K_VISUAL_IDENTIFIER_EXPANSION=''.
   #
