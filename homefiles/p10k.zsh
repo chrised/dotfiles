@@ -90,7 +90,7 @@
     time                    # current time
   )
   # Use a single line for Warp
-  if [ "${TERM_PROGRAM}" != "WarpTerminal" ]; then
+  if [ "${TERM_PROGRAM:-unknown}" != "WarpTerminal" ]; then
       POWERLEVEL9K_LEFT_PROMPT_ELEMENTS+=(
           # =========================[ Line #2 ]=========================
           newline
