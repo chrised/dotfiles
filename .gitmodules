@@ -28,34 +28,14 @@
 	url = https://github.com/dodie/vim-disapprove-deep-indentation
 	branch = master
 	ignore = all
-[submodule "submodules/vim-erlang-skeletons"]
-	path = submodules/vim-erlang-skeletons
-	url = https://github.com/vim-erlang/vim-erlang-skeletons
-	branch = master
-	ignore = all
 [submodule "submodules/vim-gitgutter"]
 	path = submodules/vim-gitgutter
 	url = https://github.com/airblade/vim-gitgutter
 	branch = master
 	ignore = all
-[submodule "submodules/vim-javascript-syntax"]
-	path = submodules/vim-javascript-syntax
-	url = https://github.com/jelera/vim-javascript-syntax.git
-	branch = master
-	ignore = all
-[submodule "submodules/vim-logstash-syntax"]
-	path = submodules/vim-logstash-syntax
-	url = https://github.com/vim-scripts/logstash.vim.git
-	branch = master
-	ignore = all
 [submodule "submodules/vim-monokai"]
 	path = submodules/vim-monokai
 	url = https://github.com/sickill/vim-monokai.git
-	branch = master
-	ignore = all
-[submodule "submodules/vim-node"]
-	path = submodules/vim-node
-	url = https://github.com/moll/vim-node.git
 	branch = master
 	ignore = all
 [submodule "submodules/vim-pathogen"]
@@ -66,16 +46,6 @@
 [submodule "submodules/vim-plist"]
 	path = submodules/vim-plist
 	url = https://github.com/darfink/vim-plist.git
-	branch = master
-	ignore = all
-[submodule "submodules/vim-syntastic"]
-	path = submodules/vim-syntastic
-	url = https://github.com/scrooloose/syntastic.git
-	branch = master
-	ignore = all
-[submodule "submodules/vim-tagbar"]
-	path = submodules/vim-tagbar
-	url = https://github.com/majutsushi/tagbar.git
 	branch = master
 	ignore = all
 [submodule "submodules/vim-trailing-whitespace"]
