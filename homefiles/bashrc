@@ -12,7 +12,9 @@ fi
 
 UNAME="$(uname)"
 
-test -e "/etc/profile" && source "/etc/profile"
+if ! uname -a | grep -qi synology && [ -e '/etc/profile' ]; then
+    source "/etc/profile"
+fi
 
 if [ "${TERM_PROGRAM}" = "iTerm.app" ]; then
     alias it='open . -a iterm'
