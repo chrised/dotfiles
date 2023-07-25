@@ -8,6 +8,11 @@ if [ -f "/opt/homebrew/bin/brew" ]; then
     eval "$(/opt/homebrew/bin/brew shellenv)"
 fi
 
+if ! uname -a | grep -qi synology && [ -e '/etc/profile' ]; then
+    source "/etc/profile"
+    export TERM=xterm
+fi
+
 # Homebrew completion:
 if type brew &>/dev/null; then
   FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
